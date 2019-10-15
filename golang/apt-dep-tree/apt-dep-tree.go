@@ -9,7 +9,13 @@ import (
 	"strings"
 )
 
+var cache map[string][]string = map[string][]string{}
+
 func checkDepends(pkg string) ([]string, error) {
+	if v, ok := cache[pkg]; ok {
+		return v, nil
+	}
+
 	cmd := exec.Command("apt-cache", "depends", pkg)
 	var stdout bytes.Buffer
 	var stderr bytes.Buffer
@@ -33,6 +39,7 @@ func checkDepends(pkg string) ([]string, error) {
 		result = append(result, depPkg)
 	}
 
+	cache[pkg] = result
 	return result, nil
 }
 
