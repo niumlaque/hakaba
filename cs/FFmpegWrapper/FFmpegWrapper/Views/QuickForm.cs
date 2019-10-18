@@ -1,20 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace FFmpegWrapper.Views
+﻿namespace FFmpegWrapper.Views
 {
+    using System;
+    using System.Windows.Forms;
+
     public partial class QuickForm : Form
     {
-        public QuickForm()
+        private readonly string fileName;
+
+        public QuickForm() : this(string.Empty)
         {
-            InitializeComponent();
+        }
+
+        public QuickForm(string fileName)
+        {
+            this.InitializeComponent();
+            this.fileName = fileName;
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            this.Test();
+        }
+
+        private void Test()
+        {
+            using (var confirmDialog = new ConfirmationForm("127.0.0.1"))
+            {
+                if (confirmDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (var execDialog = new ExecutionForm("ping", confirmDialog.Parameters))
+                    {
+                        execDialog.ShowDialog();
+                    }
+                }
+            }
         }
     }
 }

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Models\LockObject.cs" />
     <Compile Include="Models\Settings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,6 +56,18 @@
     </Compile>
     <Compile Include="Views\DownloadForm.Designer.cs">
       <DependentUpon>DownloadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ConfirmationForm.Designer.cs">
+      <DependentUpon>ConfirmationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExecutionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ExecutionForm.Designer.cs">
+      <DependentUpon>ExecutionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
@@ -85,6 +98,12 @@
     </Compile>
     <EmbeddedResource Include="Views\DownloadForm.resx">
       <DependentUpon>DownloadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ConfirmationForm.resx">
+      <DependentUpon>ConfirmationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ExecutionForm.resx">
+      <DependentUpon>ExecutionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
