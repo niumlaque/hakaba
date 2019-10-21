@@ -1,34 +1,37 @@
 ﻿namespace FFmpegWrapper.Views
 {
     using System;
+    using System.Diagnostics;
     using System.Windows.Forms;
 
     public partial class ConfirmationForm : Form
     {
-        private string parameters = string.Empty;
+        private string command = string.Empty;
 
         public ConfirmationForm() : this(string.Empty)
         {
         }
 
-        public ConfirmationForm(string parameters)
+        public ConfirmationForm(string command)
         {
             this.InitializeComponent();
-            this.rtBoxParameters.LostFocus += this.OnParametersTextBoxLostFocus;
-            this.rtBoxParameters.TextChanged += OnParametersTextChanged;
-            this.Parameters = parameters;
+            this.Text = string.Format("{0} - 確認", App.Caption);
+            this.rtBoxCommand.LanguageOption = RichTextBoxLanguageOptions.UIFonts;
+            this.rtBoxCommand.LostFocus += this.OnCommandTextBoxLostFocus;
+            this.rtBoxCommand.TextChanged += this.OnCommandTextChanged;
+            this.Command = command;
         }
 
-        private void OnParametersTextChanged(object sender, EventArgs e)
+        private void OnCommandTextChanged(object sender, EventArgs e)
         {
-            this.btnExec.Enabled = this.rtBoxParameters.Text.Length > 0;
+            this.btnExec.Enabled = this.rtBoxCommand.Text.Length > 0;
         }
 
-        public string Parameters
+        public string Command
         {
             get
             {
-                return this.parameters;
+                return this.command.Replace("\r\n", " ").Replace("\n", " ");
             }
 
             private set
@@ -38,24 +41,28 @@
                     value = string.Empty;
                 }
 
-                if (this.parameters != value)
+                if (this.command != value)
                 {
-                    this.parameters = value;
-                    this.rtBoxParameters.Text = this.parameters;
+                    this.command = value;
+                    this.rtBoxCommand.Text = this.command;
                     this.btnExec.Enabled = !string.IsNullOrWhiteSpace(value);
                 }
             }
         }
 
-        private void OnParametersTextBoxLostFocus(object sender, EventArgs e)
+        private void OnCommandTextBoxLostFocus(object sender, EventArgs e)
         {
-            this.Parameters = this.rtBoxParameters.Text;
+            this.Command = this.rtBoxCommand.Text;
         }
 
         private void OnExecButtonClicked(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            var si = new ProcessStartInfo("cmd", "/k " + this.Command);
+            using (var proc = new Process())
+            {
+                proc.StartInfo = si;
+                proc.Start();
+            }
         }
 
         private void OnCancelButtonClicked(object sender, EventArgs e)

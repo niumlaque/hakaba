@@ -7,6 +7,7 @@
         public DownloadForm()
         {
             this.InitializeComponent();
+            this.Text = string.Format("{0} - ダウンロード", App.Caption);
         }
 
         private void OnFMLinkLabelClicked(object sender, LinkLabelLinkClickedEventArgs e)

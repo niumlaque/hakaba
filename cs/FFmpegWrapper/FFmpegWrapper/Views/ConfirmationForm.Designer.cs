@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rtBoxParameters = new System.Windows.Forms.RichTextBox();
+            this.rtBoxCommand = new System.Windows.Forms.RichTextBox();
             this.btnExec = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // rtBoxParameters
+            // rtBoxCommand
             // 
-            this.rtBoxParameters.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rtBoxCommand.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtBoxParameters.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.rtBoxParameters.Location = new System.Drawing.Point(12, 24);
-            this.rtBoxParameters.Name = "rtBoxParameters";
-            this.rtBoxParameters.Size = new System.Drawing.Size(560, 97);
-            this.rtBoxParameters.TabIndex = 0;
-            this.rtBoxParameters.Text = "";
+            this.rtBoxCommand.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.rtBoxCommand.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.rtBoxCommand.Location = new System.Drawing.Point(12, 24);
+            this.rtBoxCommand.Name = "rtBoxCommand";
+            this.rtBoxCommand.Size = new System.Drawing.Size(560, 97);
+            this.rtBoxCommand.TabIndex = 0;
+            this.rtBoxCommand.Text = "";
             // 
             // btnExec
             // 
@@ -85,7 +86,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnExec);
-            this.Controls.Add(this.rtBoxParameters);
+            this.Controls.Add(this.rtBoxCommand);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(600, 200);
             this.Name = "ConfirmationForm";
@@ -100,7 +101,7 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox rtBoxParameters;
+        private System.Windows.Forms.RichTextBox rtBoxCommand;
         private System.Windows.Forms.Button btnExec;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label1;

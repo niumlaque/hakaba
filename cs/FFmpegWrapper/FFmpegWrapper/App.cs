@@ -23,6 +23,27 @@
             Settings.Save();
         }
 
+        public static (bool ok, string path) GetFFmpegPath()
+        {
+            var ok = false;
+            var path = App.Settings.FFmpegPath;
+            if (System.IO.File.Exists(path))
+            {
+                ok = true;
+                return (ok, path);
+            }
+            using (var dialog = new Views.OptionsForm())
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    ok = true;
+                    path = App.Settings.FFmpegPath;
+                }
+            }
+
+            return (ok, path);
+        }
+
         public static DialogResult Error(string format, params object[] args)
         {
             return MessageBox.Show(string.Format(format,args), Caption, MessageBoxButtons.OK, MessageBoxIcon.Error);

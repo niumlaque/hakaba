@@ -6,6 +6,8 @@
 
     internal static class Program
     {
+        private static EventHandler onIdleHandler;
+
         /// <summary>
         /// アプリケーションのメイン エントリ ポイントです。
         /// </summary>
@@ -22,17 +24,26 @@
 
             if (args.Length > 0)
             {
-                var file = args[0];
-                if (!File.Exists(file))
+                if (args[0] == "--direct")
                 {
-                    App.Error("{0} が見つかりませんでした。", file);
-                    return;
+                    onIdleHandler = new EventHandler((_, __) => OnDirect());
+                    Application.Idle += onIdleHandler;
+                    Application.Run();
                 }
-
-                using (var form = new Views.QuickForm())
+                else
                 {
-                    form.Text = string.Format("{0} - クイック", App.Caption);
-                    Application.Run(form);
+                    var file = args[0];
+                    if (!File.Exists(file))
+                    {
+                        App.Error("{0} が見つかりませんでした。", file);
+                        return;
+                    }
+
+                    using (var form = new Views.QuickForm())
+                    {
+                        form.Text = string.Format("{0} - クイック", App.Caption);
+                        Application.Run(form);
+                    }
                 }
             }
             else
@@ -73,6 +84,25 @@
             }
 
             return true;
+        }
+
+        private static void OnDirect()
+        {
+            Application.Idle -= onIdleHandler;
+            var (ok, ffmpeg) = App.GetFFmpegPath();
+            if (!ok)
+            {
+                App.Error("FFmpeg のパスを設定する必要があります。");
+            }
+            else
+            {
+                using (var confirmDialog = new Views.ConfirmationForm(ffmpeg))
+                {
+                    confirmDialog.ShowDialog();
+                }
+            }
+
+            Application.Exit();
         }
     }
 }

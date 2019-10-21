@@ -9,6 +9,7 @@
         public OptionsForm()
         {
             this.InitializeComponent();
+            this.Text = string.Format("{0} - オプション", App.Caption);
             this.txtFFmpegPath.Text = App.Settings.FFmpegPath;
             this.txtFFprobePath.Text = App.Settings.FFprobePath;
         }
