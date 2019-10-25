@@ -23,14 +23,14 @@
             Settings.Save();
         }
 
-        public static (bool ok, string path) GetFFmpegPath()
+        public static (string path, bool ok) GetFFmpegPath()
         {
             var ok = false;
             var path = App.Settings.FFmpegPath;
             if (System.IO.File.Exists(path))
             {
                 ok = true;
-                return (ok, path);
+                return (path, ok);
             }
             using (var dialog = new Views.OptionsForm())
             {
@@ -41,7 +41,7 @@
                 }
             }
 
-            return (ok, path);
+            return (path, ok);
         }
 
         public static DialogResult Error(string format, params object[] args)

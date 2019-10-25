@@ -33,9 +33,10 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.convertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.downloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.convertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,14 +63,14 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.openToolStripMenuItem.Text = "開く(&O)";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OnOpenToolStripMenuItemClicked);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.exitToolStripMenuItem.Text = "終了(&X)";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.OnExitToolStripMenuItemClicked);
             // 
@@ -83,32 +84,41 @@
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.toolsToolStripMenuItem.Text = "ツール(&T)";
             // 
+            // convertToolStripMenuItem
+            // 
+            this.convertToolStripMenuItem.Name = "convertToolStripMenuItem";
+            this.convertToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.convertToolStripMenuItem.Text = "変換(&C)...";
+            this.convertToolStripMenuItem.Click += new System.EventHandler(this.OnConvertToolStripMenuItemClicked);
+            // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.optionsToolStripMenuItem.Text = "オプション(&O)...";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.OnOptionsToolStripMenuItemClicked);
             // 
             // downloadToolStripMenuItem
             // 
             this.downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
-            this.downloadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.downloadToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.downloadToolStripMenuItem.Text = "ダウンロード(&D)...";
             this.downloadToolStripMenuItem.Click += new System.EventHandler(this.OnDownloadToolStripMenuItemClicked);
             // 
-            // convertToolStripMenuItem
+            // pnlContent
             // 
-            this.convertToolStripMenuItem.Name = "convertToolStripMenuItem";
-            this.convertToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.convertToolStripMenuItem.Text = "変換(&C)...";
-            this.convertToolStripMenuItem.Click += new System.EventHandler(this.OnConvertToolStripMenuItemClicked);
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(0, 24);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(800, 515);
+            this.pnlContent.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 539);
+            this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainForm";
@@ -131,5 +141,6 @@
         private System.Windows.Forms.ToolStripMenuItem downloadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem convertToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlContent;
     }
 }

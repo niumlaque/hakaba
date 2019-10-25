@@ -12,6 +12,7 @@
         public MainForm()
         {
             this.InitializeComponent();
+            this.WithParametersForm();
         }
 
         private string FileName
@@ -30,6 +31,19 @@
                     this.Text = string.Format("{0}({1})", App.Caption, value);
                 }
             }
+        }
+
+        private void WithParametersForm()
+        {
+            // 将来的には画面を分けたい
+            Views.ParametersForm param = new ParametersForm();
+            param.TopLevel = false;
+            param.FormBorderStyle = FormBorderStyle.None;
+            param.Dock = DockStyle.Fill;
+            param.Visible = true;
+            this.openToolStripMenuItem.Enabled = false;
+            this.convertToolStripMenuItem.Enabled = false;
+            this.pnlContent.Controls.Add(param);
         }
 
         private void OnOptionsToolStripMenuItemClicked(object sender, EventArgs e)

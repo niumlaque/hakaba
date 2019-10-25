@@ -89,7 +89,7 @@
         private static void OnDirect()
         {
             Application.Idle -= onIdleHandler;
-            var (ok, ffmpeg) = App.GetFFmpegPath();
+            var (ffmpeg, ok) = App.GetFFmpegPath();
             if (!ok)
             {
                 App.Error("FFmpeg のパスを設定する必要があります。");

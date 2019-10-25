@@ -1,5 +1,7 @@
 ﻿namespace FFmpegWrapper.Views
 {
+    using System;
+    using System.Collections.Generic;
     using System.IO;
     using System.Windows.Forms;
 
@@ -11,15 +13,34 @@
             this.Initialize();
         }
 
+        internal (Models.CommandBuilder builder, bool ok) GetBuilder()
+        {
+            var (ffmpeg, ok) = App.GetFFmpegPath();
+            if (!ok)
+            {
+                return (null, false);
+            }
+
+            var builder = new Models.CommandBuilder(ffmpeg, this.txtSource.Text, this.txtDestination.Text);
+            if (this.cmbVideoCodec.SelectedIndex > 0)
+            {
+                builder.Add(new Models.VideoCodec(((KeyValuePair<string, string>)this.cmbVideoCodec.SelectedItem).Key));
+            }
+
+            return (builder, true);
+        }
+
         private void Initialize()
         {
             // ビデオエンコード
             new Behaviours.ComboBoxItems(this.cmbVideoCodec,
-                ("-c:v rawvideo", "無劣化 avi 出力"),
-                ("-c:v libx264", "x264"),
-                ("-c:v libx265", "x265"),
-                ("-c:v h264_qsv", "H.264(QSV)"),
-                ("-c:v hevc_nvenc", "H.265(NVEnc)"));
+                ("rawvideo", "無劣化 avi 出力"),
+                ("libx264", "x264"),
+                ("libx265", "x265"),
+                ("h264_qsv", "H.264(QSV)"),
+                ("hevc_nvenc", "H.265(NVEnc)"));
+
+            this.cmbVideoCodec.SelectedIndex = 0;
         }
 
         private void OnUseBFrameCheckedChanged(object sender, System.EventArgs e)

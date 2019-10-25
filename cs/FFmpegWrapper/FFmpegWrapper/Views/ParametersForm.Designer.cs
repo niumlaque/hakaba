@@ -36,6 +36,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbnDestRef = new System.Windows.Forms.Button();
             this.gBoxVideo = new System.Windows.Forms.GroupBox();
+            this.gBoxVideoFilter = new System.Windows.Forms.GroupBox();
+            this.txtPostProcessing = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtVideoScale = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.chkUseBFrame = new System.Windows.Forms.CheckBox();
             this.gBoxBFrame = new System.Windows.Forms.GroupBox();
             this.nudRefs = new System.Windows.Forms.NumericUpDown();
@@ -46,16 +51,11 @@
             this.cmbVideoCodec = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gBoxAudio = new System.Windows.Forms.GroupBox();
-            this.gBoxVideoFilter = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtVideoScale = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtPostProcessing = new System.Windows.Forms.TextBox();
             this.gBoxVideo.SuspendLayout();
+            this.gBoxVideoFilter.SuspendLayout();
             this.gBoxBFrame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRefs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaxBFrame)).BeginInit();
-            this.gBoxVideoFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // chkYes
@@ -140,10 +140,59 @@
             this.gBoxVideo.Controls.Add(this.label3);
             this.gBoxVideo.Location = new System.Drawing.Point(12, 84);
             this.gBoxVideo.Name = "gBoxVideo";
-            this.gBoxVideo.Size = new System.Drawing.Size(776, 318);
+            this.gBoxVideo.Size = new System.Drawing.Size(776, 254);
             this.gBoxVideo.TabIndex = 7;
             this.gBoxVideo.TabStop = false;
             this.gBoxVideo.Text = "映像オプション";
+            // 
+            // gBoxVideoFilter
+            // 
+            this.gBoxVideoFilter.Controls.Add(this.txtPostProcessing);
+            this.gBoxVideoFilter.Controls.Add(this.label7);
+            this.gBoxVideoFilter.Controls.Add(this.txtVideoScale);
+            this.gBoxVideoFilter.Controls.Add(this.label6);
+            this.gBoxVideoFilter.Location = new System.Drawing.Point(26, 156);
+            this.gBoxVideoFilter.Name = "gBoxVideoFilter";
+            this.gBoxVideoFilter.Size = new System.Drawing.Size(471, 89);
+            this.gBoxVideoFilter.TabIndex = 9;
+            this.gBoxVideoFilter.TabStop = false;
+            this.gBoxVideoFilter.Text = "ビデオフィルタ";
+            // 
+            // txtPostProcessing
+            // 
+            this.txtPostProcessing.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.txtPostProcessing.Location = new System.Drawing.Point(97, 54);
+            this.txtPostProcessing.Name = "txtPostProcessing";
+            this.txtPostProcessing.Size = new System.Drawing.Size(100, 19);
+            this.txtPostProcessing.TabIndex = 5;
+            this.txtPostProcessing.Text = "ac";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 57);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 12);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "PostProcessing";
+            // 
+            // txtVideoScale
+            // 
+            this.txtVideoScale.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.txtVideoScale.Location = new System.Drawing.Point(54, 25);
+            this.txtVideoScale.Name = "txtVideoScale";
+            this.txtVideoScale.Size = new System.Drawing.Size(100, 19);
+            this.txtVideoScale.TabIndex = 3;
+            this.txtVideoScale.Text = "1920:1080";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 12);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "リサイズ";
             // 
             // chkUseBFrame
             // 
@@ -259,67 +308,18 @@
             // 
             this.gBoxAudio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gBoxAudio.Location = new System.Drawing.Point(14, 412);
+            this.gBoxAudio.Location = new System.Drawing.Point(14, 348);
             this.gBoxAudio.Name = "gBoxAudio";
             this.gBoxAudio.Size = new System.Drawing.Size(774, 100);
             this.gBoxAudio.TabIndex = 8;
             this.gBoxAudio.TabStop = false;
             this.gBoxAudio.Text = "音声オプション";
             // 
-            // gBoxVideoFilter
-            // 
-            this.gBoxVideoFilter.Controls.Add(this.txtPostProcessing);
-            this.gBoxVideoFilter.Controls.Add(this.label7);
-            this.gBoxVideoFilter.Controls.Add(this.txtVideoScale);
-            this.gBoxVideoFilter.Controls.Add(this.label6);
-            this.gBoxVideoFilter.Location = new System.Drawing.Point(26, 156);
-            this.gBoxVideoFilter.Name = "gBoxVideoFilter";
-            this.gBoxVideoFilter.Size = new System.Drawing.Size(471, 89);
-            this.gBoxVideoFilter.TabIndex = 9;
-            this.gBoxVideoFilter.TabStop = false;
-            this.gBoxVideoFilter.Text = "ビデオフィルタ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 12);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "リサイズ";
-            // 
-            // txtVideoScale
-            // 
-            this.txtVideoScale.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtVideoScale.Location = new System.Drawing.Point(54, 25);
-            this.txtVideoScale.Name = "txtVideoScale";
-            this.txtVideoScale.Size = new System.Drawing.Size(100, 19);
-            this.txtVideoScale.TabIndex = 3;
-            this.txtVideoScale.Text = "1920:1080";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 57);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 12);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "PostProcessing";
-            // 
-            // txtPostProcessing
-            // 
-            this.txtPostProcessing.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtPostProcessing.Location = new System.Drawing.Point(97, 54);
-            this.txtPostProcessing.Name = "txtPostProcessing";
-            this.txtPostProcessing.Size = new System.Drawing.Size(100, 19);
-            this.txtPostProcessing.TabIndex = 5;
-            this.txtPostProcessing.Text = "ac";
-            // 
             // ParametersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 524);
+            this.ClientSize = new System.Drawing.Size(800, 460);
             this.Controls.Add(this.gBoxAudio);
             this.Controls.Add(this.gBoxVideo);
             this.Controls.Add(this.tbnDestRef);
@@ -333,12 +333,12 @@
             this.Text = "ParametersForm";
             this.gBoxVideo.ResumeLayout(false);
             this.gBoxVideo.PerformLayout();
+            this.gBoxVideoFilter.ResumeLayout(false);
+            this.gBoxVideoFilter.PerformLayout();
             this.gBoxBFrame.ResumeLayout(false);
             this.gBoxBFrame.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRefs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaxBFrame)).EndInit();
-            this.gBoxVideoFilter.ResumeLayout(false);
-            this.gBoxVideoFilter.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
