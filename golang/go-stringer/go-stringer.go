@@ -17,14 +17,14 @@ func exitOnFail(err error) {
 	}
 }
 
-func makeStringer(structName string, fields []*ast.Field, lf string) string {
-	stringer := "func (p *" + structName + ") String() string {" + lf
+func makeStringer(structName string, fields []*ast.Field, newLine string) string {
+	stringer := "func (p *" + structName + ") String() string {" + newLine
 
-	fmt := make([]string, 0)
-	args := make([]string, 0)
+	fmt := make([]string, 0, 16)
+	args := make([]string, 0, 16)
 	for _, x := range fields {
 		if len(x.Names) > 0 {
-			fmt = append(fmt, x.Names[0].Name+"=%x")
+			fmt = append(fmt, x.Names[0].Name+"=%v")
 			args = append(args, "p."+x.Names[0].Name)
 		}
 	}
@@ -35,7 +35,7 @@ func makeStringer(structName string, fields []*ast.Field, lf string) string {
 		stringer += "\treturn fmt.Sprintf(\"" + strings.Join(fmt, ", ") + "\", " + strings.Join(args, ", ") + ")"
 	}
 
-	return stringer + lf + "}"
+	return stringer + newLine + "}"
 }
 
 func findFirstStructTypeSpecFromGenDecl(d *ast.GenDecl) (*ast.TypeSpec, *ast.StructType, bool) {
@@ -92,5 +92,5 @@ func main() {
 
 	stringer, err := generate(os.Args[1])
 	exitOnFail(err)
-	fmt.Println(stringer)
+	fmt.Print(stringer)
 }

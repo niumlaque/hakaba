@@ -26,7 +26,7 @@ type Foo struct {
 	mode int
 }`
 	expected := `func (p *Foo) String() string {
-	return fmt.Sprintf("mode=%x", p.mode)
+	return fmt.Sprintf("mode=%v", p.mode)
 }`
 
 	actual, err := generate(src)
@@ -46,7 +46,7 @@ type Foo struct {
 	Public string
 }`
 	expected := `func (p *Foo) String() string {
-	return fmt.Sprintf("private=%x, Public=%x", p.private, p.Public)
+	return fmt.Sprintf("private=%v, Public=%v", p.private, p.Public)
 }`
 
 	actual, err := generate(src)
@@ -79,7 +79,7 @@ type Foo struct {
 	Public string
 }`
 	expected := `func (p *Foo) String() string {
-	return fmt.Sprintf("private=%x, Public=%x", p.private, p.Public)
+	return fmt.Sprintf("private=%v, Public=%v", p.private, p.Public)
 }`
 
 	actual, err := generate(src)
