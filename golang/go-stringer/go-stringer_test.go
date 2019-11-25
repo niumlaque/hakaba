@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"testing"
 )
 
@@ -65,7 +66,7 @@ func f() {}
 `
 	_, err := generate(src)
 	if err == nil {
-		t.Errorf("function only must occurred error")
+		t.Errorf("function only must be error occurred")
 	}
 }
 
@@ -89,5 +90,31 @@ type Foo struct {
 
 	if expected != actual {
 		t.Errorf("\nexpected:\n\"%s\", \nactual:\n\"%s\"", expected, actual)
+	}
+}
+
+func TestOtherLangCode(t *testing.T) {
+	_, err := generate("int f() {}")
+	if err == nil {
+		t.Error("other language code must be error occurred")
+	}
+}
+
+func TestExitOnFail(t *testing.T) {
+	exited := false
+	exit = func(n int) {
+		exited = true
+	}
+
+	exited = false
+	exitOnFail(errors.New(""))
+	if !exited {
+		t.Error("\nexpected: true, actual: false")
+	}
+
+	exited = false
+	exitOnFail(nil)
+	if exited {
+		t.Error("\nexpected: false, actual: true")
 	}
 }
