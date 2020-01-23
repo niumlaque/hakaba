@@ -118,3 +118,20 @@ func TestExitOnFail(t *testing.T) {
 		t.Error("\nexpected: false, actual: true")
 	}
 }
+
+func TestTaggedStruct(t *testing.T) {
+	src := "type Foo struct {\n\tMode int `short:\"m\" long:\"mode\" description:\"hogehoge\"`\n\tmoveable bool `short:\"m\" long:\"move\" description:\"<fugafuga>\"`\n}"
+
+	expected := `func (p *Foo) String() string {
+	return fmt.Sprintf("Mode=%v, moveable=%v", p.Mode, p.moveable)
+}`
+
+	actual, err := generate(src)
+	if err != nil {
+		t.Error(err)
+	}
+
+	if expected != actual {
+		t.Errorf("\nexpected:\n\"%s\", \nactual:\n\"%s\"", expected, actual)
+	}
+}
