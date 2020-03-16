@@ -25,6 +25,24 @@ impl fmt::Display for Parameters {
     }
 }
 
+fn get_rev_list() -> Result<Vec<String>, Box<dyn std::error::Error>> {
+    let output: std::process::Output;
+    match Command::new("git").arg("rev-list").arg("HEAD").output() {
+        Ok(o) => match str::from_utf8(&o.stdout) {
+            // 戻り地が <&str, Utf8Error> だから to_string して文字列にして
+            // split で collect したら Vec<String> じゃない？？
+            Ok(s) => Ok(s.to_string().split('\n').collect()),
+            Err(err) => Err(Box::new(err)),
+        },
+        Err(err) => Err(Box::new(err)),
+    }
+
+    //     match str::from_utf8(&output.stdout) {
+    //         Ok(o) => Ok(o.split('\n').collect()),
+    //         Err(err) => Err(err),
+    //     }
+}
+
 fn main() {
     let mut param = Parameters::new();
 
