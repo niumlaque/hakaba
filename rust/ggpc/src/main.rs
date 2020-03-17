@@ -6,6 +6,7 @@ use clap::{App, Arg};
 
 #[derive(Debug)]
 struct Parameters {
+    pattern: String,
     verbose: bool,
     all: bool,
 }
@@ -13,6 +14,7 @@ struct Parameters {
 impl Parameters {
     fn new() -> Self {
         Self {
+            pattern: "".to_string(),
             verbose: false,
             all: false,
         }
@@ -21,7 +23,11 @@ impl Parameters {
 
 impl fmt::Display for Parameters {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "verbose={}, all={}", self.verbose, self.all)
+        write!(
+            f,
+            "pattern={}, verbose={}, all={}",
+            self.pattern, self.verbose, self.all
+        )
     }
 }
 
@@ -77,18 +83,39 @@ fn get_files(hash: &str) -> Result<Vec<String>, Box<dyn std::error::Error>> {
             .filter(|x| x.len() > 0)
             .map(|x| x.split('\t').collect())
             .filter(|x: &Vec<&str>| x[0] == "A" || x[0] == "M")
-            .map(|x| x[1])
-            .map(|x| x.to_string())
+            .map(|x| x[1].to_string())
             .collect()),
-        Err(err) => return Err(err),
+        Err(err) => Err(err),
     }
 }
 
-// fn get_diff(hash: &str) -> Result<String, Box<dyn std::error::Error>> {
-//     get_stdout_text("git", vec!["show", hash])
-// }
+fn get_file_text(hash: &str, file: &str) -> Result<Vec<String>, Box<dyn std::error::Error>> {
+    // TODO:　ここで Utf8Error が出る。 多分 bin ファイルを読み込んだとき。
+    //        無視して次の検索をかけたい
+    match get_stdout_text("git", vec!["show", &format!("{}:{}", hash, file)]) {
+        Ok(s) => Ok(s.split('\n').map(|x| x.to_string()).collect()),
+        Err(err) => Err(err),
+    }
+}
 
-fn main() {
+fn grep_text(text: &Vec<String>, pattern: &str) -> Option<Vec<(usize, String)>> {
+    let mut result: Vec<(usize, String)> = vec![];
+    for i in 0..text.len() {
+        let line: String = text[i].to_string();
+        // 該当箇所の色付けとかしてみたい。
+        // indexof って無い？
+        if line.contains(pattern) {
+            result.push((i + 1, line));
+        }
+    }
+
+    match result.len() {
+        0 => None,
+        _ => Some(result),
+    }
+}
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut param = Parameters::new();
 
     let app = App::new("ggpc")
@@ -114,31 +141,35 @@ fn main() {
         );
 
     let matches = app.get_matches();
+    if let Some(pattern) = matches.value_of("PATTERN") {
+        param.pattern = pattern.to_string();
+    }
+
     param.verbose = matches.is_present("verbose");
     param.all = matches.is_present("all");
+    let param = param; // これでこれ以降 param が変更できなくなる
 
     if param.verbose {
         println!("{}", param);
     }
 
-    let revlist;
-    match get_rev_list(param.all) {
-        Ok(l) => revlist = l,
-        Err(err) => {
-            println!("{}", err);
-            std::process::exit(1);
-        }
-    }
-
+    // ? をつけると Error だった場合はその場で return する
+    let revlist = get_rev_list(param.all)?;
     if param.verbose {
         println!("Found {} commits", revlist.len());
     }
 
     for hash in &revlist {
-        println!("======== {} ========", hash);
-        match get_files(hash) {
-            Ok(files) => println!("{:?}", files),
-            Err(err) => println!("{}", err),
+        let files = get_files(hash)?;
+        for file in &files {
+            let text = get_file_text(hash, file)?;
+            if let Some(ls) = grep_text(&text, &param.pattern) {
+                for v in ls {
+                    println!("{} {}({}): {}", hash, file, v.0, v.1);
+                }
+            }
         }
     }
+
+    Ok(())
 }
