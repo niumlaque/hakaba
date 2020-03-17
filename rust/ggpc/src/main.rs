@@ -162,11 +162,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     for hash in &revlist {
         let files = get_files(hash)?;
         for file in &files {
-            let text = get_file_text(hash, file)?;
-            if let Some(ls) = grep_text(&text, &param.pattern) {
-                for v in ls {
-                    println!("{} {}({}): {}", hash, file, v.0, v.1);
+            match get_file_text(hash, file) {
+                Ok(text) => {
+                    if let Some(ls) = grep_text(&text, &param.pattern) {
+                        for v in ls {
+                            println!("{} {}({}): {}", hash, file, v.0, v.1);
+                        }
+                    }
                 }
+                Err(err) => println!("{} {}: {}", hash, file, err),
             }
         }
     }
