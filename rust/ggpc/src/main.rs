@@ -26,21 +26,14 @@ impl fmt::Display for Parameters {
 }
 
 fn get_rev_list() -> Result<Vec<String>, Box<dyn std::error::Error>> {
-    let output: std::process::Output;
+    // FIXME: git が無いディレクトリで実行しても Err に入らない。なんで？
     match Command::new("git").arg("rev-list").arg("HEAD").output() {
         Ok(o) => match str::from_utf8(&o.stdout) {
-            // 戻り地が <&str, Utf8Error> だから to_string して文字列にして
-            // split で collect したら Vec<String> じゃない？？
-            Ok(s) => Ok(s.to_string().split('\n').collect()),
+            Ok(s) => Ok(s.split('\n').map(|x| x.to_string()).collect()),
             Err(err) => Err(Box::new(err)),
         },
         Err(err) => Err(Box::new(err)),
     }
-
-    //     match str::from_utf8(&output.stdout) {
-    //         Ok(o) => Ok(o.split('\n').collect()),
-    //         Err(err) => Err(err),
-    //     }
 }
 
 fn main() {
@@ -71,9 +64,8 @@ fn main() {
         println!("{}", param);
     }
 
-    // コマンド試してみる
-    match Command::new("git").arg("show").output() {
-        Ok(o) => println!("ok"), //println!("{}", str::from_utf8(&o.stdout).unwrap()),
+    match get_rev_list() {
+        Ok(l) => println!("OK: {:?}", l),
         Err(err) => println!("{}", err),
     }
 }
