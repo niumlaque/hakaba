@@ -25,14 +25,26 @@ impl fmt::Display for Parameters {
     }
 }
 
-fn get_rev_list() -> Result<Vec<String>, Box<dyn std::error::Error>> {
-    // FIXME: git が無いディレクトリで実行しても Err に入らない。なんで？
-    match Command::new("git").arg("rev-list").arg("HEAD").output() {
+fn get_stdout_text(bin: &str, args: Vec<&str>) -> Result<String, Box<dyn std::error::Error>> {
+    let mut cmd = Command::new(bin);
+    for arg in &args {
+        cmd.arg(arg);
+    }
+
+    match cmd.output() {
         Ok(o) => match str::from_utf8(&o.stdout) {
-            Ok(s) => Ok(s.split('\n').map(|x| x.to_string()).collect()),
+            Ok(s) => Ok(s.to_string()),
             Err(err) => Err(Box::new(err)),
         },
         Err(err) => Err(Box::new(err)),
+    }
+}
+
+fn get_rev_list() -> Result<Vec<String>, Box<dyn std::error::Error>> {
+    // FIXME: git が無いディレクトリで実行しても Err に入らない。なんで？
+    match get_stdout_text("git", vec!["rev-list", "HEAD"]) {
+        Ok(s) => Ok(s.split('\n').map(|x| x.to_string()).collect()),
+        Err(err) => Err(err),
     }
 }
 
