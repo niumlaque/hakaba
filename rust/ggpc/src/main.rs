@@ -98,14 +98,13 @@ fn get_file_text(hash: &str, file: &str) -> Result<Vec<String>, Box<dyn std::err
     }
 }
 
-fn grep_text(text: &Vec<String>, pattern: &str) -> Option<Vec<(usize, String)>> {
-    let mut result: Vec<(usize, String)> = vec![];
+fn grep_text(text: &Vec<String>, pattern: &str) -> Option<Vec<(usize, usize, String)>> {
+    let mut result: Vec<(usize, usize, String)> = vec![];
     for i in 0..text.len() {
         let line: String = text[i].to_string();
         // 該当箇所の色付けとかしてみたい。
-        // indexof って無い？
-        if line.contains(pattern) {
-            result.push((i + 1, line));
+        if let Some(index) = line.find(pattern) {
+            result.push((i + 1, index, line));
         }
     }
 
@@ -166,7 +165,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 Ok(text) => {
                     if let Some(ls) = grep_text(&text, &param.pattern) {
                         for v in ls {
-                            println!("{} {}({}): {}", hash, file, v.0, v.1);
+                            println!("{} {}({}): {}", hash, file, v.0, v.2);
                         }
                     }
                 }
