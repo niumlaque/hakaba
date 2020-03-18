@@ -9,6 +9,7 @@ struct Parameters {
     pattern: String,
     verbose: bool,
     all: bool,
+    color: bool,
 }
 
 impl Parameters {
@@ -17,6 +18,7 @@ impl Parameters {
             pattern: "".to_string(),
             verbose: false,
             all: false,
+            color: true,
         }
     }
 }
@@ -25,8 +27,8 @@ impl fmt::Display for Parameters {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
             f,
-            "pattern={}, verbose={}, all={}",
-            self.pattern, self.verbose, self.all
+            "pattern={}, verbose={}, all={}, color={}",
+            self.pattern, self.verbose, self.all, self.color
         )
     }
 }
@@ -89,6 +91,7 @@ fn get_files(hash: &str) -> Result<Vec<String>, Box<dyn std::error::Error>> {
     }
 }
 
+// 指定されたコミットのファイルの文字列を改行コード毎に Vec に格納した値を取得する。
 fn get_file_text(hash: &str, file: &str) -> Result<Vec<String>, Box<dyn std::error::Error>> {
     // TODO:　ここで Utf8Error が出る。 多分 bin ファイルを読み込んだとき。
     //        無視して次の検索をかけたい
@@ -98,6 +101,8 @@ fn get_file_text(hash: &str, file: &str) -> Result<Vec<String>, Box<dyn std::err
     }
 }
 
+// 指定された改行コード毎の文字列が格納された Vec から一致する行数と一行分の文字列を返す。
+// return: (行番号, 一致したインデックス, 一行分の文字列)
 fn grep_text(text: &Vec<String>, pattern: &str) -> Option<Vec<(usize, usize, String)>> {
     let mut result: Vec<(usize, usize, String)> = vec![];
     for i in 0..text.len() {
@@ -112,6 +117,23 @@ fn grep_text(text: &Vec<String>, pattern: &str) -> Option<Vec<(usize, usize, Str
         0 => None,
         _ => Some(result),
     }
+}
+
+// 文字列の指定された位置に色付けする。
+fn set_ansi_8bit_color(s: &str, index: usize, len: usize, code: u8) -> String {
+    let prefix = format!("\x1b[38;5;{}m", code);
+    let suffix = "\x1b[m";
+    let mut ret = String::new();
+    ret.reserve(prefix.len() + suffix.len() + s.len());
+
+    let begin = index;
+    let end = index + len;
+    ret.push_str(&s[..index]);
+    ret.push_str(&prefix);
+    ret.push_str(&s[begin..end]);
+    ret.push_str(suffix);
+    ret.push_str(&s[end..]);
+    return ret;
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -137,6 +159,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 .help("Grep all commits")
                 .short("a")
                 .long("all"),
+        )
+        .arg(
+            Arg::with_name("nocolor")
+                .help("with no color")
+                .long("no-color"),
         );
 
     let matches = app.get_matches();
@@ -146,6 +173,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     param.verbose = matches.is_present("verbose");
     param.all = matches.is_present("all");
+    param.color = !matches.is_present("nocolor");
     let param = param; // これでこれ以降 param が変更できなくなる
 
     if param.verbose {
@@ -165,7 +193,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 Ok(text) => {
                     if let Some(ls) = grep_text(&text, &param.pattern) {
                         for v in ls {
-                            println!("{} {}({}): {}", hash, file, v.0, v.2);
+                            let mut out = v.2;
+                            if param.color {
+                                out = set_ansi_8bit_color(&out, v.1, param.pattern.len(), 196);
+                            }
+
+                            println!("{} {}({}): {}", hash, file, v.0, out);
                         }
                     }
                 }
