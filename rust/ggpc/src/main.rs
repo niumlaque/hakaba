@@ -10,6 +10,7 @@ struct Parameters {
     verbose: bool,
     all: bool,
     color: bool,
+    error: bool,
 }
 
 impl Parameters {
@@ -19,6 +20,7 @@ impl Parameters {
             verbose: false,
             all: false,
             color: true,
+            error: false,
         }
     }
 }
@@ -27,8 +29,8 @@ impl fmt::Display for Parameters {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(
             f,
-            "pattern={}, verbose={}, all={}, color={}",
-            self.pattern, self.verbose, self.all, self.color
+            "pattern={}, verbose={}, all={}, color={}, error={}",
+            self.pattern, self.verbose, self.all, self.color, self.error
         )
     }
 }
@@ -164,6 +166,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             Arg::with_name("nocolor")
                 .help("with no color")
                 .long("no-color"),
+        )
+        .arg(
+            Arg::with_name("error")
+                .help("show error")
+                .long("show-error"),
         );
 
     let matches = app.get_matches();
@@ -174,6 +181,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     param.verbose = matches.is_present("verbose");
     param.all = matches.is_present("all");
     param.color = !matches.is_present("nocolor");
+    param.error = matches.is_present("error");
     let param = param; // これでこれ以降 param が変更できなくなる
 
     if param.verbose {
@@ -202,7 +210,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                         }
                     }
                 }
-                Err(err) => println!("{} {}: {}", hash, file, err),
+                Err(err) => {
+                    if param.error {
+                        println!("{} {}: {}", hash, file, err);
+                    }
+                }
             }
         }
     }
