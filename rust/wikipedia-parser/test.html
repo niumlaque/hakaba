@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>C++ - Wikipedia</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"ja","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgMonthNamesShort":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRequestId":"Xm8lQQpAMNAAAGWXM4QAAACE","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"C++","wgTitle":"C++","wgCurRevisionId":74781156,"wgRevisionId":74781156,"wgArticleId":1505,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["出典を必要とする記述のある記事/2019年3月","日本産業規格を典拠にしている記事","独自研究の除去が必要な記述のある記事/2019年1月-6月","出典を必要とする記述のある記事/2016年5月",
+"独自研究の除去が必要な記述のある記事/2018年7月-12月","日本語版記事がリダイレクトの仮リンクを含む記事","ISBNマジックリンクを使用しているページ","プログラミング言語","C++","オブジェクト指向言語","JIS"],"wgPageContentLanguage":"ja","wgPageContentModel":"wikitext","wgRelevantPageName":"C++","wgRelevantArticleId":1505,"wgIsProbablyEditable":!0,"wgRelevantPageIsProbablyEditable":!0,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wgPopupsReferencePreviews":!1,"wgPopupsConflictsWithNavPopupGadget":!1,"wgVisualEditor":{"pageLanguageCode":"ja","pageLanguageDir":"ltr","pageVariantFallbacks":"ja"},"wgMFDisplayWikibaseDescriptions":{"search":!0,"nearby":!0,"watchlist":!0,"tagline":!0},"wgWMESchemaEditAttemptStepOversample":!1,"wgULSCurrentAutonym":"日本語","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q2407",
+"wgCentralAuthMobileDomain":!1,"wgEditSubmitButtonLabelPublish":!0};RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.pygments":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.toc.styles":"ready","skins.vector.styles":"ready","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready"};RLPAGEMODULES=["ext.cite.ux-enhancements","site","mediawiki.page.startup","skins.vector.js","mediawiki.page.ready","mediawiki.toc","ext.gadget.ReferenceTooltips","ext.gadget.suppressEnterAtSummaryBox","ext.gadget.checkSignature","ext.gadget.WikiMiniAtlas","ext.gadget.switcher","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.popups",
+"ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.uls.compactlinks","ext.uls.interface","ext.cx.eventlogging.campaigns","ext.centralNotice.geoIP","ext.centralNotice.startUp"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1smlf",function($,jQuery,require,module){/*@nomin*/mw.user.options.set({"variant":"ja"});
+});mw.loader.implement("user.tokens@tffin",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/w/load.php?lang=ja&amp;modules=ext.cite.styles%7Cext.pygments%2CwikimediaBadges%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.toc.styles%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/w/load.php?lang=ja&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/w/load.php?lang=ja&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.35.0-wmf.22"/>
+<meta name="referrer" content="origin"/>
+<meta name="referrer" content="origin-when-crossorigin"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png"/>
+<link rel="alternate" type="application/x-wiki" title="編集" href="/w/index.php?title=C%2B%2B&amp;action=edit"/>
+<link rel="edit" title="編集" href="/w/index.php?title=C%2B%2B&amp;action=edit"/>
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (ja)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//ja.wikipedia.org/w/api.php?action=rsd"/>
+<link rel="license" href="//creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="WikipediaのAtomフィード" href="/w/index.php?title=%E7%89%B9%E5%88%A5:%E6%9C%80%E8%BF%91%E3%81%AE%E6%9B%B4%E6%96%B0&amp;feed=atom"/>
+<link rel="canonical" href="https://ja.wikipedia.org/wiki/C%2B%2B"/>
+<link rel="dns-prefetch" href="//login.wikimedia.org"/>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<!--[if lt IE 9]><script src="/w/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-C rootpage-C skin-vector action-view">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"><!-- CentralNotice --></div>
+	<div class="mw-indicators mw-body-content">
+</div>
+
+	<h1 id="firstHeading" class="firstHeading" lang="ja">C++</h1>
+	
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">出典: フリー百科事典『ウィキペディア（Wikipedia）』</div>
+		<div id="contentSub"></div>
+		
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">ナビゲーションに移動</a>
+		<a class="mw-jump-link" href="#p-search">検索に移動</a>
+		<div id="mw-content-text" lang="ja" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><table class="infobox vevent" style="width:22em;"><caption itemprop="name" class="summary" style="">C++</caption><tbody><tr class="" style="" itemprop=""><td colspan="2" class="" style="text-align:center;" itemprop="">
+<a href="/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:ISO_C%2B%2B_Logo.svg" class="image" title="C++"><img alt="C++" src="//upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/144px-ISO_C%2B%2B_Logo.svg.png" decoding="async" width="144" height="162" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/216px-ISO_C%2B%2B_Logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/288px-ISO_C%2B%2B_Logo.svg.png 2x" data-file-width="306" data-file-height="344" /></a><div style="">C++のロゴ</div></td></tr><tr class="" style="" itemprop=""><th scope="row" style="text-align:left; white-space:nowrap;"><a href="/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%91%E3%83%A9%E3%83%80%E3%82%A4%E3%83%A0" title="プログラミングパラダイム">パラダイム</a></th><td class="" style="" itemprop="">
+<a href="/wiki/%E6%89%8B%E7%B6%9A%E3%81%8D%E5%9E%8B%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="手続き型プログラミング">手続き型プログラミング</a>、<a href="/wiki/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B" title="抽象データ型">データ抽象化</a>、<a href="/wiki/%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="オブジェクト指向プログラミング">オブジェクト指向プログラミング</a>、<a href="/wiki/%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AA%E3%83%83%E3%82%AF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="ジェネリックプログラミング">ジェネリックプログラミング</a><sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup></td></tr><tr class="" style="" itemprop=""><th scope="row" style="text-align:left; white-space:nowrap;">登場時期</th><td class="" style="" itemprop="">
+1983年<span class="noprint">（37年前）</span><span style="display:none">&#160;（<span class="bday dtstart published updated">1983</span>）</span></td></tr><tr class="" style="" itemprop=""><th scope="row" style="text-align:left; white-space:nowrap;">開発者</th><td class="" style="" itemprop="">
+<a href="/wiki/%E3%83%93%E3%83%A3%E3%83%BC%E3%83%8D%E3%83%BB%E3%82%B9%E3%83%88%E3%83%AD%E3%83%B4%E3%82%B9%E3%83%88%E3%83%AB%E3%83%83%E3%83%97" title="ビャーネ・ストロヴストルップ">ビャーネ・ストロヴストルップ</a>&#160;<span class="penicon"><a href="https://www.wikidata.org/wiki/Q2407?uselang=ja#P178" title="ウィキデータを編集"><img alt="ウィキデータを編集" src="//upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/10px-OOjs_UI_icon_edit-ltr-progressive.svg.png" decoding="async" width="10" height="10" style="vertical-align: text-top" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/15px-OOjs_UI_icon_edit-ltr-progressive.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png 2x" data-file-width="20" data-file-height="20" /></a></span></td></tr><tr class="" style="" itemprop=""><th scope="row" style="text-align:left; white-space:nowrap;">最新リリース</th><td class="" style="" itemprop="">
+ISO/IEC 14882:2017/ 2017年12月1日<span class="noprint">（2年前）</span><span style="display:none">&#160;（<span class="bday dtstart published updated">2017-12-01</span>）</span></td></tr><tr class="" style="" itemprop=""><th scope="row" style="text-align:left; white-space:nowrap;">評価版リリース</th><td class="" style="" itemprop="">
+ISO/IEC 14882:2020</td></tr><tr class="" style="" itemprop=""><th scope="row" style="text-align:left; white-space:nowrap;"><a href="/wiki/%E5%9E%8B%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0" title="型システム">型付け</a></th><td class="" style="" itemprop="">
+nominative, <a href="/wiki/%E5%9E%8B%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0#型の安全性" title="型システム">安全でない</a><a href="/wiki/%E5%9E%8B%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0#強い型付けと弱い型付け" title="型システム">強い</a><a href="/wiki/%E9%9D%99%E7%9A%84%E5%9E%8B%E4%BB%98%E3%81%91" title="静的型付け">静的型付け</a></td></tr><tr class="" style="" itemprop=""><th scope="row" style="text-align:left; white-space:nowrap;">主な処理系</th><td class="" style="" itemprop="">
+<a href="/wiki/GNU%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3" title="GNUコンパイラコレクション">GCC</a>、<a href="/wiki/Clang" title="Clang">Clang</a>、<a href="/wiki/Microsoft_Visual_C%2B%2B" title="Microsoft Visual C++">Microsoft Visual C++</a>、<a href="/wiki/Intel_C%2B%2B_Compiler" title="Intel C++ Compiler">Intel C++ Compiler</a>、<a href="/wiki/C%2B%2B_Builder" title="C++ Builder">C++ Builder</a></td></tr><tr class="" style="" itemprop=""><th scope="row" style="text-align:left; white-space:nowrap;">影響を受けた言語</th><td class="" style="" itemprop="">
+<a href="/wiki/C%E8%A8%80%E8%AA%9E" title="C言語">C言語</a>、<a href="/wiki/Simula" title="Simula">Simula</a>、ALGOL 68、<a href="/wiki/CLU" title="CLU">CLU</a>、<a href="/wiki/ML_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" title="ML (プログラミング言語)">ML</a>、<a href="/wiki/Ada" title="Ada">Ada</a>&#160;<span class="penicon"><a href="https://www.wikidata.org/wiki/Q2407?uselang=ja#P737" title="ウィキデータを編集"><img alt="ウィキデータを編集" src="//upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/10px-OOjs_UI_icon_edit-ltr-progressive.svg.png" decoding="async" width="10" height="10" style="vertical-align: text-top" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/15px-OOjs_UI_icon_edit-ltr-progressive.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png 2x" data-file-width="20" data-file-height="20" /></a></span></td></tr><tr class="" style="" itemprop=""><th scope="row" style="text-align:left; white-space:nowrap;">影響を与えた言語</th><td class="" style="" itemprop="">
+<a href="/wiki/Java" title="Java">Java</a>、<a href="/wiki/C_Sharp" title="C Sharp">C#</a>、<a href="/wiki/D%E8%A8%80%E8%AA%9E" title="D言語">D言語</a>、<a href="/wiki/PHP_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" title="PHP (プログラミング言語)">PHP</a></td></tr><tr class="" style="" itemprop=""><th scope="row" style="text-align:left; white-space:nowrap;"><a href="/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%B5%E3%82%A4%E3%83%88" title="ウェブサイト">ウェブサイト</a></th><td class="" style="" itemprop="">
+<span class="url"><a rel="nofollow" class="external text" href="https://isocpp.org/">isocpp<wbr />.org</a></span> <a href="https://www.wikidata.org/wiki/Q2407" title="ウィキデータを編集"><img alt="ウィキデータを編集" src="//upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/10px-OOjs_UI_icon_edit-ltr-progressive.svg.png" decoding="async" width="10" height="10" style="vertical-align: text-top" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/15px-OOjs_UI_icon_edit-ltr-progressive.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png 2x" data-file-width="20" data-file-height="20" /></a></td></tr><tr class="" style="" itemprop=""><th scope="row" style="text-align:left; white-space:nowrap;">拡張子</th><td class="" style="" itemprop="">
+cc、cpp、cxx、c、c++、h、hpp、hh、hxx、h++&#160;<span class="penicon"><a href="https://www.wikidata.org/wiki/Q2407?uselang=ja#P1195" title="ウィキデータを編集"><img alt="ウィキデータを編集" src="//upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/10px-OOjs_UI_icon_edit-ltr-progressive.svg.png" decoding="async" width="10" height="10" style="vertical-align: text-top" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/15px-OOjs_UI_icon_edit-ltr-progressive.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png 2x" data-file-width="20" data-file-height="20" /></a></span></td></tr><tr class="noprint"><td colspan="2" style="text-align:right; font-size:85%;"><a href="/wiki/Template:Infobox_%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E" title="Template:Infobox プログラミング言語">テンプレートを表示</a></td></tr></tbody></table>
+<p><b>C++</b>（<b>シープラスプラス</b>）は、汎用<a href="/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E" title="プログラミング言語">プログラミング言語</a>のひとつである。派生元である<a href="/wiki/C%E8%A8%80%E8%AA%9E" title="C言語">C言語</a>の機能や特徴を継承しつつ、表現力と効率性の向上のために、<a href="/wiki/%E6%89%8B%E7%B6%9A%E3%81%8D%E5%9E%8B%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="手続き型プログラミング">手続き型プログラミング</a>・<a href="/wiki/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B" title="抽象データ型">データ抽象</a>・<a href="/wiki/%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="オブジェクト指向プログラミング">オブジェクト指向プログラミング</a>・<a href="/wiki/%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AA%E3%83%83%E3%82%AF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="ジェネリックプログラミング">ジェネリックプログラミング</a>といった複数の<a href="/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%91%E3%83%A9%E3%83%80%E3%82%A4%E3%83%A0" title="プログラミングパラダイム">プログラミングパラダイム</a>が組み合わされている<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">&#91;2&#93;</a></sup>。C言語のようにハードウェアを直接扱うような下位層向けの<a href="/wiki/%E4%BD%8E%E6%B0%B4%E6%BA%96%E8%A8%80%E8%AA%9E" title="低水準言語">低水準言語</a>としても、複雑な<a href="/wiki/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2" title="アプリケーションソフトウェア">アプリケーションソフトウェア</a>を開発するための上位層向け<a href="/wiki/%E9%AB%98%E6%B0%B4%E6%BA%96%E8%A8%80%E8%AA%9E" title="高水準言語">高水準言語</a>としても使用可能である。<a href="/wiki/%E3%82%A2%E3%82%BB%E3%83%B3%E3%83%96%E3%83%AA%E8%A8%80%E8%AA%9E" title="アセンブリ言語">アセンブリ言語</a>以外の<a href="/wiki/%E4%BD%8E%E6%B0%B4%E6%BA%96%E8%A8%80%E8%AA%9E" title="低水準言語">低水準言語</a>を必要としないこと、使わない機能に時間的・空間的コストを必要としないことが、言語設計の重要な原則となっている<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">&#91;3&#93;</a></sup><sup id="cite_ref-4" class="reference"><a href="#cite_note-4">&#91;4&#93;</a></sup>。
+</p><p>C++は、1983年に<a href="/wiki/%E3%83%99%E3%83%AB%E7%A0%94%E7%A9%B6%E6%89%80" title="ベル研究所">AT&amp;Tベル研究所</a>の計算機科学者<a href="/wiki/%E3%83%93%E3%83%A3%E3%83%BC%E3%83%8D%E3%83%BB%E3%82%B9%E3%83%88%E3%83%AD%E3%83%B4%E3%82%B9%E3%83%88%E3%83%AB%E3%83%83%E3%83%97" title="ビャーネ・ストロヴストルップ">ビャーネ・ストロヴストルップ</a>によって公開された。<span class="fix-domain" title="この記述には信頼できる情報源の提示が求められています。（2019年3月）">1980年代半ばからC言語に次ぐ人気を集めるようになり</span><sup class="noprint Template-Fact">&#91;<i><a href="/wiki/Wikipedia:%E3%80%8C%E8%A6%81%E5%87%BA%E5%85%B8%E3%80%8D%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%95%E3%82%8C%E3%81%9F%E6%96%B9%E3%81%B8" title="Wikipedia:「要出典」をクリックされた方へ"><span title="この記述には信頼できる情報源の提示が求められています。（2019年3月）">要出典</span></a></i>&#93;</sup>、様々な<a href="/wiki/%E3%83%97%E3%83%A9%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0_(%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0)" title="プラットフォーム (コンピューティング)">プラットフォーム</a>でその開発環境が導入された。1998年から<a href="/wiki/%E5%9B%BD%E9%9A%9B%E6%A8%99%E6%BA%96%E5%8C%96%E6%A9%9F%E6%A7%8B" title="国際標準化機構">ISO</a>と<a href="/wiki/%E5%9B%BD%E9%9A%9B%E9%9B%BB%E6%B0%97%E6%A8%99%E6%BA%96%E4%BC%9A%E8%AD%B0" title="国際電気標準会議">IEC</a>の共同で言語仕様と<a href="/wiki/Standard_Template_Library" title="Standard Template Library">テンプレートライブラリ</a>の標準化が行われるようになり、その後2003年、2011年、2014年、2017年に標準規格が改訂されている。2019年現在の最新規格は「ISO/IEC 14882:2017」通称「<a href="/wiki/C%2B%2B17" title="C++17">C++17</a>」である。
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ja" dir="ltr"><h2 id="mw-toc-heading">目次</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#歴史"><span class="tocnumber">1</span> <span class="toctext">歴史</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#国際規格"><span class="tocnumber">1.1</span> <span class="toctext">国際規格</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#将来"><span class="tocnumber">1.2</span> <span class="toctext">将来</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#C++という名称"><span class="tocnumber">1.3</span> <span class="toctext">C++という名称</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#哲学"><span class="tocnumber">2</span> <span class="toctext">哲学</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#標準ライブラリ"><span class="tocnumber">3</span> <span class="toctext">標準ライブラリ</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#外部ライブラリ"><span class="tocnumber">4</span> <span class="toctext">外部ライブラリ</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#特徴"><span class="tocnumber">5</span> <span class="toctext">特徴</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Hello,_World!"><span class="tocnumber">5.1</span> <span class="toctext">Hello, World!</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#演算子と演算子のオーバーロード"><span class="tocnumber">5.2</span> <span class="toctext">演算子と演算子のオーバーロード</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#テンプレート"><span class="tocnumber">5.3</span> <span class="toctext">テンプレート</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#オブジェクト"><span class="tocnumber">5.4</span> <span class="toctext">オブジェクト</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="#カプセル化"><span class="tocnumber">5.4.1</span> <span class="toctext">カプセル化</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#継承"><span class="tocnumber">5.4.2</span> <span class="toctext">継承</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="#多態"><span class="tocnumber">5.5</span> <span class="toctext">多態</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="#静的な多態"><span class="tocnumber">5.5.1</span> <span class="toctext">静的な多態</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#動的な多態"><span class="tocnumber">5.5.2</span> <span class="toctext">動的な多態</span></a>
+<ul>
+<li class="toclevel-4 tocsection-18"><a href="#派生"><span class="tocnumber">5.5.2.1</span> <span class="toctext">派生</span></a></li>
+<li class="toclevel-4 tocsection-19"><a href="#仮想関数"><span class="tocnumber">5.5.2.2</span> <span class="toctext">仮想関数</span></a></li>
+<li class="toclevel-4 tocsection-20"><a href="#テンプレート_2"><span class="tocnumber">5.5.2.3</span> <span class="toctext">テンプレート</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-21"><a href="#単一行コメント"><span class="tocnumber">5.6</span> <span class="toctext">単一行コメント</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#C++ソースコードの処理とパーサ"><span class="tocnumber">6</span> <span class="toctext">C++ソースコードの処理とパーサ</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="#互換性"><span class="tocnumber">7</span> <span class="toctext">互換性</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="#C言語との互換性"><span class="tocnumber">7.1</span> <span class="toctext">C言語との互換性</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="#主なC++処理系"><span class="tocnumber">8</span> <span class="toctext">主なC++処理系</span></a></li>
+<li class="toclevel-1 tocsection-26"><a href="#脚注"><span class="tocnumber">9</span> <span class="toctext">脚注</span></a></li>
+<li class="toclevel-1 tocsection-27"><a href="#参考文献"><span class="tocnumber">10</span> <span class="toctext">参考文献</span></a></li>
+<li class="toclevel-1 tocsection-28"><a href="#関連項目"><span class="tocnumber">11</span> <span class="toctext">関連項目</span></a></li>
+<li class="toclevel-1 tocsection-29"><a href="#外部リンク"><span class="tocnumber">12</span> <span class="toctext">外部リンク</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".E6.AD.B4.E5.8F.B2"></span><span class="mw-headline" id="歴史">歴史</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=1" title="節を編集: 歴史">編集</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>ストロヴストルップはプログラミング言語<b>C with Classes</b>（クラス付きのC言語）の開発を<a href="/wiki/1979%E5%B9%B4" title="1979年">1979年</a>に開始した。彼は大規模なソフトウェアの開発に有用な特徴を<a href="/wiki/Simula" title="Simula">Simula</a>が備えていることに気がついたが、Simulaは実行速度が遅く実用的ではなかった。一方で<a href="/wiki/BCPL" title="BCPL">BCPL</a>は実行速度こそ速かったものの、大規模なソフトウェア開発を念頭に置いた場合にあまりにも<a href="/wiki/%E4%BD%8E%E7%B4%9A%E8%A8%80%E8%AA%9E" class="mw-redirect" title="低級言語">低級</a>だった。
+</p><p>これらの事情を鑑みて、ストロヴストルップは当時既に汎用的な言語だったC言語にSimulaの特徴を取り入れることを試みた。この取り組みにあたっては<a href="/wiki/ALGOL" title="ALGOL">ALGOL68</a> や<a href="/wiki/Ada" title="Ada">Ada</a>、 <a href="/wiki/CLU" title="CLU">CLU</a>、 <a href="/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9EML" class="mw-redirect" title="プログラミング言語ML">ML</a>等の言語の影響も受けている。最初はクラスと派生クラス、型検査機構の強化、<a href="/wiki/%E3%82%A4%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E9%96%A2%E6%95%B0" title="インライン関数">インライン関数</a>、デフォルト引数の機能を、<a href="/wiki/Cfront" title="Cfront">Cfront</a>を介してC言語に追加した。<a href="/wiki/1985%E5%B9%B4" title="1985年">1985年</a><a href="/wiki/10%E6%9C%88" title="10月">10月</a>に最初の商用リリースがなされた<sup id="cite_ref-invention_5-0" class="reference"><a href="#cite_note-invention-5">&#91;5&#93;</a></sup>。
+</p><p><a href="/wiki/1983%E5%B9%B4" title="1983年">1983年</a>にはC with Classesから<b>C++</b>に名称を変更した。この際に、<a href="/wiki/%E4%BB%AE%E6%83%B3%E9%96%A2%E6%95%B0" class="mw-redirect" title="仮想関数">仮想関数</a>と、関数と演算子の<a href="/wiki/%E5%A4%9A%E9%87%8D%E5%AE%9A%E7%BE%A9" title="多重定義">多重定義</a>、<a href="/wiki/%E5%8F%82%E7%85%A7_(%E6%83%85%E5%A0%B1%E5%B7%A5%E5%AD%A6)" title="参照 (情報工学)">参照</a>型、<code>const</code>型、ユーザー制御可能な自由領域メモリ制御、型検査機構の改良、BCPL形式の（「<code>//</code>」による）行単位のコメントなどの機能が追加された。<a href="/wiki/1985%E5%B9%B4" title="1985年">1985年</a>には『The C++ Programming Language』の初版が出版された（邦訳『プログラミング言語C++』<a href="/wiki/1988%E5%B9%B4" title="1988年">1988年</a>)）。この時点では公式な標準が策定されていなかったために、この本が事実上のリファレンスとなった。<a href="/wiki/1989%E5%B9%B4" title="1989年">1989年</a>C++のバージョン2.0として、<a href="/wiki/%E5%A4%9A%E9%87%8D%E7%B6%99%E6%89%BF" class="mw-redirect" title="多重継承">多重継承</a>と<a href="/wiki/%E6%8A%BD%E8%B1%A1%E3%82%AF%E3%83%A9%E3%82%B9" class="mw-redirect" title="抽象クラス">抽象クラス</a>、静的<a href="/wiki/%E3%83%A1%E3%83%B3%E3%83%90%E9%96%A2%E6%95%B0" class="mw-redirect" title="メンバ関数">メンバ関数</a>、<code>const</code>メンバ関数、<a href="/wiki/%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E5%88%B6%E5%BE%A1" title="アクセス制御"><code>protected</code></a>メンバ等の機能が追加されたものがリリースされた。<a href="/wiki/1990%E5%B9%B4" title="1990年">1990年</a>に『The Annotated C++ Reference Manual (ARM)』<sup id="cite_ref-6" class="reference"><a href="#cite_note-6">&#91;6&#93;</a></sup>（邦訳『注解C++リファレンスマニュアル』<sup id="cite_ref-7" class="reference"><a href="#cite_note-7">&#91;7&#93;</a></sup>）が出版され、将来の標準化の土台となるものを提供した。後に追加された機能には<a href="/wiki/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)" title="テンプレート (プログラミング)">テンプレート</a>と<a href="/wiki/%E4%BE%8B%E5%A4%96%E5%87%A6%E7%90%86" title="例外処理">例外処理</a>、<a href="/wiki/%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93" title="名前空間">名前空間</a>、新形式の<a href="/wiki/%E5%9E%8B%E5%A4%89%E6%8F%9B" title="型変換">キャスト</a>、<a href="/wiki/%E3%83%96%E3%83%BC%E3%83%AB%E5%9E%8B" class="mw-redirect" title="ブール型">ブール型</a>が含まれた。
+</p><p>ARMが事実上の標準として使われた時代が続いたが、標準化が進んだ。C++言語の最初の標準は<a href="/wiki/1998%E5%B9%B4" title="1998年">1998年</a>にISO/IEC 14882:1998として承認された。2003年の改訂版を経て、<a href="/wiki/2011%E5%B9%B4" title="2011年">2011年</a>にメジャーアップデートとして制定されたのがISO/IEC 14882:2011、通称「<b><a href="/wiki/C%2B%2B11" title="C++11">C++11</a></b>」である。このバージョンは、元々、非公式に「C++0x」と呼ばれていた。<a href="/wiki/2000%E5%B9%B4%E4%BB%A3" title="2000年代">2000年代</a>中に制定され、正式に「C++09」と呼称されることを見越した仮称だったが、2000年代中には実現しなかった。2011年8月10日まで続いた最終国際投票で C++0x は全会一致で承認された。これにより C++0x と呼ばれてきた C++ の次期改正案はついに国際標準になり、<a href="/wiki/C%2B%2B11" title="C++11">C++11</a>と呼べるようになった。また、<a href="/wiki/2014%E5%B9%B4" title="2014年">2014年</a>にはISO/IEC 14882:2014、通称「<b><a href="/wiki/C%2B%2B14" title="C++14">C++14</a></b>」が策定された。<a href="/wiki/2017%E5%B9%B4" title="2017年">2017年</a>にはISO/IEC 14882:2017、通称「<b><a href="/wiki/C%2B%2B17" title="C++17">C++17</a></b>」が策定された。2020年にはISO/IEC 14882:2020、通称「<b><a href="/w/index.php?title=C%2B%2B20&amp;action=edit&amp;redlink=1" class="new" title="C++20 (存在しないページ)">C++20</a></b>」が策定される予定である。
+</p><p>C++言語の進化に伴い、標準ライブラリもまた進化していった。C++標準ライブラリに最初に追加されたのは、従来のC言語の <code><a href="/wiki/Printf" title="Printf">printf()</a></code> や <code><a href="/wiki/Scanf" title="Scanf">scanf()</a></code> といった関数を置き換えるストリームI/Oライブラリである。また、C++98における標準ライブラリへの追加で最も重要なものは<a href="/wiki/Standard_Template_Library" title="Standard Template Library">Standard Template Library</a> (STL) である。C++11では、<a href="/wiki/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE" title="正規表現">正規表現</a>による検索・置換や複数<a href="/wiki/%E3%82%B9%E3%83%AC%E3%83%83%E3%83%89_(%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF)" title="スレッド (コンピュータ)">スレッド</a>での同時実行、<a href="/wiki/%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB" title="ハッシュテーブル">ハッシュテーブル</a>・ハッシュセットの追加などさらなる拡充が続いている。
+</p>
+<h3><span id=".E5.9B.BD.E9.9A.9B.E8.A6.8F.E6.A0.BC"></span><span class="mw-headline" id="国際規格">国際規格</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=2" title="節を編集: 国際規格">編集</a><span class="mw-editsection-bracket">]</span></span></h3>
+<table class="wikitable">
+
+<tbody><tr>
+<th>規格出版日</th>
+<th>C++ 国際規格</th>
+<th>非公式名称</th>
+<th>対応する日本工業規格
+</th></tr>
+<tr>
+<td>1998-09-01
+</td>
+<td>ISO/IEC 14882:1998<sup id="cite_ref-8" class="reference"><a href="#cite_note-8">&#91;8&#93;</a></sup>
+</td>
+<td>C++98
+</td>
+<td>―
+</td></tr>
+<tr>
+<td>2003-10-16
+</td>
+<td>ISO/IEC 14882:2003<sup id="cite_ref-9" class="reference"><a href="#cite_note-9">&#91;9&#93;</a></sup>
+</td>
+<td><a href="/w/index.php?title=C%2B%2B03&amp;action=edit&amp;redlink=1" class="new" title="C++03 (存在しないページ)">C++03</a>
+</td>
+<td>JIS X 3014:2003
+</td></tr>
+<tr>
+<td>2007-11-15
+</td>
+<td>ISO/IEC TR 19768:2007<sup id="cite_ref-10" class="reference"><a href="#cite_note-10">&#91;10&#93;</a></sup>
+</td>
+<td><a href="/wiki/C%2B%2B_Technical_Report_1" title="C++ Technical Report 1">C++TR1</a>
+</td>
+<td>―
+</td></tr>
+<tr>
+<td>2011-09-01
+</td>
+<td>ISO/IEC 14882:2011<sup id="cite_ref-11" class="reference"><a href="#cite_note-11">&#91;11&#93;</a></sup>
+</td>
+<td><a href="/wiki/C%2B%2B11" title="C++11">C++11</a>
+</td>
+<td>―
+</td></tr>
+<tr>
+<td>2014-12-15
+</td>
+<td>ISO/IEC 14882:2014<sup id="cite_ref-12" class="reference"><a href="#cite_note-12">&#91;12&#93;</a></sup>
+</td>
+<td><a href="/wiki/C%2B%2B14" title="C++14">C++14</a>
+</td>
+<td>―
+</td></tr>
+<tr>
+<td>2017-12
+</td>
+<td>ISO/IEC 14882:2017<sup id="cite_ref-13" class="reference"><a href="#cite_note-13">&#91;13&#93;</a></sup>
+</td>
+<td><a href="/wiki/C%2B%2B17" title="C++17">C++17</a>
+</td>
+<td>―
+</td></tr>
+<tr>
+<td>2020年 予定
+</td>
+<td>
+</td>
+<td>C++20
+</td>
+<td>―
+</td></tr></tbody></table>
+<p>長年にわたる作業の後、<a href="/wiki/ANSI" class="mw-redirect" title="ANSI">ANSI</a>とISOの合同委員会はプログラミング言語C++を1998年に標準化した (ISO/IEC 14882:1998)。1998年の標準の公式なリリースから数年間にわたって委員会は不具合の報告を続け、<a href="/wiki/2003%E5%B9%B4" title="2003年">2003年</a>に訂正版を出版した。<a href="/wiki/2003%E5%B9%B4" title="2003年">2003年</a><a href="/wiki/12%E6%9C%88" title="12月">12月</a>に制定された日本産業規格<cite style="font-style:normal" id="CITEREFJISX30142003"><span class="url"><a rel="nofollow" class="external text" href="https://www.jisc.go.jp/app/jis/general/GnrJISNumberNameSearchList?show&amp;jisStdNo=X3014">JIS&#x20;X&#x20;3014</a></span>&#58;2003「プログラム言語C++」</cite>は、ISO/IEC 14882:2003 (E) の日本語訳である。
+</p><p>2007年11月15日、<a href="/wiki/C%2B%2B_Technical_Report_1" title="C++ Technical Report 1">C++ Technical Report 1</a> (TR1) という技術報告書（テクニカルレポート）がリリースされた。これは規格の公式な一部ではなかったが、次の版のC++に含まれると期待される、標準ライブラリへの数多くの拡張を与えた。TR1の内容は、多少の修正を加えてC++11に取り込まれている。
+</p><p>2011年9月1日、C++98以来初の大きな改訂となるISO/IEC 14882:2011が発行された。
+</p><p>2014年8月18日、ISO/IEC 14882:2014 (C++14) が投票で承認され<sup id="cite_ref-14" class="reference"><a href="#cite_note-14">&#91;14&#93;</a></sup>、2014年12月15日に公式に出版された。
+</p><p>2017年12月、ISO/IEC 14882:2017 (C++17) が公式に発行された。
+</p><p>2019年現在、C++20の仕様策定が進められている。
+</p>
+<h3><span id=".E5.B0.86.E6.9D.A5"></span><span class="mw-headline" id="将来">将来</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=3" title="節を編集: 将来">編集</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>C++に対しては、今もなお要望が絶えない。特に<a href="/wiki/Boost_C%2B%2B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA" title="Boost C++ライブラリ">Boost C++ライブラリ</a>を開発しているBoostコミュニティはC++の方向性の決定に大きく貢献し、さらにC++標準化委員会へ改良すべき点などを意見している。現在はマルチパラダイムプログラミングをより自然に行えるようにすることに力が注がれており、たとえばBoostでは、C++の<a href="/wiki/%E9%96%A2%E6%95%B0%E5%9E%8B%E8%A8%80%E8%AA%9E" title="関数型言語">関数型プログラミング</a>や<a href="/wiki/%E3%83%A1%E3%82%BF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="メタプログラミング">メタプログラミング</a>の可能性を模索している。
+</p><p><a href="/wiki/C%2B%2B11" title="C++11">C++11</a>と呼ばれている新しいバージョンのC++標準ではこれらの一部が取り込まれ、今後のC++でもさらなる追加が行われると見られている。
+</p>
+<h3><span id="C.2B.2B.E3.81.A8.E3.81.84.E3.81.86.E5.90.8D.E7.A7.B0"></span><span class="mw-headline" id="C++という名称">C++という名称</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=4" title="節を編集: C++という名称">編集</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>この名称はRick Mascittiの功績で、最初に使用されたのは1983年の12月である。初期の研究期間では、開発中の言語は「C with Classes」と呼ばれていた。最終名は、変数の値を一つ加算する、C言語の<code>++</code>（<a href="/wiki/%E3%82%A4%E3%83%B3%E3%82%AF%E3%83%AA%E3%83%A1%E3%83%B3%E3%83%88" title="インクリメント">インクリメント</a>）演算子からの派生である。また一般的な命名規則での「+」の使用は、機能強化されたコンピュータプログラムを意味する。ストロヴストルップによれば「この名前は、C言語からの変更の革新的な本質を示している」ということである。C+は、より初期の無関係なプログラミング言語の名前である。
+</p><p>ストロヴストルップは著書『The C++ Programming Language』の前文で名前の起源を語り、<a href="/wiki/%E3%82%B8%E3%83%A7%E3%83%BC%E3%82%B8%E3%83%BB%E3%82%AA%E3%83%BC%E3%82%A6%E3%82%A7%E3%83%AB" title="ジョージ・オーウェル">ジョージ・オーウェル</a>の小説『<a href="/wiki/1984%E5%B9%B4_(%E5%B0%8F%E8%AA%AC)" title="1984年 (小説)">1984年</a>』の付録から「C++」が連想されるかもしれないと付け加えている。<a href="/wiki/%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AF" title="ニュースピーク">ニュースピーク</a>という架空の言語の解説に宛てられた3つの章の中に、科学技術に関する専門用語とジャーゴンの解説に宛てられた「C vocabulary」という章がある。ニュースピークで「ダブルプラス」は最上級の修飾語である。ゆえにニュースピークで「C++」は「最も極端な専門用語またはジャーゴン」という意味になるだろう。
+</p><p>1992年、Rick Mascittiは名前について非公式に質問されると、彼はおふざけのつもりで命名したという旨の回答をした。彼はこの言語の正式な名称になるとは夢にも思っていなかった。
+</p>
+<h2><span id=".E5.93.B2.E5.AD.A6"></span><span class="mw-headline" id="哲学">哲学</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=5" title="節を編集: 哲学">編集</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>ビャーネ・ストロヴストルップは著書『<a href="https://en.wikipedia.org/wiki/The_Design_and_Evolution_of_C%2B%2B" class="extiw" title="en:The Design and Evolution of C++">C++の設計と進化</a>(1994)』でC++を設計する際に用いたルールを述べている。
+</p>
+<ul><li>C++はCと同等の実行効率と移植性を持つ<a href="/wiki/%E5%9E%8B%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0" title="型システム">静的に型付け</a>された汎用言語である。</li>
+<li>C++は直接的かつ包括的に複数のプログラミングスタイル（<a href="/wiki/%E6%89%8B%E7%B6%9A%E3%81%8D%E5%9E%8B%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="手続き型プログラミング">手続き型プログラミング</a>、<a href="/wiki/%E6%8A%BD%E8%B1%A1%E5%8C%96_(%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%A6)" title="抽象化 (計算機科学)">抽象化</a>、<a href="/wiki/%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91" title="オブジェクト指向">オブジェクト指向</a>、<a href="/wiki/%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AA%E3%83%83%E3%82%AF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="ジェネリックプログラミング">ジェネリックプログラミング</a>）をサポートする。</li>
+<li>C++はもしプログラマが間違っている可能性があったとしても<a href="/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E" title="プログラマ">プログラマ</a>に選択の余地を与える。</li>
+<li>C++は可能な限りC言語との互換性を持ち、C言語からスムーズに移行できる。</li>
+<li>C++はプラットフォームに固有な機能や汎用的でない機能の実装を避ける。</li>
+<li>C++は利用しない機能についてはオーバーヘッドが生じない（ゼロオーバーヘッドの原則）。</li>
+<li>C++は高級な実行環境を必要としない。</li></ul>
+<p>C++のコンパイラがどのようにコードを出力しメモリのレイアウトを決めるのかということについては『Inside the C++ Object Model』(Lippman, 1996)に記載されている。ただしコンパイラが出力するコードの仕様はコンパイラ制作者の裁量に任されている。
+</p>
+<h2><span id=".E6.A8.99.E6.BA.96.E3.83.A9.E3.82.A4.E3.83.96.E3.83.A9.E3.83.AA"></span><span class="mw-headline" id="標準ライブラリ">標準ライブラリ</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=6" title="節を編集: 標準ライブラリ">編集</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="rellink" style="margin-bottom: 0.5em; padding-left: 2em; font-style: italic;">詳細は「<a href="/wiki/%E6%A8%99%E6%BA%96C%2B%2B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA" title="標準C++ライブラリ">標準C++ライブラリ</a>」を参照</div>
+<p>1998年に施行された<a href="/wiki/ANSI" class="mw-redirect" title="ANSI">ANSI</a>/<a href="/wiki/%E5%9B%BD%E9%9A%9B%E6%A8%99%E6%BA%96%E5%8C%96%E6%A9%9F%E6%A7%8B" title="国際標準化機構">ISO</a> C++ <a href="/wiki/%E6%A8%99%E6%BA%96%E5%8C%96" title="標準化">規格</a>は言語仕様と<a href="/wiki/%E6%A8%99%E6%BA%96C%2B%2B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA" title="標準C++ライブラリ">ライブラリ</a>の2つのパートで構成される。ライブラリ規格の大半は<a href="/wiki/Standard_Template_Library" title="Standard Template Library">Standard Template Library</a> (STL)とC言語の標準ライブラリの改良版についての内容である。標準規格以外にも様々なライブラリが数多く存在し、リンカを使用することにより、<a href="/wiki/C%E8%A8%80%E8%AA%9E" title="C言語">C言語</a>、<a href="/wiki/FORTRAN" title="FORTRAN">FORTRAN</a>、<a href="/wiki/Pascal" title="Pascal">Pascal</a>、<a href="/wiki/BASIC" title="BASIC">BASIC</a>のような言語を用いて作成されたライブラリを利用できる。規格外のライブラリが利用できるかどうかはコンパイラに依存する。
+</p><p>C++標準ライブラリはC++向けに若干の最適化が施されたC言語標準ライブラリを含んでいる。C++標準ライブラリの大部分はSTLである。 <a href="/wiki/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A_(%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B)" title="コンテナ (データ型)">コンテナ</a>（<a href="/wiki/%E5%8F%AF%E5%A4%89%E9%95%B7%E9%85%8D%E5%88%97" title="可変長配列">可変長配列</a>や<a href="/wiki/%E9%80%A3%E7%B5%90%E3%83%AA%E3%82%B9%E3%83%88" title="連結リスト">リスト</a>など）、コンテナを配列のように扱えるようにする<a href="/wiki/%E3%82%A4%E3%83%86%E3%83%AC%E3%83%BC%E3%82%BF" title="イテレータ">イテレータ</a>、検索やソートを行う<a href="/wiki/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0" title="アルゴリズム">アルゴリズム</a>といった有用なツールが提供されている。さらに<code>map</code>や<code>multimap</code>のような<a href="/wiki/%E9%80%A3%E6%83%B3%E9%85%8D%E5%88%97" title="連想配列">連想配列</a>や、<code>set</code>や<code>multiset</code>のようなソート済みコンテナも提供され、これらは全てインターフェイスに互換性がある。テンプレートを用いることにより、あらゆるコンテナ(またはイテレータで定義したシーケンス)に適用できる汎用的なアルゴリズムを記述できる。C言語と同様に<a href="/wiki/%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA" title="ライブラリ">ライブラリ</a>の機能には<code>#include</code> <a href="/wiki/%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%86%E3%82%A3%E3%83%96" title="ディレクティブ">ディレクティブ</a>を使ってヘッダファイルを読み込むことによってアクセスする。C++には<a href="/wiki/%E6%A8%99%E6%BA%96C%2B%2B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA#Standard_headers" title="標準C++ライブラリ">69本の標準ヘッダファイル</a>があるが、このうち19本については非推奨となっている。
+</p><p>STLは標準規格に採用される前は、<a href="/wiki/%E3%83%92%E3%83%A5%E3%83%BC%E3%83%AC%E3%83%83%E3%83%88%E3%83%BB%E3%83%91%E3%83%83%E3%82%AB%E3%83%BC%E3%83%89" title="ヒューレット・パッカード">ヒューレット・パッカード</a>の（一時は<a href="/wiki/%E3%82%B7%E3%83%AA%E3%82%B3%E3%83%B3%E3%82%B0%E3%83%A9%E3%83%95%E3%82%A3%E3%83%83%E3%82%AF%E3%82%B9" title="シリコングラフィックス">シリコングラフィックス</a>の）商用ライブラリだった。STLは標準規格の単なる一部分に過ぎず規格書にSTLという表記は見られないが、入出力ストリーム、国際化、デバッグ機能、C言語標準ライブラリ等の、STL以外の部分と区別するために、今でも多くの人がSTLという用語を使っている。
+</p><p>大半のC++コンパイラはSTLを含むC++標準ライブラリの実装を提供している。<a href="/w/index.php?title=STLPort&amp;action=edit&amp;redlink=1" class="new" title="STLPort (存在しないページ)">STLPort</a>のようなコンパイラ非依存のSTLも存在する。様々な目的でC++標準ライブラリを独自に実装しているプロジェクトは他にもある。
+</p><p>C++の標準ライブラリは大きく次のように分けられる。多種多様な実行環境が存在することを考慮して、<a href="/wiki/%E3%82%B0%E3%83%A9%E3%83%95%E3%82%A3%E3%82%AB%E3%83%AB%E3%83%A6%E3%83%BC%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9" class="mw-redirect" title="グラフィカルユーザインターフェース">GUI</a>に関するライブラリは標準に含まれていない。
+</p>
+<ul><li>言語サポート（型情報、例外処理など）</li>
+<li>診断（アサート（<a href="/wiki/%E8%A1%A8%E6%98%8E" title="表明">表明</a>）、エラー情報）</li>
+<li>汎用ユーティリティ（タプル、<a href="/wiki/%E5%8B%95%E7%9A%84%E3%83%A1%E3%83%A2%E3%83%AA%E7%A2%BA%E4%BF%9D" title="動的メモリ確保">動的メモリ確保</a>、スマートポインタ、<a href="/wiki/%E3%83%A1%E3%82%BF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="メタプログラミング">メタプログラミング</a>など）</li>
+<li><a href="/wiki/%E6%96%87%E5%AD%97%E5%88%97" title="文字列">文字列</a>・<a href="/wiki/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE" title="正規表現">正規表現</a></li>
+<li>ロケール（<a href="/wiki/%E5%9B%BD%E9%9A%9B%E5%8C%96%E3%81%A8%E5%9C%B0%E5%9F%9F%E5%8C%96" title="国際化と地域化">国際化と地域化</a>）</li>
+<li>コンテナ（<a href="/wiki/%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0" title="データ構造">データ構造</a>）・イテレータ・アルゴリズム（いわゆる<a href="/wiki/Standard_Template_Library" title="Standard Template Library">STL</a>）</li>
+<li>数値演算</li>
+<li><a href="/wiki/%E5%85%A5%E5%87%BA%E5%8A%9B" title="入出力">入出力</a></li>
+<li>アトミック演算（<a href="/wiki/%E4%B8%8D%E5%8F%AF%E5%88%86%E6%93%8D%E4%BD%9C" title="不可分操作">不可分操作</a>）</li>
+<li><a href="/wiki/%E3%82%B9%E3%83%AC%E3%83%83%E3%83%89_(%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF)" title="スレッド (コンピュータ)">スレッド</a></li></ul>
+<h2><span id=".E5.A4.96.E9.83.A8.E3.83.A9.E3.82.A4.E3.83.96.E3.83.A9.E3.83.AA"></span><span class="mw-headline" id="外部ライブラリ">外部ライブラリ</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=7" title="節を編集: 外部ライブラリ">編集</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>以下に、C++で広く使われている<span class="fix-domain" title="この記述には「独自研究」が含まれているおそれがあります。（2019-05）">と思われる</span><sup class="noprint Inline-Template nowrap">&#91;<i><a href="/wiki/Wikipedia:%E7%8B%AC%E8%87%AA%E7%A0%94%E7%A9%B6%E3%81%AF%E8%BC%89%E3%81%9B%E3%81%AA%E3%81%84" title="Wikipedia:独自研究は載せない"><span title="この記述には「独自研究」が含まれているおそれがあります。（2019-05）">独自研究?</span></a></i>&#93;</sup>ライブラリを挙げる。
+</p>
+<dl><dt><a href="/wiki/Boost_C%2B%2B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA" title="Boost C++ライブラリ">Boost C++ライブラリ</a></dt>
+<dd>様々なC++汎用ライブラリの集合。<a href="/wiki/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE" title="正規表現">正規表現</a>を扱うBoost.Regexや<a href="/wiki/%E7%84%A1%E5%90%8D%E9%96%A2%E6%95%B0" title="無名関数">無名関数</a>（<a href="/wiki/%E3%83%A9%E3%83%A0%E3%83%80%E8%A8%88%E7%AE%97" title="ラムダ計算">ラムダ計算</a>）を簡潔に記述できるBoost Lambda Libraryなどがある。C++11やC++14などでも、Boostに存在するライブラリが標準ライブラリに採用されたり、標準ライブラリとして提案された項目がBoostで先行して実装されたりしている。これにより、実際に実装・使用することでの知見が得られ、標準ライブラリとして採用される際に活かされている。</dd>
+<dt><a href="/wiki/Apache_Xerces" title="Apache Xerces">Apache Xerces</a></dt>
+<dd>C++での主要<a href="/wiki/Extensible_Markup_Language" title="Extensible Markup Language">XML</a><a href="/wiki/%E6%A7%8B%E6%96%87%E8%A7%A3%E6%9E%90%E5%99%A8" title="構文解析器">パーサ</a>の一つ。Java版も存在する。</dd>
+<dt><a href="/wiki/XUnit" title="XUnit">CppUnit</a></dt>
+<dd>C++での<a href="/wiki/%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88%E3%83%86%E3%82%B9%E3%83%88" class="mw-redirect" title="ユニットテスト">ユニットテスト</a>フレームワーク。 クラス毎の動作確認に威力を発揮する。</dd></dl>
+<h2><span id=".E7.89.B9.E5.BE.B4"></span><span class="mw-headline" id="特徴">特徴</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=8" title="節を編集: 特徴">編集</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><a href="/wiki/C%E8%A8%80%E8%AA%9E" title="C言語">C言語</a>に、<a href="/wiki/%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="オブジェクト指向プログラミング">オブジェクト指向プログラミング</a>をはじめとする様々なプログラミングパラダイムをサポートするための改良が加えられたものといえる。ただし、他のプログラミング言語と違い、旧来のCと同様に手続き型言語としても扱えるという特徴がある。また、C言語と比べて型チェックが厳しくなっており、型安全性が向上している。このことから、C++を<i>better C</i>というふうに呼ぶことがある。すなわち、基本的にC言語に対して上位互換性がある。初期のC++はCへのトランスレータとして実装され、C++プログラムを一旦Cプログラムに変換してから<a href="/wiki/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9" title="コンパイラ">コンパイル</a>していた。
+</p><p>ただし、C++という名称が定まった当初の時期から、C言語とC++との間には厳密な互換性はない<sup id="cite_ref-15" class="reference"><a href="#cite_note-15">&#91;15&#93;</a></sup><sup id="cite_ref-16" class="reference"><a href="#cite_note-16">&#91;16&#93;</a></sup>。当時、Cとの互換性について議論の末、「C++とANSI Cの間には不正当な非互換性はない」という合意が形成されることとなった。そのため、正当な非互換性を巡って多くの議論が発生した<sup id="cite_ref-17" class="reference"><a href="#cite_note-17">&#91;17&#93;</a></sup>。ただし、まだANSIによるC言語の標準規格も策定途中の時期である。
+</p><p>その後、先祖であるC言語のANSIによる標準規格制定時には、関数のプロトタイプ宣言や<code>const</code>修飾など、C++の機能がC言語に取り入れられることにもなった。<a href="/wiki/C99" title="C99">C99</a>の出現により、<code>//</code>コメントなどのC++で使われていた便利な機能が加わってCとC++の互換性が高まる一方、別々に審議し、別の時期に発行していることと、開発対象が必ずしも同じでないために利害関係者が異なることによる違いもある<sup class="noprint Template-Fact">&#91;<i><a href="/wiki/Wikipedia:%E3%80%8C%E8%A6%81%E5%87%BA%E5%85%B8%E3%80%8D%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%95%E3%82%8C%E3%81%9F%E6%96%B9%E3%81%B8" title="Wikipedia:「要出典」をクリックされた方へ"><span title="この記述には信頼できる情報源の提示が求められています。（2016年5月）">要出典</span></a></i>&#93;</sup>。
+</p><p>次のような多種多様な機能を持っており、言語仕様は大変複雑である。
+</p>
+<ul><li><a href="/wiki/%E5%A4%9A%E9%87%8D%E7%B6%99%E6%89%BF" class="mw-redirect" title="多重継承">多重継承</a></li>
+<li><a href="/wiki/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)" title="テンプレート (プログラミング)">テンプレート</a></li>
+<li><a href="/wiki/%E6%BC%94%E7%AE%97%E5%AD%90" title="演算子">演算子</a>の<a href="/wiki/%E5%A4%9A%E9%87%8D%E5%AE%9A%E7%BE%A9" title="多重定義">オーバーロード</a></li>
+<li><a href="/wiki/%E4%BE%8B%E5%A4%96%E5%87%A6%E7%90%86" title="例外処理">例外処理</a></li>
+<li><a href="/wiki/%E5%AE%9F%E8%A1%8C%E6%99%82%E5%9E%8B%E6%83%85%E5%A0%B1" title="実行時型情報">実行時型情報</a> (RTTI)</li></ul>
+<p>ここから、よりオブジェクト指向を強化し、「なんでもあり」ではない代わりに分かりやすくスマートな設計を目指した新たな言語（<a href="/wiki/Java" title="Java">Java</a>、<a href="/wiki/D%E8%A8%80%E8%AA%9E" title="D言語">D言語</a>など）が作られることとなった。
+</p>
+<h3><span id="Hello.2C_World.21"></span><span class="mw-headline" id="Hello,_World!">Hello, World!</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=9" title="節を編集: Hello, World!">編集</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>C++はC言語およびそのプリプロセッサの構文をほぼ継承している。以下のサンプルは<a href="/wiki/%E3%83%93%E3%83%A3%E3%83%BC%E3%83%8D%E3%83%BB%E3%82%B9%E3%83%88%E3%83%AD%E3%83%B4%E3%82%B9%E3%83%88%E3%83%AB%E3%83%83%E3%83%97" title="ビャーネ・ストロヴストルップ">ビャーネ・ストロヴストルップ</a>の書籍「The C++ Programming Language, 4th Edition」(<a href="/wiki/%E7%89%B9%E5%88%A5:%E6%96%87%E7%8C%AE%E8%B3%87%E6%96%99/9780321563842" class="internal mw-magiclink-isbn">ISBN 978-0321563842</a>) の「2.2.1 Hello, World!」に記載されている<a href="/wiki/%E6%A8%99%E6%BA%96C%2B%2B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA" title="標準C++ライブラリ">標準C++ライブラリ</a>のストリーム機能を用いて<a href="/wiki/%E6%A8%99%E6%BA%96%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%A0#Standard_output_.28stdout.29" title="標準ストリーム">標準出力</a>に出力する<a href="/wiki/Hello_world" title="Hello world">Hello world</a>プログラムである<sup id="cite_ref-18" class="reference"><a href="#cite_note-18">&#91;18&#93;</a></sup><sup id="cite_ref-19" class="reference"><a href="#cite_note-19">&#91;19&#93;</a></sup>。
+</p>
+<div class="mw-highlight mw-highlight-lang-cpp mw-content-ltr" dir="ltr"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>書籍でも明記されているが、<code>main()</code>関数で意図的に返り値を返さない手法が使用されている。
+</p>
+<h3><span id=".E6.BC.94.E7.AE.97.E5.AD.90.E3.81.A8.E6.BC.94.E7.AE.97.E5.AD.90.E3.81.AE.E3.82.AA.E3.83.BC.E3.83.90.E3.83.BC.E3.83.AD.E3.83.BC.E3.83.89"></span><span class="mw-headline" id="演算子と演算子のオーバーロード">演算子と演算子のオーバーロード</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=10" title="節を編集: 演算子と演算子のオーバーロード">編集</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="rellink" style="margin-bottom: 0.5em; padding-left: 2em; font-style: italic;">詳細は「<a href="/wiki/C%E3%81%A8C%2B%2B%E3%81%AE%E6%BC%94%E7%AE%97%E5%AD%90" title="CとC++の演算子">CとC++の演算子</a>」を参照</div>
+<p>C++には四則演算、ビット演算、参照、比較、論理演算などの30を超える演算子がある。メンバーアクセス演算子（<code>.</code>と<code>.*</code>）のような一部の例外はあるが、大半の演算子はユーザー定義によるオーバーロードが可能である。オーバーロード可能な演算子が豊富に揃えられているためC++を一種の<a href="/wiki/%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E5%9B%BA%E6%9C%89%E8%A8%80%E8%AA%9E" title="ドメイン固有言語">ドメイン固有言語</a>として利用できる。またオーバーロード可能な演算子はスマートポインタのような先進的な実装テクニックに欠かせないものとなっている。演算子をオーバーロードしても<a href="/wiki/%E6%BC%94%E7%AE%97%E3%81%AE%E5%84%AA%E5%85%88%E9%A0%86%E4%BD%8D" class="mw-redirect" title="演算の優先順位">演算の優先順位</a>は変化せず、また演算子のオペランドの数も変化しない。ただし指定したオペランドが無視される可能性はある。
+</p>
+<h3><span id=".E3.83.86.E3.83.B3.E3.83.97.E3.83.AC.E3.83.BC.E3.83.88"></span><span class="mw-headline" id="テンプレート">テンプレート</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=11" title="節を編集: テンプレート">編集</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="rellink" style="margin-bottom: 0.5em; padding-left: 2em; font-style: italic;">詳細は「<a href="/wiki/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)" title="テンプレート (プログラミング)">テンプレート (プログラミング)</a>」を参照</div>
+<p>C++には、<a href="/wiki/%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AA%E3%83%83%E3%82%AF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="ジェネリックプログラミング">ジェネリックプログラミング</a>を実現する機能として<b>テンプレート</b>が存在する。テンプレートにできる対象は、関数とクラスである。C++14以降では変数もテンプレートの対象となった。テンプレートはコード中の型および定数をパラメータ化できる。テンプレートのパラメータ（テンプレート仮引数）に、型、コンパイル時定数またはその他のテンプレート（テンプレート実引数）を与えることで、テンプレートはコンパイル時に<b>インスタンス化</b>（実体化・具現化などとも）される。コンパイラは関数やクラスをインスタンス化するために、テンプレート仮引数をテンプレート実引数に置き換える。テンプレートは<a href="/wiki/%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AA%E3%83%83%E3%82%AF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="ジェネリックプログラミング">ジェネリックプログラミング</a>、<a href="/wiki/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%83%A1%E3%82%BF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="テンプレートメタプログラミング">テンプレートメタプログラミング</a>、コード最適化などのために利用される強力なツールであるが、一定のコストを伴う。各テンプレートのインスタンスはテンプレート仮引数毎にテンプレートコードのコピーを生成するためコードサイズが肥大化する。これはコンパイル時に実型引数の情報を削除することで単一の型インスタンスを生成するランタイム型のジェネリクスを実装した<a href="/wiki/Java" title="Java">Java</a>などの言語とは対照的である。なお、<a href="/wiki/C_Sharp" title="C Sharp">C#</a> (<a href="/wiki/.NET_Framework" title=".NET Framework">.NET Framework</a>) は<a href="/wiki/%E5%AE%9F%E8%A1%8C%E6%99%82%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9" title="実行時コンパイラ">実行時コンパイラ</a>により実型引数の情報を削除することなく複数の型インスタンスを生成する方式を採用しており、C++とJavaの中間的なアプローチとなっている。
+</p><p>テンプレートとプリプロセッサマクロはいずれもコンパイル時に処理される言語機能であり、静的な条件に基づいたコンパイルが行われるが、テンプレートは字句の置き換えに限定されない。テンプレートはC++の構文と型を解析し、厳密な型チェックに基づいた高度なプログラムの流れの制御ができる。マクロは条件コンパイルに利用できるが、新しい型の生成、再帰的定義、型の評価などは行えないため、コンパイル前のテキストの置き換えや追加・削除といった用途に限定される。つまりマクロは事前に定義されたシンボルに基づいてコンパイルの流れを制御できるものの、テンプレートとは異なり独立して新しいシンボルを生成することはできない。テンプレートは静的な<a href="/wiki/%E3%83%9D%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%95%E3%82%A3%E3%82%BA%E3%83%A0" title="ポリモーフィズム">多態</a>（下記参照）と<a href="/wiki/%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AA%E3%83%83%E3%82%AF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="ジェネリックプログラミング">ジェネリックプログラミング</a>のためのツールである。
+</p><p>C++のテンプレートはコンパイル時における<a href="/wiki/%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E5%AE%8C%E5%85%A8" title="チューリング完全">チューリング完全</a>なメカニズムである。これは<a href="/wiki/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%83%A1%E3%82%BF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="テンプレートメタプログラミング">テンプレートメタプログラミング</a>を用いて実行する前にコンピュータが計算可能なあらゆる処理を表現できることを意味している。
+</p><p>概略すれば、テンプレートはコードの記述に本来必要な型や定数を明確にすることなく抽象的な記述ができる、パラメータ化された関数またはクラスである。テンプレート仮引数に実引数を与えてインスタンス化した結果は、テンプレート仮引数に指定した型に特化した形で記述されたコードと全く等価になる。これによりテンプレートは、汎用的かつおおまかに記述された関数およびクラス（テンプレート）と、特定の型に特化した実装（インスタンス化されたテンプレート）の依存関係を解消し、パフォーマンスを犠牲にすることなく抽象化できる手段を提供する。
+</p>
+<h3><span id=".E3.82.AA.E3.83.96.E3.82.B8.E3.82.A7.E3.82.AF.E3.83.88"></span><span class="mw-headline" id="オブジェクト">オブジェクト</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=12" title="節を編集: オブジェクト">編集</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>C++は<a href="/wiki/C%E8%A8%80%E8%AA%9E" title="C言語">C言語</a>に<a href="/wiki/%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="オブジェクト指向プログラミング">オブジェクト指向プログラミング</a>をサポートするための改良を加えたものといえる。C++のクラスには、オブジェクト指向言語で一般的な<a href="/wiki/%E6%8A%BD%E8%B1%A1%E5%8C%96_(%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%A6)" title="抽象化 (計算機科学)">抽象化</a>、<a href="/wiki/%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E5%8C%96" title="カプセル化">カプセル化</a>、<a href="/wiki/%E7%B6%99%E6%89%BF_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)" title="継承 (プログラミング)">継承</a>、<a href="/wiki/%E3%83%9D%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%95%E3%82%A3%E3%82%BA%E3%83%A0" title="ポリモーフィズム">多態</a>の4つの機能がある。オブジェクトは実行時に生成されるクラスの実体である。クラスは実行時に生成される様々なオブジェクトのひな形と考えることができる。
+</p><p>なお、C++は<a href="/wiki/Smalltalk" title="Smalltalk">Smalltalk</a>などに見られる<a href="/wiki/%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E8%BB%A2%E9%80%81" title="メッセージ転送">メッセージ転送</a>の概念によるオブジェクト指向を採用していない。
+</p>
+<h4><span id=".E3.82.AB.E3.83.97.E3.82.BB.E3.83.AB.E5.8C.96"></span><span class="mw-headline" id="カプセル化">カプセル化</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=13" title="節を編集: カプセル化">編集</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><a href="/wiki/%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB%E5%8C%96" title="カプセル化">カプセル化</a>とは、データ構造を保証し、演算子が意図したとおりに動作し、クラスの利用者が直感的に使い方を理解できるようにするためにデータを隠蔽することである。クラスや関数はC++の基礎的なカプセル化のメカニズムである。クラスのメンバは<code>public</code>、<code>protected</code>、<code>private</code>のいずれかとして宣言され明示的にカプセル化できる。<tt>public</tt>なメンバはどの関数からでもアクセスできる。<tt>private</tt>なメンバはクラスのメンバ関数から、またはクラスが明示的にアクセス権を与えたフレンド関数からアクセスできる。<tt>protected</tt>なメンバはクラスのメンバおよびフレンド関数に加えてその派生クラスのメンバからもアクセスできる。
+</p><p>オブジェクト指向では原則としてクラスのメンバ変数にアクセスする全ての関数はクラスの中にカプセル化されなければならない。C++ではメンバ関数およびフレンド関数によりこれをサポートするが、強制はされない。プログラマはメンバ変数の一部または全体を<tt>public</tt>として定義でき、型とは無関係な変数を<tt>public</tt>な要素として定義できる。このことからC++はオブジェクト指向だけでなく、<a href="/wiki/%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB" title="モジュール">モジュール化</a>のような機能分割のパラダイムもサポートしているといえる。
+</p><p>一般的には、全ての<a href="/wiki/%E3%83%87%E3%83%BC%E3%82%BF" title="データ">データ</a>を<tt>private</tt>または<tt>protected</tt>にして、クラスのユーザに必要最小限の関数のみを<tt>public</tt>として公開することがよい習慣であると考えられている。このようにしてデータの実装の詳細を隠蔽することにより、設計者はインターフェイスを変更することなく後日実装を根本から変更できる
+<sup id="cite_ref-20" class="reference"><a href="#cite_note-20">&#91;20&#93;</a></sup>
+<sup id="cite_ref-21" class="reference"><a href="#cite_note-21">&#91;21&#93;</a></sup>。
+</p>
+<h4><span id=".E7.B6.99.E6.89.BF"></span><span class="mw-headline" id="継承">継承</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=14" title="節を編集: 継承">編集</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><a href="/wiki/%E7%B6%99%E6%89%BF_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)" title="継承 (プログラミング)">継承</a>を使うと他のクラスの資産を流用できる。基底クラスからの継承は<code>public</code>、<code>protected</code>、<code>private</code>のいずれかとして宣言する。このアクセス指定子により、派生クラスや全く無関係なクラスが基底クラスの<tt>public</tt>および<tt>protected</tt>メンバにアクセスできるかどうかを決定できる。普通は<tt>public</tt>継承のみがいわゆる<i>派生</i>に対応する。残りの二つの継承方法はあまり利用されない。アクセス指定子を省略した場合、<a href="/wiki/%E6%A7%8B%E9%80%A0%E4%BD%93" title="構造体">構造体</a>は<tt>public</tt>継承になるのに対し、クラスでは<tt>private</tt>継承になる。基底クラスを<code>virtual</code>として宣言することもできる。これは<a href="/wiki/%E4%BB%AE%E6%83%B3%E7%B6%99%E6%89%BF" title="仮想継承">仮想継承</a>と呼ばれる。仮想継承は基底クラスのオブジェクトが一つだけ存在することを保証するものであり、多重継承の曖昧さの問題を避けることができる。
+</p><p><b>多重継承</b>はC++の中でもしばしば問題になる機能である。多重継承では複数の基底クラスから一つのクラスを派生できる。これにより継承関係が複雑になる。例えば<code>FlyingCat</code>クラスは<code>Cat</code>クラスと<code>FlyingMammal</code>クラスから派生できる。<a href="/wiki/Java" title="Java">Java</a>や<a href="/wiki/C_Sharp" title="C Sharp">C#</a>では、基底クラスの数を一つに制限する一方で、複数の<a href="/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9_(%E6%8A%BD%E8%B1%A1%E5%9E%8B)" title="インタフェース (抽象型)">インターフェイス</a>を実装でき、これにより制約はあるものの多重継承に近い機能を実現できる（実装の多重継承ではなく型の多重継承）。インターフェイスはクラスと異なり抽象メソッド（純粋仮想関数）を宣言できるのみであり、関数の実装やフィールド（メンバ変数）は定義できない。JavaとC#のインターフェイスは、C++の抽象基底クラスと呼ばれる純粋仮想関数宣言のみを持つクラスに相当する。JavaやC#の継承モデルを好むプログラマは、C++において実装の多重継承は使わず、実装の継承は単一継承に絞り、抽象基底クラスによる型の多重継承のみを使うポリシーを採用することもできる。
+</p>
+<h3><span id=".E5.A4.9A.E6.85.8B"></span><span class="mw-headline" id="多態">多態</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=15" title="節を編集: 多態">編集</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="rellink" style="margin-bottom: 0.5em; padding-left: 2em; font-style: italic;">詳細は「<a href="/wiki/%E3%83%9D%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%95%E3%82%A3%E3%82%BA%E3%83%A0" title="ポリモーフィズム">ポリモーフィズム</a>」を参照</div>
+<p><a href="/wiki/%E3%83%9D%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%95%E3%82%A3%E3%82%BA%E3%83%A0" title="ポリモーフィズム">多態 (ポリモーフィズム) </a>は様々な場面で多用されている機能である。多態により、状況や文脈に応じてオブジェクトに異なる振る舞いをさせることができる。逆に言うと、オブジェクト自身が振る舞いを決定することができる。
+</p><p>C++は<b>静的な多態</b>と<b>動的な多態</b>の両方をサポートする。コンパイル時に解決される静的な多態は柔軟性に劣るもののパフォーマンス面で有利である。一方、実行時に解決される動的な多態は柔軟性に優れているもののパフォーマンス面で不利である。
+</p>
+<h4><span id=".E9.9D.99.E7.9A.84.E3.81.AA.E5.A4.9A.E6.85.8B"></span><span class="mw-headline" id="静的な多態">静的な多態</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=16" title="節を編集: 静的な多態">編集</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>関数のオーバーロードは名称が同じ複数の関数を宣言できる機能である。ただし引数は異なっていなければならない。個々の関数は<a href="/wiki/%E5%BC%95%E6%95%B0" title="引数">引数</a>の数や型の順序で区別される。同名の関数はコードの文脈によってどの関数が呼ばれるのかが決まる。関数の戻り値の型で区別することはできない。
+</p><p>関数を宣言する際にプログラマはデフォルト引数を指定できる。関数を呼び出すときに引数を省略した場合はデフォルト引数が適用される。関数を呼び出すときに宣言よりも引数の数が少ない場合は、左から右の順で引数の型が比較され、後半部分にデフォルト引数が適用される。たいていの場合は一つの関数にデフォルト引数を指定するよりも、引数の数が異なる関数をオーバーロードする方が望ましい。
+</p><p>C++のテンプレートでは、より洗練された汎用的な多態を実現できる。特に<a href="https://en.wikipedia.org/wiki/Curiously_Recurring_Template_Pattern" class="extiw" title="en:Curiously Recurring Template Pattern">Curiously Recurring Template Pattern</a>により仮想関数のオーバーライドをシミュレートした静的な多態を実装できる。C++のテンプレートは型安全かつ<a href="/wiki/%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E5%AE%8C%E5%85%A8" title="チューリング完全">チューリング完全</a>であるため、<a href="/wiki/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%83%A1%E3%82%BF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="テンプレートメタプログラミング">テンプレートメタプログラミング</a>によりコンパイラに条件文を再帰的に解決させて実行コードを生成させることにも利用できる。
+</p>
+<h4><span id=".E5.8B.95.E7.9A.84.E3.81.AA.E5.A4.9A.E6.85.8B"></span><span class="mw-headline" id="動的な多態">動的な多態</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=17" title="節を編集: 動的な多態">編集</a><span class="mw-editsection-bracket">]</span></span></h4>
+<h5><span id=".E6.B4.BE.E7.94.9F"></span><span class="mw-headline" id="派生">派生</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=18" title="節を編集: 派生">編集</a><span class="mw-editsection-bracket">]</span></span></h5>
+<p>基底クラスへのポインタおよび参照は、正確に型が一致するオブジェクトだけでなく、その派生クラスのオブジェクトを指すことができる（<a href="/wiki/%E3%83%AA%E3%82%B9%E3%82%B3%E3%83%95%E3%81%AE%E7%BD%AE%E6%8F%9B%E5%8E%9F%E5%89%87" title="リスコフの置換原則">リスコフの置換原則</a>）。これにより、複数の異なる派生型を、同一の基底型で統一的に扱うことが可能となる。また、基底型へのポインタの配列やコンテナは、複数の異なる派生型へのポインタを保持できる。派生オブジェクトから基底オブジェクトへの変換（アップキャスト）では、リスコフの置換原則により、明示的なキャストは必要ない。
+</p><p><code>dynamic_cast</code>は基底オブジェクトから派生オブジェクトへの変換（ダウンキャスト）を実行時に安全に行うための演算子である。この機能は<a href="/wiki/%E5%AE%9F%E8%A1%8C%E6%99%82%E5%9E%8B%E6%83%85%E5%A0%B1" title="実行時型情報">実行時型情報</a> (RTTI) に依存している。あるオブジェクトが特定の派生型のオブジェクトであることがあらかじめ分かっている場合は<code>static_cast</code>演算子でキャストすることもできる。<code>static_cast</code>は純粋にコンパイル時に解決されるため動作が速く、またRTTIを必要としない。また、<code>static_cast</code>は従来のC言語形式のキャスト構文と違い継承階層のナビゲーションをサポートするため、多重継承した場合もメモリレイアウトを考慮したダウンキャストを実行することができる。ただし、<code>static_cast</code>では多重継承において継承関係を持たない基底型同士のキャスト（クロスキャスト）を実行することはできず、<code>dynamic_cast</code>が必要となる。とはいえ、ダウンキャストやクロスキャストが必要となるようなプログラムは、通例設計に問題があることを示しており、本来は仮想関数のオーバーライドによる多態を用いるべきである。
+</p>
+<h5><span id=".E4.BB.AE.E6.83.B3.E9.96.A2.E6.95.B0"></span><span class="mw-headline" id="仮想関数">仮想関数</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=19" title="節を編集: 仮想関数">編集</a><span class="mw-editsection-bracket">]</span></span></h5>
+<p>クラスのメンバー関数を<code>virtual</code>キーワードで修飾することにより、派生クラスで<a href="/wiki/%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%89" title="オーバーライド">オーバーライド</a>（再定義）することが可能な仮想関数 (virtual function) となる。仮想関数は「<a href="/wiki/%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89_(%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%A6)" title="メソッド (計算機科学)">メソッド</a>」と呼ばれることもある<sup id="cite_ref-22" class="reference"><a href="#cite_note-22">&#91;22&#93;</a></sup>。派生クラスにて、基底クラスの仮想関数と名前および引数の数や型の順序が同じ関数を定義することでオーバーライドする（<a href="/wiki/C%2B%2B11" title="C++11">C++11</a>以降では、<code>override</code>キーワードにより修飾することでオーバーライドを明示することもできる）。基底クラスの仮想関数を派生クラスで<a href="/wiki/%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%89" title="オーバーライド">オーバーライド</a>した場合、実際に呼び出される関数はオブジェクトの型によって決定される。基底クラスのポインタのみが与えられた場合、コンパイラはオブジェクトの型をコンパイル時に特定できず正しい関数を呼び出せないため、実行時にこれを特定する。これをダイナミックディスパッチと呼ぶ。仮想関数により、オブジェクトに割り当てられた実際の型に従って、最上位の派生クラスで実装した関数が呼び出される。一般的なC++コンパイラは<a href="/wiki/%E4%BB%AE%E6%83%B3%E9%96%A2%E6%95%B0%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB" title="仮想関数テーブル">仮想関数テーブル</a>を用いる。オブジェクトの型が判明している場合はスコープ解決演算子を利用して仮想関数テーブルを使わないようにバイパスすることもできるが、一般的には実行時に仮想関数の呼び出しを解決するのが普通である。
+</p><p>通常のメンバー関数に加え、オーバーロードした演算子やデストラクタも仮想関数にできる。原則的にはクラスが仮想関数を持つ場合はデストラクタも仮想関数にすべきである。コンストラクタやその延長線上にあるコピーコンストラクタはコンパイルされた時点でオブジェクトの型が確定しないため仮想関数にできない。しかし、派生オブジェクトへのポインタが基底オブジェクトへのポインタとして渡された場合に、そのオブジェクトのコピーを作らなければならない場合は問題が生じる。このような場合は<code>clone()</code>関数(またはそれに準じる物)を仮想関数として作成するのが一般的な解決方法である。<code>clone()</code>は派生クラスのコピーを生成して返す。
+</p><p><code>= 0</code>をメンバー関数宣言の末尾セミコロンの直前に挿入することにより、メンバー関数を<b>純粋仮想関数</b> (pure virtual function) にできる。純粋仮想関数を持つクラスは純粋仮想クラスと呼ばれ、このクラスからオブジェクトを生成することはできない。このような純粋仮想クラスは基底クラスとしてのみ利用できる。派生クラスは純粋仮称関数を継承するため、派生クラスのオブジェクトを生成したい場合は全ての純粋仮想関数をオーバーライドして実装しなければならない。純粋仮想関数を持つクラスのオブジェクトを生成しようと試みるようなプログラムは行儀が悪い。
+</p>
+<h5><span id=".E3.83.86.E3.83.B3.E3.83.97.E3.83.AC.E3.83.BC.E3.83.88_2"></span><span class="mw-headline" id="テンプレート_2">テンプレート</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=20" title="節を編集: テンプレート">編集</a><span class="mw-editsection-bracket">]</span></span></h5>
+<p>型消去 (type erasure) と呼ばれる、テンプレートを活用して動的な多態性を実現する手法が存在する。この手法はC++の標準ライブラリでも<code>std::function</code>や<code>std::shared_ptr</code>の削除子で採用されている。いずれも、コンストラクタや代入演算子で（一定の条件を満たす）任意のオブジェクトを実引数として渡せるようにすることから多態性を実現している。
+</p>
+<h3><span id=".E5.8D.98.E4.B8.80.E8.A1.8C.E3.82.B3.E3.83.A1.E3.83.B3.E3.83.88"></span><span class="mw-headline" id="単一行コメント">単一行コメント</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=21" title="節を編集: 単一行コメント">編集</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>C99の制定前、C言語とC++との分かりやすい差異として、<code>//</code> で始まり改行で終わる、<b>単一行<a href="/wiki/%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88_(%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF)" title="コメント (コンピュータ)">コメント</a></b>の有無があった。
+</p><p>単一行コメントはもともと、C言語の祖先にあたる<a href="/wiki/BCPL" title="BCPL">BCPL</a>に含まれていた仕様である。現在のC++のコンパイラの多くがC言語のコンパイラとしても使えるようになっているのと同様に、C言語が生まれて間もない頃は、C言語に加え<a href="/wiki/B%E8%A8%80%E8%AA%9E" title="B言語">B言語</a>やBCPLのコンパイルができるコンパイラが用いられていた。それらコンパイラは、C言語のソースであってもBCPLと同様に単一行コメントが使用できるよう独自の拡張がなされていたため、<span class="fix-domain" title="この記述には「独自研究」が含まれているおそれがあります。（2018-08）">BCPLの単一行コメントに慣れ親しんでいたプログラマ達は、C言語でも単一行コメントを使い続けた。その慣習がC++の誕生時まで生き残っていたため、C++では単一行コメントを「復活」させることになった。</span><sup class="noprint Inline-Template nowrap">&#91;<i><a href="/wiki/Wikipedia:%E7%8B%AC%E8%87%AA%E7%A0%94%E7%A9%B6%E3%81%AF%E8%BC%89%E3%81%9B%E3%81%AA%E3%81%84" title="Wikipedia:独自研究は載せない"><span title="この記述には「独自研究」が含まれているおそれがあります。（2018-08）">独自研究?</span></a></i>&#93;</sup>
+</p><p><span class="fix-domain" title="この記述には「独自研究」が含まれているおそれがあります。（2018-08）">そのためもあって、C言語での仕様外の単一行コメントの使用は半ば常習と化し、</span><sup class="noprint Inline-Template nowrap">&#91;<i><a href="/wiki/Wikipedia:%E7%8B%AC%E8%87%AA%E7%A0%94%E7%A9%B6%E3%81%AF%E8%BC%89%E3%81%9B%E3%81%AA%E3%81%84" title="Wikipedia:独自研究は載せない"><span title="この記述には「独自研究」が含まれているおそれがあります。（2018-08）">独自研究?</span></a></i>&#93;</sup>現在ではC99の制定によって正式に単一行コメントがサポートされるようになった。
+</p>
+<h2><span id="C.2B.2B.E3.82.BD.E3.83.BC.E3.82.B9.E3.82.B3.E3.83.BC.E3.83.89.E3.81.AE.E5.87.A6.E7.90.86.E3.81.A8.E3.83.91.E3.83.BC.E3.82.B5"></span><span class="mw-headline" id="C++ソースコードの処理とパーサ">C++ソースコードの処理とパーサ</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=22" title="節を編集: C++ソースコードの処理とパーサ">編集</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><a href="/wiki/LALR%E6%B3%95" title="LALR法">LALR(1)</a>のような旧式のパースアルゴリズムを用いてC++の<a href="/wiki/%E6%A7%8B%E6%96%87%E8%A7%A3%E6%9E%90" title="構文解析">パーサ</a>を記述することは比較的難しい<sup id="cite_ref-23" class="reference"><a href="#cite_note-23">&#91;23&#93;</a></sup>。その理由の一つはC++の文法がLALRではないことである。このため、コード分析ツールや、高度な修正を行うツール（<a href="/wiki/%E3%83%AA%E3%83%95%E3%82%A1%E3%82%AF%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)" title="リファクタリング (プログラミング)">リファクタリング</a>ツールなど）は非常に少ない。この問題を取り扱う方法としてLALR(1)でパースできるように改良されたC++の亜種(<a href="https://en.wikipedia.org/wiki/Significantly_Prettier_and_Easier_C%2B%2B_Syntax" class="extiw" title="en:Significantly Prettier and Easier C++ Syntax">SPECS</a>)を利用する方法がある。<a href="/wiki/GLR%E6%B3%95" title="GLR法">GLRパーサ</a>のようにより強力でシンプルなパーサもあるが処理が遅い。
+</p><p>パースはC++を処理するツールを作成する際の最も難しい問題ではない。このようなツールはコンパイラと同じように識別子の意味を理解しなければならない。従ってC++を処理する実用的なシステムはソースコードをパースするだけでなく、各識別子の定義を正確に適用し（つまりC++の複雑なスコープのルールを正確に取り扱い）、型を正しく特定できなければならない。
+</p><p>いずれにせよC++ソースコード処理ツールが実用的であるためには、<a href="/wiki/GNU%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3" title="GNUコンパイラコレクション">GNU GCC</a>や<a href="/wiki/Microsoft_Visual_C%2B%2B" title="Microsoft Visual C++">Visual C++</a>で使われているような、様々なC++の方言を取り扱えなければならず、適切な分析処理やソース変換やソース出力などが実装できなければならない。GLRのような先進的なパースアルゴリズムとシンボルテーブルを組み合わせてソースコードを変換する方法を利用すればあらゆるC++ツールを開発できる。
+</p>
+<h2><span id=".E4.BA.92.E6.8F.9B.E6.80.A7"></span><span class="mw-headline" id="互換性">互換性</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=23" title="節を編集: 互換性">編集</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>その言語文法の複雑さゆえ、C++規格に準拠したコンパイラを開発するのは一般的に難しい。20世紀末から何年にも渡りC++に部分的に準拠した様々なコンパイラが作られ、<a href="/wiki/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%81%AE%E9%83%A8%E5%88%86%E7%89%B9%E6%AE%8A%E5%8C%96" title="テンプレートの部分特殊化">テンプレートの部分特殊化</a>などの部分で実装にばらつきがあった。中でも、テンプレートの宣言と実装を分離できるようにするための<code>export</code>は問題のキーワードの一つだった。<tt>export</tt>を定義したC++98規格がリリースされてから5年後の2003年前半に<a href="https://en.wikipedia.org/wiki/Comeau_C/C%2B%2B" class="extiw" title="en:Comeau C/C++">Comeau C/C++</a>が初めて<tt>export</tt>を実装した。2004年に<a href="/wiki/C%2B%2B_Builder" title="C++ Builder">Borland C++ Builder X</a>が<tt>export</tt>を実装した。これらのコンパイラはいずれも<a href="/w/index.php?title=Edison_Design_Group&amp;action=edit&amp;redlink=1" class="new" title="Edison Design Group (存在しないページ)">EDG</a>の<a href="/wiki/%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89" title="フロントエンド">フロントエンド</a>をベースにしていた。大半のコンパイラで実装されていない<tt>export</tt>は多くのC++関連書籍（例えば"<i>Beginning ANSI C++</i>", Ivor Horton著）にサンプルが記されているが、<tt>export</tt>が記載されていることによる問題は特に指摘されていない。<a href="/wiki/GNU%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3" title="GNUコンパイラコレクション">GCC</a>をはじめとするその他のコンパイラでは全くサポートしていない。<a href="https://en.wikipedia.org/wiki/Herb_Sutter" class="extiw" title="en:Herb Sutter">Herb Sutter</a>はC++の標準規格から<tt>export</tt>を削除することを推奨していたが<sup id="cite_ref-24" class="reference"><a href="#cite_note-24">&#91;24&#93;</a></sup>、C++98では最終的にこれを残す決定がなされた<sup id="cite_ref-25" class="reference"><a href="#cite_note-25">&#91;25&#93;</a></sup>。結局、C++11では実装の少なさ・困難さを理由に削除された。
+</p><p>コンパイラ開発者の裁量で決められる範囲を確保するため、C++標準化委員会は<a href="/wiki/%E5%90%8D%E5%89%8D%E4%BF%AE%E9%A3%BE" title="名前修飾">名前修飾</a>や<a href="/wiki/%E4%BE%8B%E5%A4%96%E5%87%A6%E7%90%86" title="例外処理">例外処理</a>などの実装に依存する機能の実装方法を決定しないことに決めた。この決定の問題は、<a href="/wiki/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9" title="コンパイラ">コンパイラ</a>が異なると<a href="/wiki/%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB" title="オブジェクトファイル">オブジェクトファイル</a>の互換性が保証されない点である。特定の機種や<a href="/wiki/%E3%82%AA%E3%83%9A%E3%83%AC%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0" title="オペレーティングシステム">OS</a>でコンパイラの互換性を持たせ、バイナリレベルでのコード再利用性を高めようとする<a href="/wiki/Application_Binary_Interface" title="Application Binary Interface">ABI</a><sup id="cite_ref-26" class="reference"><a href="#cite_note-26">&#91;26&#93;</a></sup>のような非標準の規格もあり、一部のコンパイラではこうした準規格を採用している。
+</p><p>2019年現在のメジャーなC++コンパイラ（<a href="/wiki/GNU%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3" title="GNUコンパイラコレクション">gcc</a>, <a href="/wiki/Clang" title="Clang">Clang</a>, <a href="/wiki/Intel_C%2B%2B_Compiler" title="Intel C++ Compiler">Intel C++ Compiler</a>, <a href="/wiki/Microsoft_Visual_C%2B%2B" title="Microsoft Visual C++">Microsoft Visual C++</a>など）の最新版はC++11およびC++14規格にほぼ準拠しており、特に<a href="/wiki/Clang" title="Clang">Clang</a>は2013年4月時点でC++11の全機能を実装完了した<sup id="cite_ref-27" class="reference"><a href="#cite_note-27">&#91;27&#93;</a></sup><sup id="cite_ref-28" class="reference"><a href="#cite_note-28">&#91;28&#93;</a></sup>。ただしマイナーアップデートとなるC++17を含めると、処理系間でのばらつきは依然として存在する。
+</p>
+<h3><span id="C.E8.A8.80.E8.AA.9E.E3.81.A8.E3.81.AE.E4.BA.92.E6.8F.9B.E6.80.A7"></span><span class="mw-headline" id="C言語との互換性">C言語との互換性</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=24" title="節を編集: C言語との互換性">編集</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>C++は基本的に<a href="/wiki/C%E8%A8%80%E8%AA%9E" title="C言語">C言語</a>の上位互換であるが、厳密には異なる<sup id="cite_ref-29" class="reference"><a href="#cite_note-29">&#91;29&#93;</a></sup>。C言語で記述された大半のプログラムはC++でコンパイルできるように簡単に修正できるが、C言語では正当でもC++では不正になる部分や、C++とは動作が異なる部分が若干存在する。
+</p><p>例えば、C言語では汎用ポインタ<code>void*</code>は他の型へのポインタに暗黙的に変換できるが、C++ではキャスト演算子によって変換を明示する必要がある。またC++では<code>new</code>や<code>class</code>といった数多くの新しいキーワードが追加されたが、移植の際に元のC言語のプログラムでそれらが識別子（例えば変数名）として使われていると、問題になる。
+</p><p>C言語の標準規格である<a href="/wiki/C99" title="C99">C99</a>やその後継<a href="/wiki/C11_(C%E8%A8%80%E8%AA%9E)" title="C11 (C言語)">C11</a>ではこうした非互換性の一部が解決されており、<code>//</code>形式のコメントや宣言とコードの混在といったC++の機能がC言語でサポートされている。その一方でC99では、可変長配列、複素数型の組み込み変数、指示初期化子、複合リテラルといった、C++でサポートしていない数多くの新機能が追加された<sup id="cite_ref-30" class="reference"><a href="#cite_note-30">&#91;30&#93;</a></sup>。C99で追加された新機能の一部は<a href="/wiki/C%2B%2B11" title="C++11">C++11</a>に反映され、次期C++1yに対してもC99やC11との互換性を向上される提案が行われている。また、可変長配列や複素数型などのC99に追加された機能の一部はC11でオプションとなった<sup id="cite_ref-31" class="reference"><a href="#cite_note-31">&#91;31&#93;</a></sup>。
+</p><p>C++で書かれた関数をC言語で書かれたプログラムから呼び出す、あるいはその逆を行なう場合など、C言語のコードとC++のコードを混在させるためにはCリンケージを利用する必要があり、関数を<code>extern "C"</code>で個別に修飾するか、<code>extern "C" { ... }</code>のブロックの中で宣言しなければならない。また、関数引数や戻り値などのインターフェイスはC言語互換形式に合わせる必要がある。Cリンケージを利用した関数については、C++名前修飾がされず、名前修飾に依存している関数オーバーロード機能は利用できない。
+</p><p>C/C++の相互運用性が確保されていることで、慣れ親しんだC言語標準ライブラリ関数の大半をC++でもそのまま利用し続けることができるということはC++の大きなメリットのひとつである。
+</p>
+<h2><span id=".E4.B8.BB.E3.81.AAC.2B.2B.E5.87.A6.E7.90.86.E7.B3.BB"></span><span class="mw-headline" id="主なC++処理系">主なC++処理系</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=25" title="節を編集: 主なC++処理系">編集</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li><a href="/wiki/Microsoft_Visual_C%2B%2B" title="Microsoft Visual C++">Microsoft Visual C++</a> (MSVC)</li>
+<li><a href="/wiki/C%2B%2B_Builder" title="C++ Builder">C++ Builder</a> (<a href="/wiki/%E3%83%9C%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89" title="ボーランド">Borland</a> C++ Compiler, BCC)</li>
+<li><a href="/wiki/GNU%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3" title="GNUコンパイラコレクション">g++</a></li>
+<li><a href="/wiki/Intel_C%2B%2B_Compiler" title="Intel C++ Compiler">Intel C++ Compiler</a> (ICC/ICL)</li>
+<li><a href="/wiki/Clang" title="Clang">Clang</a></li></ul>
+<h2><span id=".E8.84.9A.E6.B3.A8"></span><span class="mw-headline" id="脚注">脚注</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=26" title="節を編集: 脚注">編集</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="noprint" style="float:right; font-size:90%;"><tbody><tr><td>[<a href="/wiki/Help:%E8%84%9A%E6%B3%A8/%E8%AA%AD%E8%80%85%E5%90%91%E3%81%91" title="Help:脚注/読者向け"><span title="この欄の操作法">ヘルプ</span></a>]</td></tr></tbody></table>
+<div class="reflist" style="-moz-column-count:2; -webkit-column-count:2; column-count:2; -moz-column-width: 20em; -webkit-column-width: 20em; column-width: 20em; list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <span class="reference-text">『プログラミング言語C++』第4版、pp.12-13。</span>
+</li>
+<li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> <span class="reference-text">『プログラミング言語C++』第4版、pp.12-13。</span>
+</li>
+<li id="cite_note-3"><b><a href="#cite_ref-3">^</a></b> <span class="reference-text">『C++の設計と進化』、pp.152-153。</span>
+</li>
+<li id="cite_note-4"><b><a href="#cite_ref-4">^</a></b> <span class="reference-text">『プログラミング言語C++』第4版、p.11。</span>
+</li>
+<li id="cite_note-invention-5"><b><a href="#cite_ref-invention_5-0">^</a></b> <span class="reference-text"><cite style="font-style:normal">“<a rel="nofollow" class="external text" href="http://public.research.att.com/~bs/bs_faq.html#invention">Bjarne Stroustrup's FAQ - When was C++ invented?</a>”&#32;(English).&#32;<span title="">2006年5月30日</span>閲覧。</cite></span>
+</li>
+<li id="cite_note-6"><b><a href="#cite_ref-6">^</a></b> <span class="reference-text"><cite style="font-style:normal" class="citation book">Bjarne Stroustrup&#59;&#32;Margaret A. Ellis&#32;(1990).&#32;<i>The Annotated C++ Reference Manual</i>.&#32;Addison-Wesley Professional.&#32;<style data-mw-deduplicate="TemplateStyles:r76153452">.mw-parser-output cite.citation{font-style:inherit}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .id-lock-free a,.mw-parser-output .citation .cs1-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lock-green.svg/9px-Lock-green.svg.png")no-repeat;background-position:right .1em center}.mw-parser-output .id-lock-limited a,.mw-parser-output .id-lock-registration a,.mw-parser-output .citation .cs1-lock-limited a,.mw-parser-output .citation .cs1-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Lock-gray-alt-2.svg/9px-Lock-gray-alt-2.svg.png")no-repeat;background-position:right .1em center}.mw-parser-output .id-lock-subscription a,.mw-parser-output .citation .cs1-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Lock-red-alt-2.svg/9px-Lock-red-alt-2.svg.png")no-repeat;background-position:right .1em center}.mw-parser-output .cs1-subscription,.mw-parser-output .cs1-registration{color:#555}.mw-parser-output .cs1-subscription span,.mw-parser-output .cs1-registration span{border-bottom:1px dotted;cursor:help}.mw-parser-output .cs1-ws-icon a{background:url("//upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wikisource-logo.svg/12px-Wikisource-logo.svg.png")no-repeat;background-position:right .1em center}.mw-parser-output code.cs1-code{color:inherit;background:inherit;border:inherit;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;font-size:100%}.mw-parser-output .cs1-visible-error{font-size:100%}.mw-parser-output .cs1-maint{display:none;color:#33aa33;margin-left:0.3em}.mw-parser-output .cs1-subscription,.mw-parser-output .cs1-registration,.mw-parser-output .cs1-format{font-size:95%}.mw-parser-output .cs1-kern-left,.mw-parser-output .cs1-kern-wl-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right,.mw-parser-output .cs1-kern-wl-right{padding-right:0.2em}</style><a href="/wiki/ISBN" title="ISBN">ISBN</a>&#160;<a href="/wiki/%E7%89%B9%E5%88%A5:%E6%96%87%E7%8C%AE%E8%B3%87%E6%96%99/978-0201514599" title="特別:文献資料/978-0201514599">978-0201514599</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=The+Annotated+C%2B%2B+Reference+Manual&amp;rft.aulast=Bjarne+Stroustrup&amp;rft.au=Bjarne+Stroustrup&amp;rft.au=Margaret+A.+Ellis&amp;rft.date=1990&amp;rft.pub=Addison-Wesley+Professional&amp;rft.isbn=978-0201514599&amp;rfr_id=info:sid/ja.wikipedia.org:C%2B%2B"><span style="display: none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-7"><b><a href="#cite_ref-7">^</a></b> <span class="reference-text"><cite class="book" style="font-style:normal" id="Reference-Bjarne_Stroustrup;_Margaret_A._Ellis-2001">Bjarne Stroustrup; Margaret A. Ellis『The Annotated C++ Reference Manual』足立高徳、<a href="/w/index.php?title=%E5%B0%8F%E5%B1%B1%E8%A3%95%E5%8F%B8&amp;action=edit&amp;redlink=1" class="new" title="小山裕司 (存在しないページ)">小山裕司</a>、シイエム・シイ、2001年。<link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r76153452"/><a href="/wiki/ISBN" title="ISBN">ISBN</a>&#160;<a href="/wiki/%E7%89%B9%E5%88%A5:%E6%96%87%E7%8C%AE%E8%B3%87%E6%96%99/978-4901280396" title="特別:文献資料/978-4901280396">978-4901280396</a>。</cite></span>
+</li>
+<li id="cite_note-8"><b><a href="#cite_ref-8">^</a></b> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.iso.org/iso/iso_catalogue/catalogue_ics/catalogue_detail_ics.htm?csnumber=25845&amp;ICS1=35&amp;ICS2=60">ISO/IEC 14882:1998</a></span>
+</li>
+<li id="cite_note-9"><b><a href="#cite_ref-9">^</a></b> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.iso.org/iso/iso_catalogue/catalogue_ics/catalogue_detail_ics.htm?ics1=35&amp;ics2=60&amp;ics3=&amp;csnumber=38110">ISO/IEC 14882:2003</a></span>
+</li>
+<li id="cite_note-10"><b><a href="#cite_ref-10">^</a></b> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.iso.org/iso/iso_catalogue/catalogue_ics/catalogue_detail_ics.htm?ics1=35&amp;ics2=60&amp;ics3=&amp;csnumber=43289">ISO/IEC TR 19768:2007</a></span>
+</li>
+<li id="cite_note-11"><b><a href="#cite_ref-11">^</a></b> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.iso.org/iso/iso_catalogue/catalogue_ics/catalogue_detail_ics.htm?ics1=35&amp;ics2=60&amp;ics3=&amp;csnumber=50372">ISO/IEC 14882:2011</a></span>
+</li>
+<li id="cite_note-12"><b><a href="#cite_ref-12">^</a></b> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=64029">ISO/IEC 14882:2014</a></span>
+</li>
+<li id="cite_note-13"><b><a href="#cite_ref-13">^</a></b> <span class="reference-text"><a rel="nofollow" class="external free" href="https://www.iso.org/standard/68564.html">https://www.iso.org/standard/68564.html</a></span>
+</li>
+<li id="cite_note-14"><b><a href="#cite_ref-14">^</a></b> <span class="reference-text"><a rel="nofollow" class="external text" href="http://isocpp.org/blog/2014/08/we-have-cpp14">We have C++14!&#160;: Standard C++</a></span>
+</li>
+<li id="cite_note-15"><b><a href="#cite_ref-15">^</a></b> <span class="reference-text"><cite style="font-style:normal">Koenig, Andrew;&#32;Bjarne Stroustrup&#32;(1989年5月11日).&#32;“<span class="PDFlink"><a rel="nofollow" class="external text" href="https://isocpp.org/files/papers/N0007.pdf">C++: as close as possible to C – but no closer</a></span> <span style="font-size:smaller">(<a href="/wiki/Portable_Document_Format" title="Portable Document Format">PDF</a>)</span>”&#32;(英語).&#32;<span title="">2016年11月19日</span>閲覧。</cite></span>
+</li>
+<li id="cite_note-16"><b><a href="#cite_ref-16">^</a></b> <span class="reference-text"><cite style="font-style:normal">Stroustrup, Bjarne.&#32;“<a rel="nofollow" class="external text" href="http://www.stroustrup.com/bs_faq.html#C-is-subset">Stroustrup: FAQ Is C a subset of C++?</a>”&#32;(英語).&#32;<span title="">2016年11月19日</span>閲覧。</cite></span>
+</li>
+<li id="cite_note-17"><b><a href="#cite_ref-17">^</a></b> <span class="reference-text">『C++の設計と進化』、pp.124-125。</span>
+</li>
+<li id="cite_note-18"><b><a href="#cite_ref-18">^</a></b> <span class="reference-text"><cite style="font-style:normal" class="citation book">Bjarne Stroustrup&#32;(2000年).&#32;<i>The C++ Programming Language</i>&#32;(Special Edition ed.).&#32;Addison-Wesley.&#32;pp.&#160;46.&#32;<link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r76153452"/><a href="/wiki/ISBN" title="ISBN">ISBN</a>&#160;<a href="/wiki/%E7%89%B9%E5%88%A5:%E6%96%87%E7%8C%AE%E8%B3%87%E6%96%99/0-201-70073-5" title="特別:文献資料/0-201-70073-5">0-201-70073-5</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=The+C%2B%2B+Programming+Language&amp;rft.aulast=Bjarne+Stroustrup&amp;rft.au=Bjarne+Stroustrup&amp;rft.date=2000%E5%B9%B4&amp;rft.pages=pp.%26nbsp%3B46&amp;rft.edition=Special+Edition&amp;rft.pub=Addison-Wesley&amp;rft.isbn=0-201-70073-5&amp;rfr_id=info:sid/ja.wikipedia.org:C%2B%2B"><span style="display: none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-19"><b><a href="#cite_ref-19">^</a></b> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.research.att.com/~bs/3rd_issues.html">Open issues for The C++ Programming Language (3rd Edition)</a> - このコードはストロヴストルップ自身による訂正文からの引用(633ページ)。<code>std::endl</code>を<code>'\n'</code>に改めている。また<code>main</code>関数がデフォルトで0を返す件については<a rel="nofollow" class="external text" href="http://www.research.att.com/~bs/bs_faq2.html#void-main">www.research.att.com</a>及び<a rel="nofollow" class="external text" href="http://www.delorie.com/djgpp/v2faq/faq22_25.html">www.delorie.com/djgpp/</a> を参照されたし。このデフォルト仕様は<code>main</code>関数のみであり他の関数にはない。</span>
+</li>
+<li id="cite_note-20"><b><a href="#cite_ref-20">^</a></b> <span class="reference-text"><cite style="font-style:normal" class="citation book"><a href="/w/index.php?title=Herb_Sutter&amp;action=edit&amp;redlink=1" class="new" title="Herb Sutter (存在しないページ)">Sutter,&#32;Herb</a>&#59;&#32;<a href="/w/index.php?title=Andrei_Alexandrescu&amp;action=edit&amp;redlink=1" class="new" title="Andrei Alexandrescu (存在しないページ)">Alexandrescu,&#32;Andrei</a>&#32;(2004).&#32;<i>C++ Coding Standards: 101 Rules, Guidelines, and Best Practices</i>.&#32;Addison-Wesley.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=C%2B%2B+Coding+Standards%3A+101+Rules%2C+Guidelines%2C+and+Best+Practices&amp;rft.aulast=Sutter&amp;rft.aufirst=Herb&amp;rft.au=Sutter%2C%26%2332%3BHerb&amp;rft.au=Alexandrescu%2C%26%2332%3BAndrei&amp;rft.date=2004&amp;rft.pub=Addison-Wesley&amp;rfr_id=info:sid/ja.wikipedia.org:C%2B%2B"><span style="display: none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-21"><b><a href="#cite_ref-21">^</a></b> <span class="reference-text"><cite style="font-style:normal" class="citation book">Henricson,&#32;Mats&#59;&#32;Nyquist,&#32;Erik&#32;(1997).&#32;<i>Industrial Strength C++</i>.&#32;Prentice Hall.&#32;<link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r76153452"/><a href="/wiki/ISBN" title="ISBN">ISBN</a>&#160;<a href="/wiki/%E7%89%B9%E5%88%A5:%E6%96%87%E7%8C%AE%E8%B3%87%E6%96%99/0-13-120965-5" title="特別:文献資料/0-13-120965-5">0-13-120965-5</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Industrial+Strength+C%2B%2B&amp;rft.aulast=Henricson&amp;rft.aufirst=Mats&amp;rft.au=Henricson%2C%26%2332%3BMats&amp;rft.au=Nyquist%2C%26%2332%3BErik&amp;rft.date=1997&amp;rft.pub=Prentice+Hall&amp;rft.isbn=0-13-120965-5&amp;rfr_id=info:sid/ja.wikipedia.org:C%2B%2B"><span style="display: none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-22"><b><a href="#cite_ref-22">^</a></b> <span class="reference-text"><cite style="font-style:normal" class="citation book"><a href="/wiki/Bjarne_Stroustrup" class="mw-redirect" title="Bjarne Stroustrup">Stroustrup,&#32;Bjarne</a>&#32;(2000).&#32;<i>The C++ Programming Language</i>&#32;(Special Edition ed.).&#32;Addison-Wesley.&#32;p.&#160;310.&#32;<link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r76153452"/><a href="/wiki/ISBN" title="ISBN">ISBN</a>&#160;<a href="/wiki/%E7%89%B9%E5%88%A5:%E6%96%87%E7%8C%AE%E8%B3%87%E6%96%99/0-201-70073-5" title="特別:文献資料/0-201-70073-5">0-201-70073-5</a>.&#32;"A virtual member function is sometimes called a <i>method</i>."</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=The+C%2B%2B+Programming+Language&amp;rft.aulast=Stroustrup&amp;rft.aufirst=Bjarne&amp;rft.au=Stroustrup%2C%26%2332%3BBjarne&amp;rft.date=2000&amp;rft.pages=p.%26nbsp%3B310&amp;rft.edition=Special+Edition&amp;rft.pub=Addison-Wesley&amp;rft.isbn=0-201-70073-5&amp;rfr_id=info:sid/ja.wikipedia.org:C%2B%2B"><span style="display: none;">&#160;</span></span> </span>
+</li>
+<li id="cite_note-23"><b><a href="#cite_ref-23">^</a></b> <span class="reference-text"><cite style="font-style:normal">Andrew Birkett.&#32;“<a rel="nofollow" class="external text" href="http://www.nobugs.org/developer/parsingcpp/">Parsing C++ at nobugs.org</a>”.&#32;  Nobugs.org.&#32;<span title="">2009年7月3日</span>閲覧。</cite></span>
+</li>
+<li id="cite_note-24"><b><a href="#cite_ref-24">^</a></b> <span class="reference-text"> <span class="PDFlink"><a rel="nofollow" class="external text" href="http://anubis.dkuug.dk/jtc1/sc22/wg21/docs/papers/2003/n1426.pdf">Why We Can’t Afford Export</a></span> <span style="font-size:smaller">(<a href="/wiki/Portable_Document_Format" title="Portable Document Format">PDF</a>, 266&#160;KB)</span> </span>
+</li>
+<li id="cite_note-25"><b><a href="#cite_ref-25">^</a></b> <span class="reference-text"><cite style="font-style:normal">“<a rel="nofollow" class="external text" href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2003/n1459.html">Minutes of J16 Meeting No. 36/WG21 Meeting No. 31, April 7-11, 2003</a>”&#32;(2003年4月25日).&#32;<span title="">2006年9月4日</span>閲覧。</cite></span>
+</li>
+<li id="cite_note-26"><b><a href="#cite_ref-26">^</a></b> <span class="reference-text"><cite style="font-style:normal">“<a rel="nofollow" class="external text" href="http://www.codesourcery.com/cxx-abi/">C++ ABI</a>”.&#32;<span title="">2006年5月30日</span>閲覧。</cite></span>
+</li>
+<li id="cite_note-27"><b><a href="#cite_ref-27">^</a></b> <span class="reference-text"><cite style="font-style:normal">後藤大地&#32;(2013年4月22日).&#32;“<a rel="nofollow" class="external text" href="http://news.mynavi.jp/news/2013/04/22/057/">LLVM Clang、C++11にフル対応</a>”.&#32;  マイナビニュース.&#32;<span title="">2013年9月7日</span>閲覧。</cite></span>
+</li>
+<li id="cite_note-28"><b><a href="#cite_ref-28">^</a></b> <span class="reference-text"><cite style="font-style:normal">“<a rel="nofollow" class="external text" href="http://d.hatena.ne.jp/faith_and_brave/20130607/1370587078">GCC 4.8.1 - C++11全実装バージョン</a>”.&#32;  Faith and Brave - C++で遊ぼう&#32;(2013年6月7日).&#32;<span title="">2013年9月7日</span>閲覧。</cite></span>
+</li>
+<li id="cite_note-29"><b><a href="#cite_ref-29">^</a></b> <span class="reference-text"><cite style="font-style:normal">“<a rel="nofollow" class="external text" href="http://public.research.att.com/~bs/bs_faq.html#C-is-subset">Bjarne Stroustrup's FAQ - Is C a subset of C++?</a>”.&#32;<span title="">2008年1月18日</span>閲覧。</cite></span>
+</li>
+<li id="cite_note-30"><b><a href="#cite_ref-30">^</a></b> <span class="reference-text"><cite style="font-style:normal">“<a rel="nofollow" class="external text" href="http://home.datacomm.ch/t_wolf/tw/c/c9x_changes.html">C9X -- The New C Standard</a>”.&#32;<span title="">2008年12月27日</span>閲覧。</cite></span>
+</li>
+<li id="cite_note-31"><b><a href="#cite_ref-31">^</a></b> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.buildinsider.net/small/clang/01">C言語の最新事情を知る： C99の仕様 - Build Insider</a></span>
+</li>
+</ol></div>
+<h2><span id=".E5.8F.82.E8.80.83.E6.96.87.E7.8C.AE"></span><span class="mw-headline" id="参考文献">参考文献</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=27" title="節を編集: 参考文献">編集</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="refbegin columns references-column-count references-column-count-1" style="-moz-column-count:1; -webkit-column-count:1; column-count:1;-moz-column-width: 30em; -webkit-column-width: 30em; column-width: 30em;">
+<ul><li><cite class="book" style="font-style:normal" id="CITEREFStroustrup1998"><a href="/wiki/%E3%83%93%E3%83%A3%E3%83%BC%E3%83%8D%E3%83%BB%E3%82%B9%E3%83%88%E3%83%AD%E3%83%B4%E3%82%B9%E3%83%88%E3%83%AB%E3%83%83%E3%83%97" title="ビャーネ・ストロヴストルップ">Stroustrup, Bjarne</a>『プログラミング言語C++』ロングテール、長尾高弘訳、アジソン・ウェスレイ・パブリッシャーズ・ジャパン , アスキー (発売)〈アスキーアジソンウェスレイシリーズ〉、1998年（原著1997年）、第3版。<link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r76153452"/><a href="/wiki/ISBN" title="ISBN">ISBN</a>&#160;<a href="/wiki/%E7%89%B9%E5%88%A5:%E6%96%87%E7%8C%AE%E8%B3%87%E6%96%99/475611895X" title="特別:文献資料/475611895X">475611895X</a>。<link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r76153452"/><a href="/wiki/CiNii" title="CiNii">NCID</a>&#160;<a rel="nofollow" class="external text" href="https://ci.nii.ac.jp/ncid/BA39336320/">BA39336320</a>。</cite></li>
+<li><cite class="book" style="font-style:normal" id="CITEREFStroustrup2015"><a href="/wiki/%E3%83%93%E3%83%A3%E3%83%BC%E3%83%8D%E3%83%BB%E3%82%B9%E3%83%88%E3%83%AD%E3%83%B4%E3%82%B9%E3%83%88%E3%83%AB%E3%83%83%E3%83%97" title="ビャーネ・ストロヴストルップ">Stroustrup, Bjarne</a>『プログラミング言語C++』柴田望洋訳、SB Creative、2015年（原著2013年）、第4版。<link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r76153452"/><a href="/wiki/ISBN" title="ISBN">ISBN</a>&#160;<a href="/wiki/%E7%89%B9%E5%88%A5:%E6%96%87%E7%8C%AE%E8%B3%87%E6%96%99/978-4-7973-7595-4" title="特別:文献資料/978-4-7973-7595-4">978-4-7973-7595-4</a>。</cite></li>
+<li><cite class="book" style="font-style:normal" id="CITEREFStroustrup2005"><a href="/wiki/%E3%83%93%E3%83%A3%E3%83%BC%E3%83%8D%E3%83%BB%E3%82%B9%E3%83%88%E3%83%AD%E3%83%B4%E3%82%B9%E3%83%88%E3%83%AB%E3%83%83%E3%83%97" title="ビャーネ・ストロヴストルップ">Stroustrup, Bjarne</a>『C++の設計と進化』<a href="/wiki/%E3%82%A8%E3%83%94%E3%82%B9%E3%83%86%E3%83%BC%E3%83%A1%E3%83%BC" title="エピステーメー">επιστημη</a>監修、<a href="/wiki/%E5%B2%A9%E8%B0%B7%E5%AE%8F" title="岩谷宏">岩谷宏</a>訳、ソフトバンククリエイティブ、2005年（原著1994年）。<link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r76153452"/><a href="/wiki/ISBN" title="ISBN">ISBN</a>&#160;<a href="/wiki/%E7%89%B9%E5%88%A5:%E6%96%87%E7%8C%AE%E8%B3%87%E6%96%99/4797328541" title="特別:文献資料/4797328541">4797328541</a>。<link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r76153452"/><a href="/wiki/CiNii" title="CiNii">NCID</a>&#160;<a rel="nofollow" class="external text" href="https://ci.nii.ac.jp/ncid/BA70383225/">BA70383225</a>。</cite></li></ul>
+</div>
+<h2><span id=".E9.96.A2.E9.80.A3.E9.A0.85.E7.9B.AE"></span><span class="mw-headline" id="関連項目">関連項目</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=28" title="節を編集: 関連項目">編集</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="mbox-small plainlinks sistersitebox noprint" style="border:1px solid #aaa;background-color:#f9f9f9;width:22em;">
+<tbody><tr>
+<td class="mbox-image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikibooks-logo-en-noslogan.svg/40px-Wikibooks-logo-en-noslogan.svg.png" decoding="async" width="40" height="40" class="noviewer" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikibooks-logo-en-noslogan.svg/60px-Wikibooks-logo-en-noslogan.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikibooks-logo-en-noslogan.svg/80px-Wikibooks-logo-en-noslogan.svg.png 2x" data-file-width="400" data-file-height="400" /></td>
+<td class="mbox-text plainlist" style="font-size:100%;">ウィキブックスに<b><a href="https://ja.wikibooks.org/wiki/CPlusPlus" class="extiw" title="b:CPlusPlus">C++</a></b>関連の解説書・教科書があります。</td></tr></tbody></table>
+<div style="clear:right; float:right; position:relative;" class="noprint">
+<div class="navbox" style="background:#f0fff0; border:1px solid #4682b4; padding: 4px; font-size: 12px; line-height: 14px; width: 280px; height: 52px">
+<div style="float:left; margin: 0px; margin-right:8px; border:1px solid #4682b4;"><a href="/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Computer_n_screen.svg" class="image"><img alt="Computer n screen.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Computer_n_screen.svg/47px-Computer_n_screen.svg.png" decoding="async" width="47" height="49" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Computer_n_screen.svg/71px-Computer_n_screen.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/77/Computer_n_screen.svg/94px-Computer_n_screen.svg.png 2x" data-file-width="119" data-file-height="123" /></a></div><b><a href="/wiki/%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="オブジェクト指向プログラミング">オブジェクト指向言語</a></b>に分類される<br /><big style="font-size: 18px; line-height: 20px;"><b><a href="/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E" title="プログラミング言語">プログラミング言語</a></b></big><div style="text-align: right; font-size: 12px; line-height: 14px; margin:0; padding:0;">&gt;&gt;<a href="/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E%E4%B8%80%E8%A6%A7" title="プログラミング言語一覧">他のプログラミング言語</a></div></div>
+<p style="text-align:right; font-size:xx-small; margin:0; bottom-margin: 4px;"><a href="/wiki/Category:%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E" title="Category:プログラミング言語">■</a>カテゴリ / <a href="/wiki/Template:%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E" title="Template:プログラミング言語">■</a>テンプレート</p></div>
+<ul><li><a href="/wiki/C%2B%2B11" title="C++11">C++11</a> (C++0x)</li>
+<li><a href="/wiki/C%2B%2B14" title="C++14">C++14</a></li>
+<li><a href="/wiki/C%2B%2B17" title="C++17">C++17</a></li>
+<li><a href="/wiki/C%2B%2B/CLI" title="C++/CLI">C++/CLI</a></li>
+<li><a href="/wiki/Embedded_C%2B%2B" title="Embedded C++">Embedded C++</a></li>
+<li><a href="/wiki/Java%E3%81%A8C%2B%2B%E3%81%AE%E6%AF%94%E8%BC%83" title="JavaとC++の比較">JavaとC++の比較</a></li>
+<li><a href="/wiki/SystemC" title="SystemC">SystemC</a> - C++言語ベースのハードウェア記述言語</li>
+<li><a href="/wiki/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%83%A1%E3%82%BF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" title="テンプレートメタプログラミング">テンプレートメタプログラミング</a></li>
+<li><a href="/wiki/%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89_(C%2B%2B)" title="キーワード (C++)">キーワード (C++)</a></li></ul>
+<h2><span id=".E5.A4.96.E9.83.A8.E3.83.AA.E3.83.B3.E3.82.AF"></span><span class="mw-headline" id="外部リンク">外部リンク</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=C%2B%2B&amp;action=edit&amp;section=29" title="節を編集: 外部リンク">編集</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li><a rel="nofollow" class="external text" href="https://isocpp.org/">Standard C++ Foundation</a><span style="font-size:0.95em; font-weight:bold; color:#555">（英語）</span></li></ul>
+<table class="navbox" style="border-collapse:collapse;;"><tbody><tr><td><table class="nowraplinks hlist collapsible autocollapse" style="background:transparent;color:inherit;;min-width:100%;border-spacing:2px;border-collapse:separate;"><tbody><tr><th style="" colspan="2" class="navbox-title"><div style="float:left;width:6em;text-align:left;"><div class="noprint plainlinks navbar hlist" style="white-space:nowrap;font-size:60%;font-weight:normal;background-color:transparent;padding:0;color:#000;;border:none;"><ul style="display:inline;"><li><a href="/wiki/Template:C%2B%2B" title="Template:C++"><span title="このテンプレートを表示します" style="font-size:125%;;border:none;">表</span></a></li><li><a href="/w/index.php?title=Template%E2%80%90%E3%83%8E%E3%83%BC%E3%83%88:C%2B%2B&amp;action=edit&amp;redlink=1" class="new" title="Template‐ノート:C++ (存在しないページ)"><span title="このテンプレートのノートを表示します" style="font-size:125%;color:#002bb8;;border:none;">話</span></a></li><li><a class="external text" href="https://ja.wikipedia.org/w/index.php?title=Template:C++&amp;action=edit"><span title="このテンプレートを編集します。保存の前にプレビューを忘れずに。" style="font-size:125%;color:#002bb8;;border:none;">編</span></a></li><li><a class="external text" href="https://ja.wikipedia.org/w/index.php?title=Template:C++&amp;action=history"><span title="このテンプレートの過去の版を表示します" style="font-size:125%;color:#002bb8;;border:none;">歴</span></a></li></ul></div></div><span style="font-size:110%;"><a class="mw-selflink selflink">C++</a></span></th></tr><tr><td class="navbox-abovebelow" style="" colspan="2">
+<ul><li><a class="mw-selflink selflink">C++</a></li>
+<li>C++98</li>
+<li><span title="リンク先の項目はまだありません。新規の執筆や他言語版からの翻訳が望まれます。"><a href="/w/index.php?title=C%2B%2B03&amp;action=edit&amp;redlink=1" class="new" title="C++03 (存在しないページ)">C++03</a><span style="font-size: 0.77em; font-weight: normal;" class="noprint">（<a href="https://en.wikipedia.org/wiki/C%2B%2B03" class="extiw" title="en:C++03">英語版</a>）</span></span></li>
+<li><a href="/wiki/C%2B%2B_Technical_Report_1" title="C++ Technical Report 1">C++TR1</a></li>
+<li><a href="/wiki/C%2B%2B11" title="C++11">C++11</a></li>
+<li><a href="/wiki/C%2B%2B14" title="C++14">C++14</a></li>
+<li><a href="/wiki/C%2B%2B17" title="C++17">C++17</a></li></ul></td></tr><tr><td class="navbox-group" style=";">C++の機能</td><td style="text-align:left;width:100%;padding:0;;;" class="navbox-list navbox-odd"><div style="padding:0 0.25em">
+<li><span title="リンク先の項目はまだありません。新規の執筆や他言語版からの翻訳が望まれます。"><a href="/w/index.php?title=C%2B%2B%E3%81%AE%E3%82%AF%E3%83%A9%E3%82%B9&amp;action=edit&amp;redlink=1" class="new" title="C++のクラス (存在しないページ)">クラス</a><span style="font-size: 0.77em; font-weight: normal;" class="noprint">（<a href="https://en.wikipedia.org/wiki/C%2B%2B_classes" class="extiw" title="en:C++ classes">英語版</a>）</span></span></li>
+<li><a href="/wiki/%E4%BE%8B%E5%A4%96%E5%87%A6%E7%90%86" title="例外処理">例外処理</a></li>
+<li><a href="/wiki/%E5%A4%9A%E9%87%8D%E5%AE%9A%E7%BE%A9" title="多重定義">多重定義</a></li>
+<li><a href="/wiki/New%E6%BC%94%E7%AE%97%E5%AD%90" title="New演算子">new演算子</a></li>
+<li><a href="/wiki/C%E3%81%A8C%2B%2B%E3%81%AE%E6%BC%94%E7%AE%97%E5%AD%90" title="CとC++の演算子">演算子</a></li>
+<li><a href="/wiki/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)" title="テンプレート (プログラミング)">テンプレート</a></li>
+</div></td></tr><tr><td class="navbox-group" style=";"><a href="/wiki/%E6%A8%99%E6%BA%96C%2B%2B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA" title="標準C++ライブラリ">標準C++ライブラリ</a></td><td style="text-align:left;width:100%;padding:0;;;" class="navbox-list navbox-even"><div style="padding:0 0.25em">
+<ul><li><span title="リンク先の項目はまだありません。新規の執筆や他言語版からの翻訳が望まれます。"><a href="/w/index.php?title=Iostream&amp;action=edit&amp;redlink=1" class="new" title="Iostream (存在しないページ)">iostream</a><span style="font-size: 0.77em; font-weight: normal;" class="noprint">（<a href="https://en.wikipedia.org/wiki/Input/output_(C%2B%2B)" class="extiw" title="en:Input/output (C++)">英語版</a>）</span></span></li>
+<li><span title="リンク先の項目はリダイレクトなため、新規作成や他言語版からの翻訳が望まれます。"><a href="/wiki/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%9D%E3%82%A4%E3%83%B3%E3%82%BF" class="mw-redirect" title="スマートポインタ">スマートポインタ</a><span style="font-size: 0.77em; font-weight: normal;" class="noprint">（<a href="https://en.wikipedia.org/wiki/Smart_pointer" class="extiw" title="en:Smart pointer">英語版</a>）</span></span></li>
+<li><a href="/wiki/Standard_Template_Library" title="Standard Template Library">STL</a></li>
+<li><span title="リンク先の項目はまだありません。新規の執筆や他言語版からの翻訳が望まれます。"><a href="/w/index.php?title=String_(C%2B%2B)&amp;action=edit&amp;redlink=1" class="new" title="String (C++) (存在しないページ)">string</a><span style="font-size: 0.77em; font-weight: normal;" class="noprint">（<a href="https://en.wikipedia.org/wiki/String_(C%2B%2B)" class="extiw" title="en:String (C++)">英語版</a>）</span></span></li></ul>
+</div></td></tr><tr><td class="navbox-group" style=";">コンパイラ</td><td style="text-align:left;width:100%;padding:0;;;" class="navbox-list navbox-odd"><div style="padding:0 0.25em">
+<ul><li><span title="リンク先の項目はまだありません。新規の執筆や他言語版からの翻訳が望まれます。"><a href="/w/index.php?title=Borland_C%2B%2B&amp;action=edit&amp;redlink=1" class="new" title="Borland C++ (存在しないページ)">Borland C++</a><span style="font-size: 0.77em; font-weight: normal;" class="noprint">（<a href="https://en.wikipedia.org/wiki/Borland_C%2B%2B" class="extiw" title="en:Borland C++">英語版</a>）</span></span></li>
+<li><a href="/wiki/C%2B%2B_Builder" title="C++ Builder">C++ Builder</a></li>
+<li><a href="/wiki/Clang" title="Clang">Clang</a></li>
+<li><a href="/wiki/GNU%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3" title="GNUコンパイラコレクション">gcc</a></li>
+<li><a href="/wiki/Intel_C%2B%2B_Compiler" title="Intel C++ Compiler">Intel C++ Compiler</a></li>
+<li><a href="/wiki/Microsoft_Visual_C%2B%2B" title="Microsoft Visual C++">Visual C++</a></li>
+<li><span title="リンク先の項目はまだありません。新規の執筆や他言語版からの翻訳が望まれます。"><a href="/w/index.php?title=Watcom_C/C%2B%2B_compiler&amp;action=edit&amp;redlink=1" class="new" title="Watcom C/C++ compiler (存在しないページ)">Watcom C/C++</a><span style="font-size: 0.77em; font-weight: normal;" class="noprint">（<a href="https://en.wikipedia.org/wiki/Watcom_C/C%2B%2B_compiler" class="extiw" title="en:Watcom C/C++ compiler">英語版</a>）</span></span></li></ul>
+</div></td></tr><tr><td class="navbox-group" style=";"><a href="/wiki/Category:%E7%B5%B1%E5%90%88%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83" title="Category:統合開発環境">統合開発環境</a></td><td style="text-align:left;width:100%;padding:0;;;" class="navbox-list navbox-even"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/Anjuta" title="Anjuta">Anjuta</a></li>
+<li><a href="/wiki/Code::Blocks" title="Code::Blocks">Code::Blocks</a></li>
+<li><a href="/wiki/CodeLite" title="CodeLite">CodeLite</a></li>
+<li><a href="/wiki/Eclipse_(%E7%B5%B1%E5%90%88%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83)" title="Eclipse (統合開発環境)">Eclipse</a></li>
+<li><a href="/wiki/Geany" title="Geany">Geany</a></li>
+<li><a href="/wiki/Microsoft_Visual_Studio" title="Microsoft Visual Studio">Microsoft Visual Studio</a></li>
+<li><a href="/wiki/NetBeans" title="NetBeans">NetBeans</a></li></ul>
+</div></td></tr><tr><td class="navbox-group" style=";">関連言語</td><td style="text-align:left;width:100%;padding:0;;;" class="navbox-list navbox-odd"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/C%E8%A8%80%E8%AA%9E" title="C言語">C言語</a></li>
+<li><a href="/wiki/C%2B%2B_AMP" title="C++ AMP">C++ AMP</a></li>
+<li><a href="/wiki/Embedded_C%2B%2B" title="Embedded C++">Embedded C++</a></li>
+<li><a href="/wiki/Objective-C" title="Objective-C">Objective-C</a></li></ul>
+</div></td></tr><tr><td class="navbox-abovebelow" style="" colspan="2">
+<ul><li><a href="/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Folder_Hexagonal_Icon.svg" class="image" title="カテゴリ"><img alt="カテゴリ" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/48/Folder_Hexagonal_Icon.svg/16px-Folder_Hexagonal_Icon.svg.png" decoding="async" width="16" height="14" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/48/Folder_Hexagonal_Icon.svg/24px-Folder_Hexagonal_Icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/48/Folder_Hexagonal_Icon.svg/32px-Folder_Hexagonal_Icon.svg.png 2x" data-file-width="36" data-file-height="31" /></a> <b><a href="/wiki/Category:C%2B%2B" title="Category:C++">カテゴリ</a></b></li></ul></td></tr></tbody></table></td></tr></tbody></table>
+<table class="navbox" style="border-collapse:collapse;;"><tbody><tr><td><table class="nowraplinks hlist collapsible autocollapse" style="background:transparent;color:inherit;;min-width:100%;border-spacing:2px;border-collapse:separate;"><tbody><tr><th style="" colspan="2" class="navbox-title"><div style="float:left;width:6em;text-align:left;"><div class="noprint plainlinks navbar hlist" style="white-space:nowrap;font-size:60%;font-weight:normal;background-color:transparent;padding:0;color:#000;;border:none;"><ul style="display:inline;"><li><a href="/wiki/Template:%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E%E4%B8%80%E8%A6%A7" title="Template:プログラミング言語一覧"><span title="このテンプレートを表示します" style="font-size:125%;;border:none;">表</span></a></li><li><a href="/w/index.php?title=Template%E2%80%90%E3%83%8E%E3%83%BC%E3%83%88:%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E%E4%B8%80%E8%A6%A7&amp;action=edit&amp;redlink=1" class="new" title="Template‐ノート:プログラミング言語一覧 (存在しないページ)"><span title="このテンプレートのノートを表示します" style="font-size:125%;color:#002bb8;;border:none;">話</span></a></li><li><a class="external text" href="https://ja.wikipedia.org/w/index.php?title=Template:プログラミング言語一覧&amp;action=edit"><span title="このテンプレートを編集します。保存の前にプレビューを忘れずに。" style="font-size:125%;color:#002bb8;;border:none;">編</span></a></li><li><a class="external text" href="https://ja.wikipedia.org/w/index.php?title=Template:プログラミング言語一覧&amp;action=history"><span title="このテンプレートの過去の版を表示します" style="font-size:125%;color:#002bb8;;border:none;">歴</span></a></li></ul></div></div><span style="font-size:110%;">コンピュータ・<a href="/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E" title="プログラミング言語">プログラミング言語</a></span></th></tr><tr><td class="navbox-group" style=";"><a href="/wiki/%E4%BD%8E%E6%B0%B4%E6%BA%96%E8%A8%80%E8%AA%9E" title="低水準言語">低水準言語</a></td><td style="text-align:left;width:100%;padding:0;;;" class="navbox-list navbox-odd"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/%E6%A9%9F%E6%A2%B0%E8%AA%9E" title="機械語">機械語</a></li>
+<li><a href="/wiki/%E3%82%A2%E3%82%BB%E3%83%B3%E3%83%96%E3%83%AA%E8%A8%80%E8%AA%9E" title="アセンブリ言語">アセンブリ言語</a></li></ul>
+</div></td></tr><tr><td class="navbox-group" style=";"><a href="/wiki/%E9%AB%98%E6%B0%B4%E6%BA%96%E8%A8%80%E8%AA%9E" title="高水準言語">高水準言語</a></td><td style="text-align:left;width:100%;padding:0;;;" class="navbox-list navbox-even"><div style="padding:0 0.25em">
+</div><table class="nowraplinks navbox-subgroup" style="margin:-2px;width:100%;width:calc(100% + 4px);;min-width:100%;border-spacing:2px;border-collapse:separate;"><tbody><tr><td class="navbox-group" style=";">1950年代</td><td style="text-align:left;width:100%;padding:0;;;" class="navbox-list navbox-odd"><div style="padding:0 0.25em">
+<ul><li><span lang="en"><a href="/wiki/FORTRAN" title="FORTRAN">FORTRAN</a></span></li>
+<li><span lang="en"><a href="/wiki/LISP" title="LISP">LISP</a></span></li>
+<li><span lang="en"><a href="/wiki/ALGOL" title="ALGOL">ALGOL</a></span></li>
+<li><span lang="en"><a href="/wiki/RPG_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E8%A8%80%E8%AA%9E)" title="RPG (プログラム言語)">RPG</a></span></li>
+<li><span lang="en"><a href="/wiki/COBOL" title="COBOL">COBOL</a></span></li></ul>
+</div></td></tr><tr><td class="navbox-group" style=";">1960年代</td><td style="text-align:left;width:100%;padding:0;;;" class="navbox-list navbox-even"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/CPL_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" title="CPL (プログラミング言語)"><span lang="en">CPL</span></a></li>
+<li><span lang="en"><a href="/wiki/BASIC" title="BASIC">BASIC</a></span></li>
+<li><span lang="en"><a href="/wiki/PL/I" title="PL/I">PL/I</a></span></li>
+<li><span lang="en"><a href="/wiki/APL" title="APL">APL</a></span></li>
+<li><span lang="en"><a href="/wiki/BCPL" title="BCPL">BCPL</a></span></li>
+<li><span lang="en"><a href="/wiki/Simula" title="Simula">Simula</a></span></li>
+<li><span lang="en"><a href="/wiki/LOGO" title="LOGO">LOGO</a></span></li>
+<li><span lang="en"><a href="/wiki/B%E8%A8%80%E8%AA%9E" title="B言語">B</a></span></li></ul>
+</div></td></tr><tr><td class="navbox-group" style=";">1970年代</td><td style="text-align:left;width:100%;padding:0;;;" class="navbox-list navbox-odd"><div style="padding:0 0.25em">
+<ul><li><span lang="en"><a href="/wiki/Forth" title="Forth">Forth</a></span></li>
+<li><span lang="fr"><a href="/wiki/Pascal" title="Pascal">Pascal</a></span></li>
+<li><a href="/wiki/C%E8%A8%80%E8%AA%9E" title="C言語"><span lang="en">C</span></a></li>
+<li><span lang="fr"><a href="/wiki/Prolog" title="Prolog">Prolog</a></span></li>
+<li><span lang="en"><a href="/wiki/Smalltalk" title="Smalltalk">Smalltalk</a></span></li>
+<li><span lang="en"><a href="/wiki/Scheme" title="Scheme">Scheme</a></span></li>
+<li><a href="/wiki/ML_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" title="ML (プログラミング言語)"><span lang="en">ML</span></a></li>
+<li><span lang="en"><a href="/wiki/AWK" title="AWK">AWK</a></span></li>
+<li><span lang="en"><a href="/wiki/Ada" title="Ada">Ada</a></span></li></ul>
+</div></td></tr><tr><td class="navbox-group" style=";">1980年代</td><td style="text-align:left;width:100%;padding:0;;;" class="navbox-list navbox-even"><div style="padding:0 0.25em">
+<ul><li><span lang="en"><a class="mw-selflink selflink">C++</a></span></li>
+<li><span lang="en"><a href="/wiki/Objective-C" title="Objective-C">Objective-C</a></span></li>
+<li><span lang="en"><a href="/wiki/Common_Lisp" title="Common Lisp">Common Lisp</a></span></li>
+<li><span lang="fr"><a href="/wiki/Eiffel" title="Eiffel">Eiffel</a></span></li>
+<li><span lang="en"><a href="/wiki/Erlang" title="Erlang">Erlang</a></span></li>
+<li><span lang="en"><a href="/wiki/Perl" title="Perl">Perl</a></span></li>
+<li><span lang="en"><a href="/wiki/Mathematica" title="Mathematica">Mathematica</a></span></li>
+<li><span lang="en"><a href="/wiki/J_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" title="J (プログラミング言語)">J</a></span></li></ul>
+</div></td></tr><tr><td class="navbox-group" style=";">1990年代</td><td style="text-align:left;width:100%;padding:0;;;" class="navbox-list navbox-odd"><div style="padding:0 0.25em">
+<ul><li><span lang="en"><a href="/wiki/Python" title="Python">Python</a></span></li>
+<li><span lang="en"><a href="/wiki/Tcl/Tk" title="Tcl/Tk">Tcl</a></span></li>
+<li><span lang="en"><a href="/wiki/Haskell" title="Haskell">Haskell</a></span></li>
+<li><span lang="en"><a href="/wiki/Visual_Basic" title="Visual Basic">Visual Basic</a></span></li>
+<li><span lang="en"><a href="/wiki/Ruby" title="Ruby">Ruby</a></span></li>
+<li><span lang="pt"><a href="/wiki/Lua" title="Lua">Lua</a></span></li>
+<li><span lang="en"><a href="/wiki/Delphi" title="Delphi">Delphi</a></span></li>
+<li><span lang="en"><a href="/wiki/Java" title="Java">Java</a></span></li>
+<li><span lang="en"><a href="/wiki/ECMAScript" title="ECMAScript">ECMAScript</a></span> (<span lang="en"><a href="/wiki/JavaScript" title="JavaScript">JavaScript</a></span>)</li>
+<li><span lang="en"><a href="/wiki/PHP_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" title="PHP (プログラミング言語)">PHP</a></span></li>
+<li><span lang="en"><a href="/wiki/OCaml" title="OCaml">OCaml</a></span></li>
+<li><span lang="en"><a href="/wiki/SuperCollider" title="SuperCollider">SuperCollider</a></span></li>
+<li><span lang="en"><a href="/wiki/R%E8%A8%80%E8%AA%9E" title="R言語">R</a></span></li></ul>
+</div></td></tr><tr><td class="navbox-group" style=";">2000年代</td><td style="text-align:left;width:100%;padding:0;;;" class="navbox-list navbox-even"><div style="padding:0 0.25em">
+<ul><li><span lang="en"><a href="/wiki/C_Sharp" title="C Sharp">C#</a></span></li>
+<li><span lang="en"><a href="/wiki/VB.NET" class="mw-redirect" title="VB.NET">VB.NET</a></span></li>
+<li><span lang="en"><a href="/wiki/Scala" title="Scala">Scala</a></span></li>
+<li><span lang="en"><a href="/wiki/Clojure" title="Clojure">Clojure</a></span></li>
+<li><span lang="en"><a href="/wiki/D%E8%A8%80%E8%AA%9E" title="D言語">D</a></span></li>
+<li><span lang="en"><a href="/wiki/F_Sharp" title="F Sharp">F#</a></span></li>
+<li><span lang="en"><a href="/wiki/Go_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" title="Go (プログラミング言語)">Go</a></span></li>
+<li><span lang="en"><a href="/wiki/Nim" title="Nim">Nim</a></span></li></ul>
+</div></td></tr><tr><td class="navbox-group" style=";">2010年代</td><td style="text-align:left;width:100%;padding:0;;;" class="navbox-list navbox-odd"><div style="padding:0 0.25em">
+<ul><li><span lang="en"><a href="/wiki/Dart" title="Dart">Dart</a></span></li>
+<li><span lang="en"><a href="/wiki/Ceylon" title="Ceylon">Ceylon</a></span></li>
+<li><span lang="en"><a href="/wiki/Elixir_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" title="Elixir (プログラミング言語)">Elixir</a></span></li>
+<li><span lang="en"><a href="/wiki/Crystal_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" title="Crystal (プログラミング言語)">Crystal</a></span></li>
+<li><span lang="en"><a href="/wiki/Hack_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" title="Hack (プログラミング言語)">Hack</a></span></li>
+<li><span lang="en"><a href="/wiki/Swift_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" title="Swift (プログラミング言語)">Swift</a></span></li>
+<li><span lang="en"><a href="/wiki/Rust_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" title="Rust (プログラミング言語)">Rust</a></span></li>
+<li><span lang="en"><a href="/wiki/Raku" title="Raku">Raku</a></span></li>
+<li><span lang="en"><a href="/wiki/Elm_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" title="Elm (プログラミング言語)">Elm</a></span></li>
+<li><span lang="en"><a href="/wiki/Julia_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" title="Julia (プログラミング言語)">Julia</a></span></li>
+<li><span lang="en"><a href="/wiki/Kotlin" title="Kotlin">Kotlin</a></span></li></ul>
+</div></td></tr></tbody></table><div>
+</div></td></tr><tr><td class="navbox-abovebelow" style="" colspan="2">
+<ul><li><a href="/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E%E5%B9%B4%E8%A1%A8" title="プログラミング言語年表">年表</a></li>
+<li><a href="/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%91%E3%83%A9%E3%83%80%E3%82%A4%E3%83%A0" title="プログラミングパラダイム">パラダイム</a></li>
+<li><a href="/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E%E4%B8%80%E8%A6%A7" title="プログラミング言語一覧">一覧</a></li></ul></td></tr></tbody></table></td></tr></tbody></table>
+<!-- 
+NewPP limit report
+Parsed by mw1351
+Cached time: 20200315133923
+Cache expiry: 86400
+Dynamic content: true
+Complications: []
+CPU time usage: 0.832 seconds
+Real time usage: 1.283 seconds
+Preprocessor visited node count: 16781/1000000
+Post‐expand include size: 152858/2097152 bytes
+Template argument size: 33318/2097152 bytes
+Highest expansion depth: 27/40
+Expensive parser function count: 11/500
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 37183/5000000 bytes
+Number of Wikibase entities loaded: 8/400
+Lua time usage: 0.170/10.000 seconds
+Lua memory usage: 4.48 MB/50 MB
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00% 1146.770      1 -total
+ 31.45%  360.655      1 Template:Reflist
+ 23.09%  264.801      9 Template:Cite_book
+ 22.64%  259.681      1 Template:Infobox_プログラミング言語
+ 22.18%  254.405      1 Template:Infobox
+ 15.06%  172.660      5 Template:Citation/core
+  9.32%  106.837     10 Template:Cite_web
+  9.29%  106.573      8 Template:ISBN2
+  8.17%   93.714      3 Template:Navbox
+  7.87%   90.232      4 Template:Citation/identifier
+-->
+
+<!-- Saved in parser cache with key jawiki:pcache:idhash:1505-0!canonical and timestamp 20200315133922 and revision id 74781156
+ -->
+</div><noscript><img src="//ja.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>
+		<div class="printfooter">「<a dir="ltr" href="https://ja.wikipedia.org/w/index.php?title=C%2B%2B&amp;oldid=74781156">https://ja.wikipedia.org/w/index.php?title=C%2B%2B&amp;oldid=74781156</a>」から取得</div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/%E7%89%B9%E5%88%A5:%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA" title="特別:カテゴリ">カテゴリ</a>: <ul><li><a href="/wiki/Category:%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E" title="Category:プログラミング言語">プログラミング言語</a></li><li><a href="/wiki/Category:C%2B%2B" title="Category:C++">C++</a></li><li><a href="/wiki/Category:%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E8%A8%80%E8%AA%9E" title="Category:オブジェクト指向言語">オブジェクト指向言語</a></li><li><a href="/wiki/Category:JIS" title="Category:JIS">JIS</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">隠しカテゴリ: <ul><li><a href="/wiki/Category:%E5%87%BA%E5%85%B8%E3%82%92%E5%BF%85%E8%A6%81%E3%81%A8%E3%81%99%E3%82%8B%E8%A8%98%E8%BF%B0%E3%81%AE%E3%81%82%E3%82%8B%E8%A8%98%E4%BA%8B/2019%E5%B9%B43%E6%9C%88" title="Category:出典を必要とする記述のある記事/2019年3月">出典を必要とする記述のある記事/2019年3月</a></li><li><a href="/wiki/Category:%E6%97%A5%E6%9C%AC%E7%94%A3%E6%A5%AD%E8%A6%8F%E6%A0%BC%E3%82%92%E5%85%B8%E6%8B%A0%E3%81%AB%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E8%A8%98%E4%BA%8B" title="Category:日本産業規格を典拠にしている記事">日本産業規格を典拠にしている記事</a></li><li><a href="/wiki/Category:%E7%8B%AC%E8%87%AA%E7%A0%94%E7%A9%B6%E3%81%AE%E9%99%A4%E5%8E%BB%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%AA%E8%A8%98%E8%BF%B0%E3%81%AE%E3%81%82%E3%82%8B%E8%A8%98%E4%BA%8B/2019%E5%B9%B41%E6%9C%88-6%E6%9C%88" title="Category:独自研究の除去が必要な記述のある記事/2019年1月-6月">独自研究の除去が必要な記述のある記事/2019年1月-6月</a></li><li><a href="/wiki/Category:%E5%87%BA%E5%85%B8%E3%82%92%E5%BF%85%E8%A6%81%E3%81%A8%E3%81%99%E3%82%8B%E8%A8%98%E8%BF%B0%E3%81%AE%E3%81%82%E3%82%8B%E8%A8%98%E4%BA%8B/2016%E5%B9%B45%E6%9C%88" title="Category:出典を必要とする記述のある記事/2016年5月">出典を必要とする記述のある記事/2016年5月</a></li><li><a href="/wiki/Category:%E7%8B%AC%E8%87%AA%E7%A0%94%E7%A9%B6%E3%81%AE%E9%99%A4%E5%8E%BB%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%AA%E8%A8%98%E8%BF%B0%E3%81%AE%E3%81%82%E3%82%8B%E8%A8%98%E4%BA%8B/2018%E5%B9%B47%E6%9C%88-12%E6%9C%88" title="Category:独自研究の除去が必要な記述のある記事/2018年7月-12月">独自研究の除去が必要な記述のある記事/2018年7月-12月</a></li><li><a href="/wiki/Category:%E6%97%A5%E6%9C%AC%E8%AA%9E%E7%89%88%E8%A8%98%E4%BA%8B%E3%81%8C%E3%83%AA%E3%83%80%E3%82%A4%E3%83%AC%E3%82%AF%E3%83%88%E3%81%AE%E4%BB%AE%E3%83%AA%E3%83%B3%E3%82%AF%E3%82%92%E5%90%AB%E3%82%80%E8%A8%98%E4%BA%8B" title="Category:日本語版記事がリダイレクトの仮リンクを含む記事">日本語版記事がリダイレクトの仮リンクを含む記事</a></li><li><a href="/wiki/Category:ISBN%E3%83%9E%E3%82%B8%E3%83%83%E3%82%AF%E3%83%AA%E3%83%B3%E3%82%AF%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%83%9A%E3%83%BC%E3%82%B8" title="Category:ISBNマジックリンクを使用しているページ">ISBNマジックリンクを使用しているページ</a></li></ul></div></div>
+		<div class="visualClear"></div>
+		
+	</div>
+</div>
+<div id='mw-data-after-content'>
+	<div class="read-more-container"></div>
+</div>
+
+<div id="mw-navigation">
+    <h2>案内メニュー</h2>
+    <div id="mw-head">
+        
+<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">個人用ツール</h3>
+	<ul >
+		
+		<li id="pt-anonuserpage">ログインしていません</li>
+		<li id="pt-anontalk"><a href="/wiki/%E7%89%B9%E5%88%A5:%E3%83%88%E3%83%BC%E3%82%AF%E3%83%9A%E3%83%BC%E3%82%B8" title="このIPアドレスからなされた編集についての議論 [n]" accesskey="n">トーク</a></li><li id="pt-anoncontribs"><a href="/wiki/%E7%89%B9%E5%88%A5:%E8%87%AA%E5%88%86%E3%81%AE%E6%8A%95%E7%A8%BF%E8%A8%98%E9%8C%B2" title="このIPアドレスからなされた編集の一覧 [y]" accesskey="y">投稿記録</a></li><li id="pt-createaccount"><a href="/w/index.php?title=%E7%89%B9%E5%88%A5:%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E4%BD%9C%E6%88%90&amp;returnto=C%2B%2B" title="アカウントを作成してログインすることをお勧めしますが、必須ではありません">アカウント作成</a></li><li id="pt-login"><a href="/w/index.php?title=%E7%89%B9%E5%88%A5:%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3&amp;returnto=C%2B%2B" title="ログインすることを推奨します。ただし、必須ではありません。 [o]" accesskey="o">ログイン</a></li>
+	</ul>
+</div>
+
+        <div id="left-navigation">
+            <div id="p-namespaces" role="navigation" class="vectorTabs " aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">名前空間</h3>
+	<ul >
+		<li id="ca-nstab-main" class="selected"><a href="/wiki/C%2B%2B" title="本文を閲覧 [c]" accesskey="c">ページ</a></li><li id="ca-talk"><a href="/wiki/%E3%83%8E%E3%83%BC%E3%83%88:C%2B%2B" rel="discussion" title="本文ページについての議論 [t]" accesskey="t">ノート</a></li>
+	</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>変種</span>
+	</h3>
+	<ul class="menu" >
+		
+	</ul>
+</div>
+
+        </div>
+        <div id="right-navigation">
+            <div id="p-views" role="navigation" class="vectorTabs " aria-labelledby="p-views-label">
+	<h3 id="p-views-label">表示</h3>
+	<ul >
+		<li id="ca-view" class="collapsible selected"><a href="/wiki/C%2B%2B">閲覧</a></li><li id="ca-edit" class="collapsible"><a href="/w/index.php?title=C%2B%2B&amp;action=edit" title="このページを編集 [e]" accesskey="e">編集</a></li><li id="ca-history" class="collapsible"><a href="/w/index.php?title=C%2B%2B&amp;action=history" title="このページの過去の版 [h]" accesskey="h">履歴表示</a></li>
+	</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>その他</span>
+	</h3>
+	<ul class="menu" >
+		
+	</ul>
+</div>
+<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">検索</label>
+	</h3>
+	<form action="/w/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input type="search" name="search" placeholder="Wikipedia内を検索" title="Wikipedia内を検索する [f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" value="特別:検索" name="title"/>
+			<input type="submit" name="fulltext" value="検索" title="この文字列が含まれるページを探す" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="表示" title="厳密に一致する名前のページが存在すれば、そのページへ移動する" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+        </div>
+    </div>
+    
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="メインページに移動する" class="mw-wiki-logo" href="/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8"></a>
+	</div>
+	<div class="portal" role="navigation" id="p-navigation"  aria-labelledby="p-navigation-label">
+		<h3  id="p-navigation-label">
+			案内
+		</h3>
+		<div class="body">
+			<ul><li id="n-mainpage"><a href="/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8" title="メインページに移動する [z]" accesskey="z">メインページ</a></li><li id="n-portal"><a href="/wiki/Wikipedia:%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%83%86%E3%82%A3%E3%83%BB%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB" title="このプロジェクトについて、できること、情報を入手する場所">コミュニティ・ポータル</a></li><li id="n-currentevents"><a href="/wiki/Portal:%E6%9C%80%E8%BF%91%E3%81%AE%E5%87%BA%E6%9D%A5%E4%BA%8B" title="最近の出来事の背景を知る">最近の出来事</a></li><li id="n-newpages"><a href="/wiki/%E7%89%B9%E5%88%A5:%E6%96%B0%E3%81%97%E3%81%84%E3%83%9A%E3%83%BC%E3%82%B8" title="最近新規に作成されたページの一覧">新しいページ</a></li><li id="n-recentchanges"><a href="/wiki/%E7%89%B9%E5%88%A5:%E6%9C%80%E8%BF%91%E3%81%AE%E6%9B%B4%E6%96%B0" title="このウィキにおける最近の更新の一覧 [r]" accesskey="r">最近の更新</a></li><li id="n-randompage"><a href="/wiki/%E7%89%B9%E5%88%A5:%E3%81%8A%E3%81%BE%E3%81%8B%E3%81%9B%E8%A1%A8%E7%A4%BA" title="無作為に選択されたページを読み込む [x]" accesskey="x">おまかせ表示</a></li><li id="n-sandbox"><a href="/wiki/Wikipedia:%E3%82%B5%E3%83%B3%E3%83%89%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9" title="練習用のページ">練習用ページ</a></li><li id="n-commonsupload"><a href="//commons.wikimedia.org/wiki/Special:UploadWizard?uselang=ja" title="画像やメディアファイルをウィキメディア・コモンズにアップロード">アップロード (ウィキメディア・コモンズ)</a></li></ul>
+			
+		</div>
+	</div>
+	
+	<div class="portal" role="navigation" id="p-help"  aria-labelledby="p-help-label">
+		<h3  id="p-help-label">
+			ヘルプ
+		</h3>
+		<div class="body">
+			<ul><li id="n-help"><a href="/wiki/Help:%E7%9B%AE%E6%AC%A1" title="情報を得る場所">ヘルプ</a></li><li id="n-villagepump"><a href="/wiki/Wikipedia:%E4%BA%95%E6%88%B8%E7%AB%AF" title="プロジェクトについての意見交換">井戸端</a></li><li id="n-notice"><a href="/wiki/Wikipedia:%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B" title="プロジェクトについてのお知らせ">お知らせ</a></li><li id="n-bugreportspage"><a href="/wiki/Wikipedia:%E3%83%90%E3%82%B0%E3%81%AE%E5%A0%B1%E5%91%8A" title="ウィキペディア・ソフトウェアのバグ報告">バグの報告</a></li><li id="n-sitesupport"><a href="//donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_ja.wikipedia.org&amp;uselang=ja" title="ご支援ください">寄付</a></li><li id="n-contact"><a href="/wiki/Wikipedia:%E9%80%A3%E7%B5%A1%E5%85%88" title="ウィキペディアやウィキメディア財団に関する連絡先">ウィキペディアに関するお問い合わせ</a></li></ul>
+			
+		</div>
+	</div>
+	
+	<div class="portal" role="navigation" id="p-tb"  aria-labelledby="p-tb-label">
+		<h3  id="p-tb-label">
+			ツール
+		</h3>
+		<div class="body">
+			<ul><li id="t-whatlinkshere"><a href="/wiki/%E7%89%B9%E5%88%A5:%E3%83%AA%E3%83%B3%E3%82%AF%E5%85%83/C%2B%2B" title="ここにリンクしている全ウィキページの一覧 [j]" accesskey="j">リンク元</a></li><li id="t-recentchangeslinked"><a href="/wiki/%E7%89%B9%E5%88%A5:%E9%96%A2%E9%80%A3%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AE%E6%9B%B4%E6%96%B0%E7%8A%B6%E6%B3%81/C%2B%2B" rel="nofollow" title="このページからリンクしているページの最近の更新 [k]" accesskey="k">関連ページの更新状況</a></li><li id="t-upload"><a href="/wiki/Wikipedia:%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89" title="ファイルをアップロードする [u]" accesskey="u">ファイルをアップロード</a></li><li id="t-specialpages"><a href="/wiki/%E7%89%B9%E5%88%A5:%E7%89%B9%E5%88%A5%E3%83%9A%E3%83%BC%E3%82%B8%E4%B8%80%E8%A6%A7" title="特別ページの一覧 [q]" accesskey="q">特別ページ</a></li><li id="t-permalink"><a href="/w/index.php?title=C%2B%2B&amp;oldid=74781156" title="このページのこの版への固定リンク">この版への固定リンク</a></li><li id="t-info"><a href="/w/index.php?title=C%2B%2B&amp;action=info" title="このページについての詳細情報">ページ情報</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q2407" title="関連付けられたデータリポジトリ項目へのリンク [g]" accesskey="g">ウィキデータ項目</a></li><li id="t-cite"><a href="/w/index.php?title=%E7%89%B9%E5%88%A5:%E3%81%93%E3%81%AE%E3%83%9A%E3%83%BC%E3%82%B8%E3%82%92%E5%BC%95%E7%94%A8&amp;page=C%2B%2B&amp;id=74781156" title="このページの引用方法">このページを引用</a></li></ul>
+			
+		</div>
+	</div>
+	
+	<div class="portal" role="navigation" id="p-wikibase-otherprojects"  aria-labelledby="p-wikibase-otherprojects-label">
+		<h3  id="p-wikibase-otherprojects-label">
+			他のプロジェクト
+		</h3>
+		<div class="body">
+			<ul><li class="wb-otherproject-link wb-otherproject-commons"><a href="https://commons.wikimedia.org/wiki/Category:C%2B%2B" hreflang="en">コモンズ</a></li><li class="wb-otherproject-link wb-otherproject-wikibooks"><a href="https://ja.wikibooks.org/wiki/C%2B%2B" hreflang="ja">ウィキブックス</a></li></ul>
+			
+		</div>
+	</div>
+	
+	<div class="portal" role="navigation" id="p-coll-print_export"  aria-labelledby="p-coll-print_export-label">
+		<h3  id="p-coll-print_export-label">
+			印刷/書き出し
+		</h3>
+		<div class="body">
+			<ul><li id="coll-create_a_book"><a href="/w/index.php?title=%E7%89%B9%E5%88%A5:%E3%83%96%E3%83%83%E3%82%AF&amp;bookcmd=book_creator&amp;referer=C%2B%2B">ブックの新規作成</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=%E7%89%B9%E5%88%A5:ElectronPdf&amp;page=C%2B%2B&amp;action=show-download-screen">PDF 形式でダウンロード</a></li><li id="t-print"><a href="/w/index.php?title=C%2B%2B&amp;printable=yes" title="このページの印刷用ページ [p]" accesskey="p">印刷用バージョン</a></li></ul>
+			
+		</div>
+	</div>
+	
+	<div class="portal" role="navigation" id="p-lang"  aria-labelledby="p-lang-label">
+		<h3  id="p-lang-label">
+			他言語版
+		</h3>
+		<div class="body">
+			<ul><li class="interlanguage-link interwiki-af"><a href="https://af.wikipedia.org/wiki/C%2B%2B" title="アフリカーンス語: C++" lang="af" hreflang="af" class="interlanguage-link-target">Afrikaans</a></li><li class="interlanguage-link interwiki-an"><a href="https://an.wikipedia.org/wiki/C%2B%2B" title="アラゴン語: C++" lang="an" hreflang="an" class="interlanguage-link-target">Aragonés</a></li><li class="interlanguage-link interwiki-ar"><a href="https://ar.wikipedia.org/wiki/%D8%B3%D9%8A%2B%2B" title="アラビア語: سي++" lang="ar" hreflang="ar" class="interlanguage-link-target">العربية</a></li><li class="interlanguage-link interwiki-arz"><a href="https://arz.wikipedia.org/wiki/%D8%B3%D9%89%2B%2B" title="エジプト・アラビア語: سى++" lang="arz" hreflang="arz" class="interlanguage-link-target">مصرى</a></li><li class="interlanguage-link interwiki-ast"><a href="https://ast.wikipedia.org/wiki/C%2B%2B" title="アストゥリアス語: C++" lang="ast" hreflang="ast" class="interlanguage-link-target">Asturianu</a></li><li class="interlanguage-link interwiki-az"><a href="https://az.wikipedia.org/wiki/C%2B%2B" title="アゼルバイジャン語: C++" lang="az" hreflang="az" class="interlanguage-link-target">Azərbaycanca</a></li><li class="interlanguage-link interwiki-azb"><a href="https://azb.wikipedia.org/wiki/%D8%B3%DB%8C%2B%2B" title="South Azerbaijani: سی++" lang="azb" hreflang="azb" class="interlanguage-link-target">تۆرکجه</a></li><li class="interlanguage-link interwiki-bat-smg"><a href="https://bat-smg.wikipedia.org/wiki/C%2B%2B" title="サモギティア語: C++" lang="sgs" hreflang="sgs" class="interlanguage-link-target">Žemaitėška</a></li><li class="interlanguage-link interwiki-be"><a href="https://be.wikipedia.org/wiki/C%2B%2B" title="ベラルーシ語: C++" lang="be" hreflang="be" class="interlanguage-link-target">Беларуская</a></li><li class="interlanguage-link interwiki-be-x-old"><a href="https://be-x-old.wikipedia.org/wiki/C%2B%2B" title="ベラルーシ語（タラシケヴィツァ）: C++" lang="be-tarask" hreflang="be-tarask" class="interlanguage-link-target">Беларуская (тарашкевіца)‎</a></li><li class="interlanguage-link interwiki-bg"><a href="https://bg.wikipedia.org/wiki/C%2B%2B" title="ブルガリア語: C++" lang="bg" hreflang="bg" class="interlanguage-link-target">Български</a></li><li class="interlanguage-link interwiki-bn"><a href="https://bn.wikipedia.org/wiki/%E0%A6%B8%E0%A6%BF%2B%2B" title="ベンガル語: সি++" lang="bn" hreflang="bn" class="interlanguage-link-target">বাংলা</a></li><li class="interlanguage-link interwiki-bo"><a href="https://bo.wikipedia.org/wiki/C%2B" title="チベット語: C+" lang="bo" hreflang="bo" class="interlanguage-link-target">བོད་ཡིག</a></li><li class="interlanguage-link interwiki-br"><a href="https://br.wikipedia.org/wiki/C%2B%2B" title="ブルトン語: C++" lang="br" hreflang="br" class="interlanguage-link-target">Brezhoneg</a></li><li class="interlanguage-link interwiki-bs"><a href="https://bs.wikipedia.org/wiki/C%2B%2B" title="ボスニア語: C++" lang="bs" hreflang="bs" class="interlanguage-link-target">Bosanski</a></li><li class="interlanguage-link interwiki-bug"><a href="https://bug.wikipedia.org/wiki/C%2B%2B" title="ブギ語: C++" lang="bug" hreflang="bug" class="interlanguage-link-target">ᨅᨔ ᨕᨘᨁᨗ</a></li><li class="interlanguage-link interwiki-ca"><a href="https://ca.wikipedia.org/wiki/C%2B%2B" title="カタロニア語: C++" lang="ca" hreflang="ca" class="interlanguage-link-target">Català</a></li><li class="interlanguage-link interwiki-cs"><a href="https://cs.wikipedia.org/wiki/C%2B%2B" title="チェコ語: C++" lang="cs" hreflang="cs" class="interlanguage-link-target">Čeština</a></li><li class="interlanguage-link interwiki-cv"><a href="https://cv.wikipedia.org/wiki/C%2B%2B" title="チュヴァシ語: C++" lang="cv" hreflang="cv" class="interlanguage-link-target">Чӑвашла</a></li><li class="interlanguage-link interwiki-da"><a href="https://da.wikipedia.org/wiki/C%2B%2B" title="デンマーク語: C++" lang="da" hreflang="da" class="interlanguage-link-target">Dansk</a></li><li class="interlanguage-link interwiki-de"><a href="https://de.wikipedia.org/wiki/C%2B%2B" title="ドイツ語: C++" lang="de" hreflang="de" class="interlanguage-link-target">Deutsch</a></li><li class="interlanguage-link interwiki-el"><a href="https://el.wikipedia.org/wiki/C%2B%2B" title="ギリシャ語: C++" lang="el" hreflang="el" class="interlanguage-link-target">Ελληνικά</a></li><li class="interlanguage-link interwiki-en"><a href="https://en.wikipedia.org/wiki/C%2B%2B" title="英語: C++" lang="en" hreflang="en" class="interlanguage-link-target">English</a></li><li class="interlanguage-link interwiki-eo"><a href="https://eo.wikipedia.org/wiki/C%2B%2B" title="エスペラント語: C++" lang="eo" hreflang="eo" class="interlanguage-link-target">Esperanto</a></li><li class="interlanguage-link interwiki-es"><a href="https://es.wikipedia.org/wiki/C%2B%2B" title="スペイン語: C++" lang="es" hreflang="es" class="interlanguage-link-target">Español</a></li><li class="interlanguage-link interwiki-et"><a href="https://et.wikipedia.org/wiki/C%2B%2B" title="エストニア語: C++" lang="et" hreflang="et" class="interlanguage-link-target">Eesti</a></li><li class="interlanguage-link interwiki-eu"><a href="https://eu.wikipedia.org/wiki/C%2B%2B" title="バスク語: C++" lang="eu" hreflang="eu" class="interlanguage-link-target">Euskara</a></li><li class="interlanguage-link interwiki-fa"><a href="https://fa.wikipedia.org/wiki/%D8%B3%DB%8C_%D9%BE%D9%84%D8%A7%D8%B3%E2%80%8C%D9%BE%D9%84%D8%A7%D8%B3" title="ペルシア語: سی پلاس‌پلاس" lang="fa" hreflang="fa" class="interlanguage-link-target">فارسی</a></li><li class="interlanguage-link interwiki-fi"><a href="https://fi.wikipedia.org/wiki/C%2B%2B" title="フィンランド語: C++" lang="fi" hreflang="fi" class="interlanguage-link-target">Suomi</a></li><li class="interlanguage-link interwiki-fj"><a href="https://fj.wikipedia.org/wiki/C%2B%2B" title="フィジー語: C++" lang="fj" hreflang="fj" class="interlanguage-link-target">Na Vosa Vakaviti</a></li><li class="interlanguage-link interwiki-fr"><a href="https://fr.wikipedia.org/wiki/C%2B%2B" title="フランス語: C++" lang="fr" hreflang="fr" class="interlanguage-link-target">Français</a></li><li class="interlanguage-link interwiki-ga"><a href="https://ga.wikipedia.org/wiki/C%2B%2B" title="アイルランド語: C++" lang="ga" hreflang="ga" class="interlanguage-link-target">Gaeilge</a></li><li class="interlanguage-link interwiki-gan"><a href="https://gan.wikipedia.org/wiki/C%2B%2B" title="贛語: C++" lang="gan" hreflang="gan" class="interlanguage-link-target">贛語</a></li><li class="interlanguage-link interwiki-gl"><a href="https://gl.wikipedia.org/wiki/C%2B%2B" title="ガリシア語: C++" lang="gl" hreflang="gl" class="interlanguage-link-target">Galego</a></li><li class="interlanguage-link interwiki-gu"><a href="https://gu.wikipedia.org/wiki/C%2B%2B(%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AB%8B%E0%AA%97%E0%AB%8D%E0%AA%B0%E0%AA%BE%E0%AA%AE%E0%AA%BF%E0%AA%82%E0%AA%97_%E0%AA%AD%E0%AA%BE%E0%AA%B7%E0%AA%BE)" title="グジャラート語: C++(પ્રોગ્રામિંગ ભાષા)" lang="gu" hreflang="gu" class="interlanguage-link-target">ગુજરાતી</a></li><li class="interlanguage-link interwiki-he"><a href="https://he.wikipedia.org/wiki/C%2B%2B" title="ヘブライ語: C++" lang="he" hreflang="he" class="interlanguage-link-target">עברית</a></li><li class="interlanguage-link interwiki-hi"><a href="https://hi.wikipedia.org/wiki/%E0%A4%B8%E0%A5%80%2B%2B" title="ヒンディー語: सी++" lang="hi" hreflang="hi" class="interlanguage-link-target">हिन्दी</a></li><li class="interlanguage-link interwiki-hr"><a href="https://hr.wikipedia.org/wiki/C%2B%2B" title="クロアチア語: C++" lang="hr" hreflang="hr" class="interlanguage-link-target">Hrvatski</a></li><li class="interlanguage-link interwiki-hu"><a href="https://hu.wikipedia.org/wiki/C%2B%2B" title="ハンガリー語: C++" lang="hu" hreflang="hu" class="interlanguage-link-target">Magyar</a></li><li class="interlanguage-link interwiki-hy"><a href="https://hy.wikipedia.org/wiki/C%2B%2B" title="アルメニア語: C++" lang="hy" hreflang="hy" class="interlanguage-link-target">Հայերեն</a></li><li class="interlanguage-link interwiki-ia"><a href="https://ia.wikipedia.org/wiki/C%2B%2B" title="インターリングア: C++" lang="ia" hreflang="ia" class="interlanguage-link-target">Interlingua</a></li><li class="interlanguage-link interwiki-id"><a href="https://id.wikipedia.org/wiki/C%2B%2B" title="インドネシア語: C++" lang="id" hreflang="id" class="interlanguage-link-target">Bahasa Indonesia</a></li><li class="interlanguage-link interwiki-is"><a href="https://is.wikipedia.org/wiki/C%2B%2B" title="アイスランド語: C++" lang="is" hreflang="is" class="interlanguage-link-target">Íslenska</a></li><li class="interlanguage-link interwiki-it"><a href="https://it.wikipedia.org/wiki/C%2B%2B" title="イタリア語: C++" lang="it" hreflang="it" class="interlanguage-link-target">Italiano</a></li><li class="interlanguage-link interwiki-jv"><a href="https://jv.wikipedia.org/wiki/C%2B%2B" title="ジャワ語: C++" lang="jv" hreflang="jv" class="interlanguage-link-target">Jawa</a></li><li class="interlanguage-link interwiki-ka"><a href="https://ka.wikipedia.org/wiki/C%2B%2B" title="ジョージア語: C++" lang="ka" hreflang="ka" class="interlanguage-link-target">ქართული</a></li><li class="interlanguage-link interwiki-kaa"><a href="https://kaa.wikipedia.org/wiki/C%2B%2B" title="カラカルパク語: C++" lang="kaa" hreflang="kaa" class="interlanguage-link-target">Qaraqalpaqsha</a></li><li class="interlanguage-link interwiki-kk"><a href="https://kk.wikipedia.org/wiki/C%2B%2B" title="カザフ語: C++" lang="kk" hreflang="kk" class="interlanguage-link-target">Қазақша</a></li><li class="interlanguage-link interwiki-kn"><a href="https://kn.wikipedia.org/wiki/%E0%B2%B8%E0%B2%BF%2B%2B" title="カンナダ語: ಸಿ++" lang="kn" hreflang="kn" class="interlanguage-link-target">ಕನ್ನಡ</a></li><li class="interlanguage-link interwiki-ko"><a href="https://ko.wikipedia.org/wiki/C%2B%2B" title="韓国語: C++" lang="ko" hreflang="ko" class="interlanguage-link-target">한국어</a></li><li class="interlanguage-link interwiki-ky"><a href="https://ky.wikipedia.org/wiki/C%2B%2B" title="キルギス語: C++" lang="ky" hreflang="ky" class="interlanguage-link-target">Кыргызча</a></li><li class="interlanguage-link interwiki-la"><a href="https://la.wikipedia.org/wiki/C%2B%2B" title="ラテン語: C++" lang="la" hreflang="la" class="interlanguage-link-target">Latina</a></li><li class="interlanguage-link interwiki-lb"><a href="https://lb.wikipedia.org/wiki/C%2B%2B" title="ルクセンブルク語: C++" lang="lb" hreflang="lb" class="interlanguage-link-target">Lëtzebuergesch</a></li><li class="interlanguage-link interwiki-lmo"><a href="https://lmo.wikipedia.org/wiki/C%2B%2B" title="ロンバルド語: C++" lang="lmo" hreflang="lmo" class="interlanguage-link-target">Lumbaart</a></li><li class="interlanguage-link interwiki-lt"><a href="https://lt.wikipedia.org/wiki/C%2B%2B" title="リトアニア語: C++" lang="lt" hreflang="lt" class="interlanguage-link-target">Lietuvių</a></li><li class="interlanguage-link interwiki-lv"><a href="https://lv.wikipedia.org/wiki/C%2B%2B" title="ラトビア語: C++" lang="lv" hreflang="lv" class="interlanguage-link-target">Latviešu</a></li><li class="interlanguage-link interwiki-min"><a href="https://min.wikipedia.org/wiki/C%2B%2B" title="ミナンカバウ語: C++" lang="min" hreflang="min" class="interlanguage-link-target">Minangkabau</a></li><li class="interlanguage-link interwiki-mk"><a href="https://mk.wikipedia.org/wiki/C%2B%2B" title="マケドニア語: C++" lang="mk" hreflang="mk" class="interlanguage-link-target">Македонски</a></li><li class="interlanguage-link interwiki-ml"><a href="https://ml.wikipedia.org/wiki/%E0%B4%B8%E0%B4%BF%2B%2B" title="マラヤーラム語: സി++" lang="ml" hreflang="ml" class="interlanguage-link-target">മലയാളം</a></li><li class="interlanguage-link interwiki-mn"><a href="https://mn.wikipedia.org/wiki/C%2B%2B" title="モンゴル語: C++" lang="mn" hreflang="mn" class="interlanguage-link-target">Монгол</a></li><li class="interlanguage-link interwiki-mr"><a href="https://mr.wikipedia.org/wiki/%E0%A4%B8%E0%A5%80_%E0%A4%AA%E0%A5%8D%E0%A4%B2%E0%A4%B8_%E0%A4%AA%E0%A5%8D%E0%A4%B2%E0%A4%B8_(%E0%A4%86%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%B5%E0%A4%B2%E0%A5%80_%E0%A4%AD%E0%A4%BE%E0%A4%B7%E0%A4%BE)" title="マラーティー語: सी प्लस प्लस (आज्ञावली भाषा)" lang="mr" hreflang="mr" class="interlanguage-link-target">मराठी</a></li><li class="interlanguage-link interwiki-ms"><a href="https://ms.wikipedia.org/wiki/C%2B%2B" title="マレー語: C++" lang="ms" hreflang="ms" class="interlanguage-link-target">Bahasa Melayu</a></li><li class="interlanguage-link interwiki-my"><a href="https://my.wikipedia.org/wiki/C%2B%2B" title="ミャンマー語: C++" lang="my" hreflang="my" class="interlanguage-link-target">မြန်မာဘာသာ</a></li><li class="interlanguage-link interwiki-new"><a href="https://new.wikipedia.org/wiki/%E0%A4%B8%E0%A5%80%2B%2B" title="ネワール語: सी++" lang="new" hreflang="new" class="interlanguage-link-target">नेपाल भाषा</a></li><li class="interlanguage-link interwiki-nl"><a href="https://nl.wikipedia.org/wiki/C%2B%2B" title="オランダ語: C++" lang="nl" hreflang="nl" class="interlanguage-link-target">Nederlands</a></li><li class="interlanguage-link interwiki-nn"><a href="https://nn.wikipedia.org/wiki/C%2B%2B" title="ノルウェー語(ニーノシュク): C++" lang="nn" hreflang="nn" class="interlanguage-link-target">Norsk nynorsk</a></li><li class="interlanguage-link interwiki-no"><a href="https://no.wikipedia.org/wiki/C%2B%2B" title="ノルウェー語(ブークモール): C++" lang="nb" hreflang="nb" class="interlanguage-link-target">Norsk bokmål</a></li><li class="interlanguage-link interwiki-oc"><a href="https://oc.wikipedia.org/wiki/C%2B%2B" title="オック語: C++" lang="oc" hreflang="oc" class="interlanguage-link-target">Occitan</a></li><li class="interlanguage-link interwiki-pa"><a href="https://pa.wikipedia.org/wiki/%E0%A8%B8%E0%A9%80%2B%2B" title="パンジャブ語: ਸੀ++" lang="pa" hreflang="pa" class="interlanguage-link-target">ਪੰਜਾਬੀ</a></li><li class="interlanguage-link interwiki-pfl"><a href="https://pfl.wikipedia.org/wiki/C%2B%2B" title="プファルツ語: C++" lang="pfl" hreflang="pfl" class="interlanguage-link-target">Pälzisch</a></li><li class="interlanguage-link interwiki-pl"><a href="https://pl.wikipedia.org/wiki/C%2B%2B" title="ポーランド語: C++" lang="pl" hreflang="pl" class="interlanguage-link-target">Polski</a></li><li class="interlanguage-link interwiki-pnb"><a href="https://pnb.wikipedia.org/wiki/%D8%B3%DB%8C%2B%2B" title="Western Punjabi: سی++" lang="pnb" hreflang="pnb" class="interlanguage-link-target">پنجابی</a></li><li class="interlanguage-link interwiki-pt"><a href="https://pt.wikipedia.org/wiki/C%2B%2B" title="ポルトガル語: C++" lang="pt" hreflang="pt" class="interlanguage-link-target">Português</a></li><li class="interlanguage-link interwiki-ro"><a href="https://ro.wikipedia.org/wiki/C%2B%2B" title="ルーマニア語: C++" lang="ro" hreflang="ro" class="interlanguage-link-target">Română</a></li><li class="interlanguage-link interwiki-ru"><a href="https://ru.wikipedia.org/wiki/C%2B%2B" title="ロシア語: C++" lang="ru" hreflang="ru" class="interlanguage-link-target">Русский</a></li><li class="interlanguage-link interwiki-sah"><a href="https://sah.wikipedia.org/wiki/C%2B%2B" title="サハ語: C++" lang="sah" hreflang="sah" class="interlanguage-link-target">Саха тыла</a></li><li class="interlanguage-link interwiki-sco"><a href="https://sco.wikipedia.org/wiki/C%2B%2B" title="スコットランド語: C++" lang="sco" hreflang="sco" class="interlanguage-link-target">Scots</a></li><li class="interlanguage-link interwiki-sh"><a href="https://sh.wikipedia.org/wiki/C%2B%2B" title="セルボ・クロアチア語: C++" lang="sh" hreflang="sh" class="interlanguage-link-target">Srpskohrvatski / српскохрватски</a></li><li class="interlanguage-link interwiki-si"><a href="https://si.wikipedia.org/wiki/C%2B%2B" title="シンハラ語: C++" lang="si" hreflang="si" class="interlanguage-link-target">සිංහල</a></li><li class="interlanguage-link interwiki-simple"><a href="https://simple.wikipedia.org/wiki/C%2B%2B" title="シンプル英語: C++" lang="en-simple" hreflang="en-simple" class="interlanguage-link-target">Simple English</a></li><li class="interlanguage-link interwiki-sk"><a href="https://sk.wikipedia.org/wiki/C%2B%2B" title="スロバキア語: C++" lang="sk" hreflang="sk" class="interlanguage-link-target">Slovenčina</a></li><li class="interlanguage-link interwiki-sl"><a href="https://sl.wikipedia.org/wiki/C%2B%2B" title="スロベニア語: C++" lang="sl" hreflang="sl" class="interlanguage-link-target">Slovenščina</a></li><li class="interlanguage-link interwiki-sq"><a href="https://sq.wikipedia.org/wiki/C%2B%2B" title="アルバニア語: C++" lang="sq" hreflang="sq" class="interlanguage-link-target">Shqip</a></li><li class="interlanguage-link interwiki-sr"><a href="https://sr.wikipedia.org/wiki/C%2B%2B" title="セルビア語: C++" lang="sr" hreflang="sr" class="interlanguage-link-target">Српски / srpski</a></li><li class="interlanguage-link interwiki-sv"><a href="https://sv.wikipedia.org/wiki/C%2B%2B" title="スウェーデン語: C++" lang="sv" hreflang="sv" class="interlanguage-link-target">Svenska</a></li><li class="interlanguage-link interwiki-sw"><a href="https://sw.wikipedia.org/wiki/C%2B%2B" title="スワヒリ語: C++" lang="sw" hreflang="sw" class="interlanguage-link-target">Kiswahili</a></li><li class="interlanguage-link interwiki-ta"><a href="https://ta.wikipedia.org/wiki/%E0%AE%9A%E0%AE%BF%2B%2B" title="タミル語: சி++" lang="ta" hreflang="ta" class="interlanguage-link-target">தமிழ்</a></li><li class="interlanguage-link interwiki-te"><a href="https://te.wikipedia.org/wiki/%E0%B0%B8%E0%B1%80_%E0%B0%AA%E0%B1%8D%E0%B0%B2%E0%B0%B8%E0%B1%8D_%E0%B0%AA%E0%B1%8D%E0%B0%B2%E0%B0%B8%E0%B1%8D" title="テルグ語: సీ ప్లస్ ప్లస్" lang="te" hreflang="te" class="interlanguage-link-target">తెలుగు</a></li><li class="interlanguage-link interwiki-tg"><a href="https://tg.wikipedia.org/wiki/C%2B%2B" title="タジク語: C++" lang="tg" hreflang="tg" class="interlanguage-link-target">Тоҷикӣ</a></li><li class="interlanguage-link interwiki-th"><a href="https://th.wikipedia.org/wiki/%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B2%E0%B8%8B%E0%B8%B5%E0%B8%9E%E0%B8%A5%E0%B8%B1%E0%B8%AA%E0%B8%9E%E0%B8%A5%E0%B8%B1%E0%B8%AA" title="タイ語: ภาษาซีพลัสพลัส" lang="th" hreflang="th" class="interlanguage-link-target">ไทย</a></li><li class="interlanguage-link interwiki-tk"><a href="https://tk.wikipedia.org/wiki/C%2B%2B_programmirleme" title="トルクメン語: C++ programmirleme" lang="tk" hreflang="tk" class="interlanguage-link-target">Türkmençe</a></li><li class="interlanguage-link interwiki-tr"><a href="https://tr.wikipedia.org/wiki/C%2B%2B" title="トルコ語: C++" lang="tr" hreflang="tr" class="interlanguage-link-target">Türkçe</a></li><li class="interlanguage-link interwiki-tt"><a href="https://tt.wikipedia.org/wiki/C%2B%2B" title="タタール語: C++" lang="tt" hreflang="tt" class="interlanguage-link-target">Татарча/tatarça</a></li><li class="interlanguage-link interwiki-uk"><a href="https://uk.wikipedia.org/wiki/C%2B%2B" title="ウクライナ語: C++" lang="uk" hreflang="uk" class="interlanguage-link-target">Українська</a></li><li class="interlanguage-link interwiki-ur"><a href="https://ur.wikipedia.org/wiki/%D8%B3%DB%8C%2B%2B" title="ウルドゥー語: سی++" lang="ur" hreflang="ur" class="interlanguage-link-target">اردو</a></li><li class="interlanguage-link interwiki-uz"><a href="https://uz.wikipedia.org/wiki/C%2B%2B" title="ウズベク語: C++" lang="uz" hreflang="uz" class="interlanguage-link-target">Oʻzbekcha/ўзбекча</a></li><li class="interlanguage-link interwiki-vi"><a href="https://vi.wikipedia.org/wiki/C%2B%2B" title="ベトナム語: C++" lang="vi" hreflang="vi" class="interlanguage-link-target">Tiếng Việt</a></li><li class="interlanguage-link interwiki-war"><a href="https://war.wikipedia.org/wiki/C%2B%2B" title="ワライ語: C++" lang="war" hreflang="war" class="interlanguage-link-target">Winaray</a></li><li class="interlanguage-link interwiki-wuu"><a href="https://wuu.wikipedia.org/wiki/C%2B%2B" title="呉語: C++" lang="wuu" hreflang="wuu" class="interlanguage-link-target">吴语</a></li><li class="interlanguage-link interwiki-yi"><a href="https://yi.wikipedia.org/wiki/%2B%2BC" title="イディッシュ語: ++C" lang="yi" hreflang="yi" class="interlanguage-link-target">ייִדיש</a></li><li class="interlanguage-link interwiki-yo"><a href="https://yo.wikipedia.org/wiki/C%2B%2B" title="ヨルバ語: C++" lang="yo" hreflang="yo" class="interlanguage-link-target">Yorùbá</a></li><li class="interlanguage-link interwiki-zh"><a href="https://zh.wikipedia.org/wiki/C%2B%2B" title="中国語: C++" lang="zh" hreflang="zh" class="interlanguage-link-target">中文</a></li><li class="interlanguage-link interwiki-zh-min-nan"><a href="https://zh-min-nan.wikipedia.org/wiki/C%2B%2B" title="閩南語: C++" lang="nan" hreflang="nan" class="interlanguage-link-target">Bân-lâm-gú</a></li><li class="interlanguage-link interwiki-zh-yue"><a href="https://zh-yue.wikipedia.org/wiki/C%2B%2B" title="広東語: C++" lang="yue" hreflang="yue" class="interlanguage-link-target">粵語</a></li></ul>
+			<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q2407#sitelinks-wikipedia" title="言語間リンクを編集する" class="wbc-editpage">リンクを編集</a></span></div>
+		</div>
+	</div>
+	
+</div>
+
+</div>
+
+
+<div id="footer" role="contentinfo" >
+	<ul id="footer-info" class="">
+		<li id="footer-info-lastmod"> 最終更新 2019年10月27日 (日) 01:54 （日時は<a href="/wiki/%E7%89%B9%E5%88%A5:%E5%80%8B%E4%BA%BA%E8%A8%AD%E5%AE%9A#mw-prefsection-rendering" title="特別:個人設定">個人設定</a>で未設定ならば<a href="/wiki/%E5%8D%94%E5%AE%9A%E4%B8%96%E7%95%8C%E6%99%82" title="協定世界時">UTC</a>）。</li>
+		<li id="footer-info-copyright">テキストは<a href="//ja.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">クリエイティブ・コモンズ 表示-継承ライセンス</a>の下で利用可能です。追加の条件が適用される場合があります。詳細は<a href="//foundation.wikimedia.org/wiki/Terms_of_Use/ja">利用規約</a>を参照してください。<br /></li>
+	</ul>
+	<ul id="footer-places" class="">
+		<li id="footer-places-privacy"><a href="https://meta.wikimedia.org/wiki/Privacy_policy/ja" class="extiw" title="m:Privacy policy/ja">プライバシー・ポリシー</a></li>
+		<li id="footer-places-about"><a href="/wiki/Wikipedia:%E3%82%A6%E3%82%A3%E3%82%AD%E3%83%9A%E3%83%87%E3%82%A3%E3%82%A2%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" title="Wikipedia:ウィキペディアについて">ウィキペディアについて</a></li>
+		<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:%E5%85%8D%E8%B2%AC%E4%BA%8B%E9%A0%85" title="Wikipedia:免責事項">免責事項</a></li>
+		<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">開発者</a></li>
+		<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/#/ja.wikipedia.org">統計</a></li>
+		<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Cookie_statement">Cookieに関する声明</a></li>
+		<li id="footer-places-mobileview"><a href="//ja.m.wikipedia.org/w/index.php?title=C%2B%2B&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">モバイルビュー</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-copyrightico"><a href="https://wikimediafoundation.org/"><img src="/static/images/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a></li>
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/static/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</div>
+
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.832","walltime":"1.283","ppvisitednodes":{"value":16781,"limit":1000000},"postexpandincludesize":{"value":152858,"limit":2097152},"templateargumentsize":{"value":33318,"limit":2097152},"expansiondepth":{"value":27,"limit":40},"expensivefunctioncount":{"value":11,"limit":500},"unstrip-depth":{"value":1,"limit":20},"unstrip-size":{"value":37183,"limit":5000000},"entityaccesscount":{"value":8,"limit":400},"timingprofile":["100.00% 1146.770      1 -total"," 31.45%  360.655      1 Template:Reflist"," 23.09%  264.801      9 Template:Cite_book"," 22.64%  259.681      1 Template:Infobox_プログラミング言語"," 22.18%  254.405      1 Template:Infobox"," 15.06%  172.660      5 Template:Citation/core","  9.32%  106.837     10 Template:Cite_web","  9.29%  106.573      8 Template:ISBN2","  8.17%   93.714      3 Template:Navbox","  7.87%   90.232      4 Template:Citation/identifier"]},"scribunto":{"limitreport-timeusage":{"value":"0.170","limit":"10.000"},"limitreport-memusage":{"value":4694266,"limit":52428800}},"cachereport":{"origin":"mw1351","timestamp":"20200315133923","ttl":86400,"transientcontent":true}}});});</script>
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Article","name":"C++","url":"https:\/\/ja.wikipedia.org\/wiki\/C%2B%2B","sameAs":"http:\/\/www.wikidata.org\/entity\/Q2407","mainEntity":"http:\/\/www.wikidata.org\/entity\/Q2407","author":{"@type":"Organization","name":"Contributors to Wikimedia projects"},"publisher":{"@type":"Organization","name":"Wikimedia Foundation, Inc.","logo":{"@type":"ImageObject","url":"https:\/\/www.wikimedia.org\/static\/images\/wmf-hor-googpub.png"}},"datePublished":"2003-02-14T05:47:50Z","dateModified":"2019-10-27T01:54:02Z","image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/1\/18\/ISO_C%2B%2B_Logo.svg","headline":"\u6c4e\u7528\u306e\u9ad8\u6c34\u6e96\u30d7\u30ed\u30b0\u30e9\u30df\u30f3\u30b0\u8a00\u8a9e\u306e\u3072\u3068\u3064"}</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":116,"wgHostname":"mw1366"});});</script></body></html>
+
