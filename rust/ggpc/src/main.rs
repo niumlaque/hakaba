@@ -164,12 +164,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         )
         .arg(
             Arg::with_name("nocolor")
-                .help("with no color")
+                .help("With no color")
                 .long("no-color"),
         )
         .arg(
             Arg::with_name("error")
-                .help("show error")
+                .help("Show error")
                 .long("show-error"),
         );
 
