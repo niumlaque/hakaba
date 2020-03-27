@@ -47,57 +47,24 @@ impl<'a> fmt::Display for Headline<'a> {
     }
 }
 
-fn get_headlines2(doc: &scraper::Html) -> Option<Headline> {
+fn search<'a>(iter: &'a mut scraper::html::Select, parent: &'a mut Headline<'a>, n: i32) {
+    let search_tag = format!("h{}", n);
+    //     let child_tag = format!("h{}", n + 1);
+    while let Some(node) = iter.next() {
+        if node.value().name() == search_tag {
+            println!("{:?}", node.value().name());
+            //                             parent.children.push(Headline::new_with_node(node));
+            parent.children.push(Headline::new());
+            search(iter, parent.children.last_mut().unwrap(), n + 1);
+        }
+    }
+}
+
+fn get_headlines3(doc: &scraper::Html) {
     let mut ret = Headline::new();
-    for node in doc.select(&Selector::parse("h1").unwrap()) {
-        match node.value().attr("id") {
-            Some("firstHeading") => {
-                ret.node = Some(node);
-                break;
-            }
-
-            _ => (),
-        }
-    }
-
-    if ret.node == None {
-        return None;
-    }
-
-    let selector = Selector::parse("h2>span").unwrap();
-    for node in doc.select(&selector) {
-        match node.value().attr("class") {
-            Some("mw-headline") => ret.children.push(Headline::new_with_node(node)),
-            _ => (),
-        }
-    }
-
-    Some(ret)
-}
-
-fn get_headlines(doc: &scraper::Html) -> Option<Vec<scraper::ElementRef>> {
-    let mut ret = vec![];
-    let selector = Selector::parse("h2>span").unwrap();
-    for node in doc.select(&selector) {
-        match node.value().attr("class") {
-            Some("mw-headline") => ret.push(node),
-            _ => (),
-        }
-    }
-
-    if ret.len() > 0 {
-        Some(ret)
-    } else {
-        None
-    }
-}
-
-fn get_content(
-    doc: &scraper::Html,
-    from: &scraper::ElementRef,
-    to: &scraper::ElementRef,
-) -> Option<String> {
-    None
+    let selector = Selector::parse("h1,h2,h3,h4,h5,h6").unwrap();
+    let mut iter = doc.select(&selector);
+    search(&mut iter, &mut ret, 1);
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -125,25 +92,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let param = param;
     let html = fs::read_to_string(param.filename)?;
     let doc = Html::parse_document(&html);
-    match get_headlines2(&doc) {
-        Some(v) => println!("{}", v),
-        _ => (),
-    }
-
-    let headlines;
-    match get_headlines(&doc) {
-        Some(v) => headlines = v,
-        None => {
-            println!("No headlines");
-            return Ok(());
-        }
-    }
-
-    if param.headlines {
-        for (i, x) in headlines.iter().enumerate() {
-            println!("{}: {}", i + 1, x.inner_html())
-        }
-    }
+    get_headlines3(&doc);
 
     Ok(())
 }
