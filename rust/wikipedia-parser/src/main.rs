@@ -2,7 +2,7 @@ extern crate clap;
 extern crate scraper;
 use clap::{App, Arg};
 use scraper::{Html, Selector};
-use std::fmt;
+use std::collections::HashMap;
 use std::fs;
 
 struct Param {
@@ -20,62 +20,102 @@ impl Param {
 }
 
 #[derive(Debug)]
-struct Headline<'a> {
-    node: Option<scraper::ElementRef<'a>>,
-    children: Vec<Headline<'a>>,
+struct Headline {
+    index: String,
+    text: String,
+    href: String,
 }
 
-impl<'a> Headline<'a> {
-    fn new() -> Self {
+impl Headline {
+    fn new(index: &str, text: &str, href: &str) -> Self {
         Self {
-            node: None,
-            children: vec![],
-        }
-    }
-
-    fn new_with_node(node: scraper::ElementRef<'a>) -> Self {
-        Self {
-            node: Some(node),
-            children: vec![],
+            index: index.to_string(),
+            text: text.to_string(),
+            href: href.to_string(),
         }
     }
 }
 
-impl<'a> fmt::Display for Headline<'a> {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        match self.node {
-            Some(n) => write!(f, "{}", n.inner_html()),
-            None => write!(f, "None"),
-        };
-
-        write!(f, "[");
-        for child in &self.children {
-            write!(f, "{}", child);
-        }
-        write!(f, "]")
+fn get_tocnumber(elm: scraper::ElementRef) -> Option<String> {
+    let span = Selector::parse("span.tocnumber").unwrap();
+    match elm.select(&span).next() {
+        Some(tocnumber) => Some(tocnumber.inner_html()),
+        _ => None,
     }
 }
 
-fn search<'a, 'b>(iter: &'a mut scraper::html::Select, parent: &'b mut Headline<'a>, n: i32) {
-    let search_tag = format!("h{}", n);
-    while let Some(node) = iter.next() {
-        if node.value().name() == search_tag {
-            parent.children.push(Headline::new_with_node(node));
-            search(iter, parent.children.last_mut().unwrap(), n + 1);
-        } else {
-            break;
-        }
+fn get_toctext(elm: scraper::ElementRef) -> Option<String> {
+    let span = Selector::parse("span.toctext").unwrap();
+    match elm.select(&span).next() {
+        Some(toctext) => Some(toctext.inner_html()),
+        _ => None,
     }
 }
 
-fn get_headlines(doc: &scraper::Html) {
-    let mut ret = Headline::new();
-    let selector = Selector::parse("h1,h2,h3,h4,h5,h6").unwrap();
-    let mut iter = doc.select(&selector);
-    search(&mut iter, &mut ret, 1);
-    println!("============================");
-    println!("{:?}", ret);
-    println!("============================");
+// toclevel 1 の li をパースする
+fn parse_top_section(elm: scraper::ElementRef, ret: &mut HashMap<String, Headline>) {
+    let a = Selector::parse("a").unwrap();
+    for node in elm.select(&a) {
+        if let Some(href) = node.value().attr("href") {
+            if let Some(index) = get_tocnumber(node) {
+                if let Some(text) = get_toctext(node) {
+                    ret.insert(index.to_string(), Headline::new(&index, &text, &href));
+                }
+            }
+        }
+
+        // // return したくないんだけどしちゃう。if 並べるしかない？
+        //         match (
+        //             node.value().attr("href"),
+        //             get_tocnumber(node),
+        //             get_toctext(node),
+        //         ) {
+        //             (Some(href), Some(index), Some(text)) => {
+        //                 ret.insert(index.to_string(), Headline::new(&index, &text, &href))
+        //             }
+        //             _ => (),
+        //         }
+    }
+}
+
+fn search_top_section(elm: scraper::ElementRef, ret: &mut HashMap<String, Headline>) {
+    let li = Selector::parse("li.toclevel-1").unwrap();
+    for node in elm.select(&li) {
+        parse_top_section(node, ret);
+    }
+}
+
+fn get_headlines(doc: &scraper::Html) -> HashMap<String, Headline> {
+    let mut ret = HashMap::new();
+    let root = Selector::parse("div.toc > ul").unwrap();
+    for node in doc.select(&root) {
+        search_top_section(node, &mut ret);
+    }
+
+    return ret;
+}
+
+fn count_char(s: &str, ch: char) -> usize {
+    let mut count: usize = 0;
+    let chars = s.chars();
+    for x in chars {
+        if x == ch {
+            count = count + 1;
+        }
+    }
+
+    return count;
+}
+
+fn display_headlines(headlines: &HashMap<String, Headline>) {
+    let mut sorted: Vec<_> = headlines.into_iter().collect();
+    sorted.sort_by(|x, y| x.0.cmp(&y.0));
+    let sorted = sorted;
+    // 単に文字列の比較だとまずい
+    for headline in sorted.iter().map(|x| x.1) {
+        let count = count_char(&headline.index, '.');
+        println!("{}{} {}", "  ".repeat(count), headline.index, headline.text);
+    }
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -103,7 +143,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let param = param;
     let html = fs::read_to_string(param.filename)?;
     let doc = Html::parse_document(&html);
-    get_headlines(&doc);
+    let headlines = get_headlines(&doc);
+    if param.headlines {
+        display_headlines(&headlines);
+    }
 
     Ok(())
 }
