@@ -63,7 +63,7 @@ fn search<'a, 'b>(iter: &'a mut scraper::html::Select, parent: &'b mut Headline<
             parent.children.push(Headline::new_with_node(node));
             search(iter, parent.children.last_mut().unwrap(), n + 1);
         } else {
-            return;
+            break;
         }
     }
 }
