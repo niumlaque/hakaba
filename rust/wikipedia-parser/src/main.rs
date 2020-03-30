@@ -43,28 +43,39 @@ impl<'a> Headline<'a> {
 
 impl<'a> fmt::Display for Headline<'a> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "再帰的に書くには？")
+        match self.node {
+            Some(n) => write!(f, "{}", n.inner_html()),
+            None => write!(f, "None"),
+        };
+
+        write!(f, "[");
+        for child in &self.children {
+            write!(f, "{}", child);
+        }
+        write!(f, "]")
     }
 }
 
-fn search<'a>(iter: &'a mut scraper::html::Select, parent: &'a mut Headline<'a>, n: i32) {
+fn search<'a, 'b>(iter: &'a mut scraper::html::Select, parent: &'b mut Headline<'a>, n: i32) {
     let search_tag = format!("h{}", n);
-    //     let child_tag = format!("h{}", n + 1);
     while let Some(node) = iter.next() {
         if node.value().name() == search_tag {
-            println!("{:?}", node.value().name());
-            //                             parent.children.push(Headline::new_with_node(node));
-            parent.children.push(Headline::new());
+            parent.children.push(Headline::new_with_node(node));
             search(iter, parent.children.last_mut().unwrap(), n + 1);
+        } else {
+            return;
         }
     }
 }
 
-fn get_headlines3(doc: &scraper::Html) {
+fn get_headlines(doc: &scraper::Html) {
     let mut ret = Headline::new();
     let selector = Selector::parse("h1,h2,h3,h4,h5,h6").unwrap();
     let mut iter = doc.select(&selector);
     search(&mut iter, &mut ret, 1);
+    println!("============================");
+    println!("{:?}", ret);
+    println!("============================");
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -92,7 +103,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let param = param;
     let html = fs::read_to_string(param.filename)?;
     let doc = Html::parse_document(&html);
-    get_headlines3(&doc);
+    get_headlines(&doc);
 
     Ok(())
 }
