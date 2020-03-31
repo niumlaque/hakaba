@@ -107,14 +107,57 @@ fn count_char(s: &str, ch: char) -> usize {
     return count;
 }
 
+fn sort_by_tocnumber(tocnumbers: &Vec<&str>) -> Vec<String> {
+    let mut prepare: Vec<Vec<i32>> = vec![];
+    let mut max = 0;
+    for number in tocnumbers {
+        let splited = number
+            .split('.')
+            .map(|x| x.parse().unwrap())
+            .collect::<Vec<i32>>();
+        if splited.len() > max {
+            max = splited.len();
+        }
+
+        prepare.push(splited);
+    }
+    for i in (0..=max).rev() {
+        prepare.sort_by(|x, y| {
+            let xp = if i < x.len() { x[i] } else { 0 };
+            let yp = if i < y.len() { y[i] } else { 0 };
+            return xp.cmp(&yp);
+        });
+    }
+
+    let mut ret = vec![];
+    for v in prepare {
+        ret.push(format!(
+            "{}",
+            v.into_iter()
+                .map(|x| x.to_string())
+                .collect::<Vec<String>>()
+                .join(".")
+        ));
+    }
+
+    return ret;
+}
+
 fn display_headlines(headlines: &HashMap<String, Headline>) {
-    let mut sorted: Vec<_> = headlines.into_iter().collect();
-    sorted.sort_by(|x, y| x.0.cmp(&y.0));
-    let sorted = sorted;
-    // 単に文字列の比較だとまずい
-    for headline in sorted.iter().map(|x| x.1) {
-        let count = count_char(&headline.index, '.');
-        println!("{}{} {}", "  ".repeat(count), headline.index, headline.text);
+    let tocnumbers: Vec<&str> = headlines
+        .into_iter()
+        .map(|x| x.0)
+        .map(AsRef::as_ref)
+        .collect();
+    let sorted_tocnumbers = sort_by_tocnumber(&tocnumbers);
+    for tocnumber in sorted_tocnumbers {
+        let count = count_char(&tocnumber, '.');
+        println!(
+            "{}{} {}",
+            "  ".repeat(count),
+            tocnumber,
+            headlines[&tocnumber.to_string()].text
+        );
     }
 }
 
@@ -141,6 +184,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     param.headlines = matches.is_present("headlines");
     let param = param;
+
     let html = fs::read_to_string(param.filename)?;
     let doc = Html::parse_document(&html);
     let headlines = get_headlines(&doc);
