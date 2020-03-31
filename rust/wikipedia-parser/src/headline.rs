@@ -3,6 +3,40 @@ use scraper::Selector;
 use std::collections::HashMap;
 
 #[derive(Debug)]
+pub struct HeadlineParsed {
+    headlines: HashMap<String, Headline>,
+}
+
+impl HeadlineParsed {
+    pub fn new(headlines: HashMap<String, Headline>) -> Self {
+        Self {
+            headlines: headlines,
+        }
+    }
+
+    pub fn format_string(&self) -> String {
+        let mut list = vec![];
+        let tocnumbers: Vec<&str> = (&self.headlines)
+            .into_iter()
+            .map(|x| x.0)
+            .map(AsRef::as_ref)
+            .collect();
+        let sorted_tocnumbers = sort_by_tocnumber(&tocnumbers);
+        for tocnumber in sorted_tocnumbers {
+            let count = count_char(&tocnumber, '.');
+            list.push(format!(
+                "{}{} {}",
+                "  ".repeat(count),
+                tocnumber,
+                self.headlines[&tocnumber.to_string()].text
+            ));
+        }
+
+        return list.join("\n");
+    }
+}
+
+#[derive(Debug)]
 pub struct Headline {
     index: String,
     text: String,
@@ -19,7 +53,7 @@ impl Headline {
     }
 }
 fn get_tocnumber(elm: scraper::ElementRef) -> Option<String> {
-    let span = Selector::parse("span.tocnumber").unwrap();
+    let span = Selector::parse("span.tocnumber").unwrap(); // TODO: return Result
     match elm.select(&span).next() {
         Some(tocnumber) => Some(tocnumber.inner_html()),
         _ => None,
@@ -27,7 +61,7 @@ fn get_tocnumber(elm: scraper::ElementRef) -> Option<String> {
 }
 
 fn get_toctext(elm: scraper::ElementRef) -> Option<String> {
-    let span = Selector::parse("span.toctext").unwrap();
+    let span = Selector::parse("span.toctext").unwrap(); // TODO: return Result
     match elm.select(&span).next() {
         Some(toctext) => Some(toctext.inner_html()),
         _ => None,
@@ -36,7 +70,7 @@ fn get_toctext(elm: scraper::ElementRef) -> Option<String> {
 
 // toclevel 1 の li をパースする
 fn parse_top_section(elm: scraper::ElementRef, ret: &mut HashMap<String, Headline>) {
-    let a = Selector::parse("a").unwrap();
+    let a = Selector::parse("a").unwrap(); // TODO: return Result
     for node in elm.select(&a) {
         if let Some(href) = node.value().attr("href") {
             if let Some(index) = get_tocnumber(node) {
@@ -61,7 +95,7 @@ fn parse_top_section(elm: scraper::ElementRef, ret: &mut HashMap<String, Headlin
 }
 
 fn search_top_section(elm: scraper::ElementRef, ret: &mut HashMap<String, Headline>) {
-    let li = Selector::parse("li.toclevel-1").unwrap();
+    let li = Selector::parse("li.toclevel-1").unwrap(); // TODO: return Result
     for node in elm.select(&li) {
         parse_top_section(node, ret);
     }
@@ -85,7 +119,7 @@ fn sort_by_tocnumber(tocnumbers: &Vec<&str>) -> Vec<String> {
     for number in tocnumbers {
         let splited = number
             .split('.')
-            .map(|x| x.parse().unwrap())
+            .map(|x| x.parse().unwrap()) // TODO: return Result
             .collect::<Vec<i32>>();
         if splited.len() > max {
             max = splited.len();
@@ -115,30 +149,13 @@ fn sort_by_tocnumber(tocnumbers: &Vec<&str>) -> Vec<String> {
     return ret;
 }
 
-pub fn display_headlines(headlines: &HashMap<String, Headline>) {
-    let tocnumbers: Vec<&str> = headlines
-        .into_iter()
-        .map(|x| x.0)
-        .map(AsRef::as_ref)
-        .collect();
-    let sorted_tocnumbers = sort_by_tocnumber(&tocnumbers);
-    for tocnumber in sorted_tocnumbers {
-        let count = count_char(&tocnumber, '.');
-        println!(
-            "{}{} {}",
-            "  ".repeat(count),
-            tocnumber,
-            headlines[&tocnumber.to_string()].text
-        );
-    }
-}
-
-pub fn get_headlines(doc: &scraper::Html) -> HashMap<String, Headline> {
+pub fn parse(doc: &scraper::Html) -> Result<HeadlineParsed, String> {
     let mut ret = HashMap::new();
-    let root = Selector::parse("div.toc > ul").unwrap();
+    let root = Selector::parse("div.toc > ul").map_err(|_| "Some Error")?;
+    //     let root = Selector::parse("div.toc > ul").map_err(|err| String::as_str)?;
     for node in doc.select(&root) {
         search_top_section(node, &mut ret);
     }
 
-    return ret;
+    Ok(HeadlineParsed::new(ret))
 }
