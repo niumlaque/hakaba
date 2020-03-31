@@ -1,23 +1,9 @@
-extern crate clap;
 extern crate scraper;
-use clap::{App, Arg};
+use wikipedia_parser::param;
+
 use scraper::{Html, Selector};
 use std::collections::HashMap;
 use std::fs;
-
-struct Param {
-    filename: String,
-    headlines: bool,
-}
-
-impl Param {
-    fn new() -> Self {
-        Self {
-            filename: "".to_string(),
-            headlines: false,
-        }
-    }
-}
 
 #[derive(Debug)]
 struct Headline {
@@ -162,33 +148,12 @@ fn display_headlines(headlines: &HashMap<String, Headline>) {
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let mut param = Param::new();
-    let app = App::new("wikipedia-parser")
-        .version("0.1.0")
-        .author("Niumlaque")
-        .arg(
-            Arg::with_name("FILENAME")
-                .help("Path to file")
-                .required(true),
-        )
-        .arg(
-            Arg::with_name("headlines")
-                .help("Display headlines")
-                .long("headlines"),
-        );
+    let p = param::get_param();
 
-    let matches = app.get_matches();
-    if let Some(filename) = matches.value_of("FILENAME") {
-        param.filename = filename.to_string();
-    }
-
-    param.headlines = matches.is_present("headlines");
-    let param = param;
-
-    let html = fs::read_to_string(param.filename)?;
+    let html = fs::read_to_string(p.filename)?;
     let doc = Html::parse_document(&html);
     let headlines = get_headlines(&doc);
-    if param.headlines {
+    if p.headlines {
         display_headlines(&headlines);
     }
 
