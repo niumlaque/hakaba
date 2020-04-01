@@ -53,7 +53,7 @@ impl Headline {
     }
 }
 fn get_tocnumber(elm: scraper::ElementRef) -> Option<String> {
-    let span = Selector::parse("span.tocnumber").unwrap(); // TODO: return Result
+    let span = Selector::parse("span.tocnumber").unwrap();
     match elm.select(&span).next() {
         Some(tocnumber) => Some(tocnumber.inner_html()),
         _ => None,
@@ -61,7 +61,7 @@ fn get_tocnumber(elm: scraper::ElementRef) -> Option<String> {
 }
 
 fn get_toctext(elm: scraper::ElementRef) -> Option<String> {
-    let span = Selector::parse("span.toctext").unwrap(); // TODO: return Result
+    let span = Selector::parse("span.toctext").unwrap();
     match elm.select(&span).next() {
         Some(toctext) => Some(toctext.inner_html()),
         _ => None,
@@ -69,8 +69,11 @@ fn get_toctext(elm: scraper::ElementRef) -> Option<String> {
 }
 
 // toclevel 1 の li をパースする
-fn parse_top_section(elm: scraper::ElementRef, ret: &mut HashMap<String, Headline>) {
-    let a = Selector::parse("a").unwrap(); // TODO: return Result
+fn parse_top_section(
+    elm: scraper::ElementRef,
+    ret: &mut HashMap<String, Headline>,
+) -> Result<(), String> {
+    let a = Selector::parse("a").map_err(|_| "Parse Error")?;
     for node in elm.select(&a) {
         if let Some(href) = node.value().attr("href") {
             if let Some(index) = get_tocnumber(node) {
@@ -92,13 +95,20 @@ fn parse_top_section(elm: scraper::ElementRef, ret: &mut HashMap<String, Headlin
         //             _ => (),
         //         }
     }
+
+    Ok(())
 }
 
-fn search_top_section(elm: scraper::ElementRef, ret: &mut HashMap<String, Headline>) {
-    let li = Selector::parse("li.toclevel-1").unwrap(); // TODO: return Result
+fn search_top_section(
+    elm: scraper::ElementRef,
+    ret: &mut HashMap<String, Headline>,
+) -> Result<(), String> {
+    let li = Selector::parse("li.toclevel-1").map_err(|_| "Parse Error")?;
     for node in elm.select(&li) {
-        parse_top_section(node, ret);
+        parse_top_section(node, ret)?;
     }
+
+    Ok(())
 }
 
 fn count_char(s: &str, ch: char) -> usize {
@@ -151,10 +161,10 @@ fn sort_by_tocnumber(tocnumbers: &Vec<&str>) -> Vec<String> {
 
 pub fn parse(doc: &scraper::Html) -> Result<HeadlineParsed, String> {
     let mut ret = HashMap::new();
-    let root = Selector::parse("div.toc > ul").map_err(|_| "Some Error")?;
+    let root = Selector::parse("div.toc > ul").map_err(|_| "Parse Error")?;
     //     let root = Selector::parse("div.toc > ul").map_err(|err| String::as_str)?;
     for node in doc.select(&root) {
-        search_top_section(node, &mut ret);
+        search_top_section(node, &mut ret)?;
     }
 
     Ok(HeadlineParsed::new(ret))
