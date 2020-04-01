@@ -34,6 +34,13 @@ impl HeadlineParsed {
 
         return list.join("\n");
     }
+
+    pub fn get_href(&self, index: &str) -> Option<&str> {
+        match self.headlines.get(index) {
+            Some(headline) => Some(&headline.href),
+            None => None,
+        }
+    }
 }
 
 #[derive(Debug)]

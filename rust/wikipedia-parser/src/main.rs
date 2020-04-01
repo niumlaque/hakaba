@@ -1,4 +1,5 @@
 extern crate scraper;
+use wikipedia_parser::content;
 use wikipedia_parser::headline;
 use wikipedia_parser::param;
 
@@ -14,6 +15,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let headlines = headline::parse(&doc)?;
     if p.headlines {
         println!("{}", headlines.format_string());
+    } else if p.tocnum.len() > 0 {
+        match headlines.get_href(&p.tocnum) {
+            Some(href) => {
+                let _ = content::parse(&doc, href)?;
+            }
+            None => println!("Not found"),
+        }
     }
 
     Ok(())
