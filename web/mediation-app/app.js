@@ -22,6 +22,8 @@ const app = () => {
     // 上で取得した全ボタン要素に対して click イベントを登録
     sounds.forEach(sound => {
         // アロー演算子と function で this の挙動が違うので注意
+        // 今回は button に img を貼り付けているので、クリックした位置によって this が指す要素が変わってしまい、
+        // 属性の取得が面倒なので this を束縛しない function のほうが使いやすい。
         sound.addEventListener('click', function() {
             song.src = this.getAttribute('data-sound');
             video.src = this.getAttribute('data-video');
