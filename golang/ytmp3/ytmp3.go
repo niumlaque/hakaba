@@ -82,10 +82,15 @@ func printVideoInfo(videoId string, verbose bool) error {
 	return nil
 }
 
-func main() {
+func run(args []string) error {
 	opts := &options{}
 	parser := flags.NewParser(opts, flags.HelpFlag)
-	if _, err := parser.Parse(); err != nil {
+	_, err := parser.ParseArgs(args)
+	return err
+}
+
+func main() {
+	if err := run(os.Args[1:]); err != nil {
 		fmt.Fprintf(os.Stderr, "%s\n", err.Error())
 		os.Exit(1)
 	}
